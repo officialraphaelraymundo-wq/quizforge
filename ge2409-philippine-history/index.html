@@ -1,0 +1,2472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GE2409 Readings in Philippine History — Reviewer</title>
+<meta property="og:title" content="GE2409 Readings in Philippine History — Reviewer" />
+<meta property="og:description" content="Practice questions across the GE2409 lesson handouts — MCQ, multi-select, scenario, and fill-in-the-blank items with instant feedback on every check." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #14171C;
+    --bg-2:         #1C2027;
+    --bg-deep:      #242932;
+    --bg-raise:     #2C313B;
+    --ink:          #ECE6D7;
+    --ink-soft:     #B8B2A4;
+    --ink-mute:     #7A7468;
+    --rule:         #2E333D;
+    --rule-strong:  #3D434F;
+    --accent:       #D86B4E;
+    --accent-deep:  #6B2818;
+    --accent-soft:  #3A1F18;
+    --correct:      #7BB876;
+    --correct-bg:   #1A2B1F;
+    --correct-edge: #2E4A35;
+    --wrong:        #D55C4A;
+    --wrong-bg:     #2D1816;
+    --wrong-edge:   #4A2722;
+    --gold:         #D4A04A;
+    --gold-bg:      #2A2010;
+    --gold-edge:    #4A3818;
+    --shadow:       0 1px 0 rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.5);
+    --display:      "Fraunces", "Times New Roman", serif;
+    --body:         "IBM Plex Sans", -apple-system, system-ui, sans-serif;
+    --mono:         "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    background-image:
+      radial-gradient(1200px 700px at 5% -15%, rgba(216,107,78,.10), transparent 60%),
+      radial-gradient(1000px 600px at 105% 115%, rgba(123,184,118,.05), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.025 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    padding: 48px 24px 80px;
+  }
+
+  .shell { max-width: 880px; margin: 0 auto; }
+
+  /* MASTHEAD */
+  .masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 36px;
+  }
+  .masthead-left {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .codex {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 3px 8px;
+    background: var(--bg);
+  }
+  .crumb {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .stamp {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* SETUP VIEW */
+  .hero { padding: 28px 0 20px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .display {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(48px, 7vw, 86px);
+    line-height: .95;
+    letter-spacing: -.02em;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .display em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .display .slash {
+    font-family: var(--mono);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--gold);
+    font-size: .8em;
+  }
+  .lede {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin-bottom: 8px;
+  }
+  .lede code {
+    font-family: var(--mono);
+    font-size: .85em;
+    background: var(--bg-deep);
+    color: var(--ink);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  .divider-double {
+    border: 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    height: 4px;
+    margin: 36px 0 28px;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .section-label::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+  }
+
+  /* COUNT PICKER */
+  .count-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) { .count-grid { grid-template-columns: repeat(2, 1fr); } }
+  .count-card {
+    cursor: pointer;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    padding: 22px 18px;
+    text-align: left;
+    font-family: inherit;
+    color: var(--ink);
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    position: relative;
+  }
+  .count-card:hover {
+    background: var(--bg-deep);
+    border-color: var(--ink-soft);
+    transform: translateY(-2px);
+  }
+  .count-card.active {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .count-card.active .count-num,
+  .count-card.active .count-label { color: var(--bg); }
+  .count-card.active::after {
+    content: "✓";
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-family: var(--display);
+    font-size: 18px;
+    color: var(--accent);
+  }
+  .count-num {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .count-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .meta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 32px;
+    padding: 18px 20px;
+    background: var(--bg-2);
+    border-left: 3px solid var(--accent);
+  }
+  @media (max-width: 600px) { .meta-row { grid-template-columns: 1fr; } }
+  .meta-item .meta-key {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 4px;
+  }
+  .meta-item .meta-val {
+    font-family: var(--display);
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .meta-item .meta-val code {
+    font-family: var(--mono);
+    font-size: 14px;
+    background: var(--bg-deep);
+    color: var(--ink);
+    padding: 1px 6px;
+  }
+
+  /* BUTTONS */
+  .btn {
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--bg);
+    transition: background .15s ease, color .15s ease, transform .15s ease, border-color .15s ease;
+  }
+  .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn:disabled { opacity: .25; cursor: not-allowed; }
+  .btn:disabled:hover { background: var(--ink); border-color: var(--ink); }
+
+  .btn.ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--rule-strong);
+  }
+  .btn.ghost:hover {
+    background: var(--bg-deep);
+    color: var(--ink);
+    border-color: var(--ink-soft);
+  }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .btn.primary:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+
+  .btn-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  /* QUIZ VIEW */
+  .progress-bar {
+    height: 4px;
+    background: var(--bg-deep);
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width .3s ease;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .progress-info .qcount {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .progress-info .qcount strong { color: var(--accent); font-weight: 400; }
+
+  .qcard {
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    padding: 32px 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+
+  /* per-question verdict banner */
+  .qverdict {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    margin: -32px -30px 26px;
+    border-bottom: 1px solid;
+  }
+  .qverdict-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-size: 18px;
+    line-height: 1;
+  }
+  .qverdict-text {
+    flex: 1;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  .qverdict-text strong {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-right: 12px;
+  }
+  .qverdict.correct {
+    background: var(--correct-bg);
+    border-bottom-color: var(--correct-edge);
+    color: var(--correct);
+  }
+  .qverdict.correct .qverdict-icon { background: var(--correct); color: var(--correct-bg); }
+  .qverdict.partial {
+    background: var(--gold-bg);
+    border-bottom-color: var(--gold-edge);
+    color: var(--gold);
+  }
+  .qverdict.partial .qverdict-icon { background: var(--gold); color: var(--gold-bg); }
+  .qverdict.wrong {
+    background: var(--wrong-bg);
+    border-bottom-color: var(--wrong-edge);
+    color: var(--wrong);
+  }
+  .qverdict.wrong .qverdict-icon { background: var(--wrong); color: var(--wrong-bg); }
+
+  .qtype-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: var(--ink);
+    color: var(--bg);
+    margin-bottom: 18px;
+  }
+  .qtype-tag.multi { background: var(--gold); color: var(--bg); }
+  .qstem {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 26px;
+    letter-spacing: -.005em;
+  }
+  .qstem code {
+    font-family: var(--mono);
+    font-size: .82em;
+    background: var(--bg-deep);
+    color: var(--ink);
+    padding: 1px 6px;
+    border-radius: 2px;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .opt {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 18px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    transition: background .12s ease, border-color .12s ease;
+    user-select: none;
+  }
+  .opt-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .opt:hover:not(.locked) {
+    border-color: var(--ink-soft);
+    background: var(--bg-raise);
+  }
+  .opt.locked { cursor: default; }
+  .opt-marker {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    background: var(--bg-2);
+    margin-top: 1px;
+  }
+  .opt[data-type="mcq"] .opt-marker,
+  .opt[data-type="scenario"] .opt-marker { border-radius: 50%; }
+  .opt.selected .opt-marker {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .opt.selected {
+    border-color: var(--ink-soft);
+    background: var(--bg-raise);
+  }
+  .opt-text {
+    flex: 1;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .opt-text code {
+    font-family: var(--mono);
+    font-size: .92em;
+    color: var(--ink);
+    background: var(--bg);
+    padding: 1px 5px;
+    border-radius: 2px;
+    border: 1px solid var(--rule);
+  }
+  .opt.selected .opt-text { color: var(--ink); }
+
+  /* checked / locked option states */
+  .opt.is-correct {
+    background: var(--correct-bg);
+    border-color: var(--correct-edge);
+  }
+  .opt.is-correct .opt-marker {
+    background: var(--correct);
+    border-color: var(--correct);
+    color: var(--correct-bg);
+  }
+  .opt.is-correct .opt-text { color: var(--ink); }
+
+  .opt.is-wrong {
+    background: var(--wrong-bg);
+    border-color: var(--wrong-edge);
+    margin-bottom: 24px;
+  }
+  .opt.is-wrong .opt-marker {
+    background: var(--wrong);
+    border-color: var(--wrong);
+    color: var(--wrong-bg);
+  }
+  .opt.is-wrong .opt-text { color: var(--ink); }
+
+  .opt.is-missed {
+    background: var(--gold-bg);
+    border-color: var(--gold-edge);
+    border-style: dashed;
+  }
+  .opt.is-missed .opt-marker {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--gold-bg);
+  }
+  .opt.is-missed .opt-text { color: var(--ink); }
+
+  .opt-tag {
+    display: inline-block;
+    margin-left: 8px;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    color: var(--bg);
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .opt-tag.you { background: var(--ink); }
+  .opt-tag.ans { background: var(--correct); }
+  .opt-tag.miss { background: var(--gold); }
+
+  .opt-feedback {
+    margin-top: 10px;
+    margin-left: 36px;
+    padding-left: 14px;
+    border-left: 2px solid var(--rule-strong);
+    font-family: var(--display);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .opt-feedback code {
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: .88em;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 1px 4px;
+    color: var(--ink);
+  }
+
+  /* nav */
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .nav-right { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .question-jumper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .jump-dot {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--rule-strong);
+    background: var(--bg-2);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    cursor: pointer;
+    transition: all .12s ease;
+    position: relative;
+  }
+  .jump-dot:hover { border-color: var(--ink-soft); color: var(--ink); }
+  .jump-dot.has-selection {
+    background: var(--bg-deep);
+    color: var(--ink);
+    border-color: var(--ink-mute);
+  }
+  .jump-dot.checked-correct {
+    background: var(--correct);
+    color: var(--bg);
+    border-color: var(--correct);
+  }
+  .jump-dot.checked-partial {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+  }
+  .jump-dot.checked-wrong {
+    background: var(--wrong);
+    color: var(--bg);
+    border-color: var(--wrong);
+  }
+  .jump-dot.current {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* RESULTS VIEW */
+  .results-hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: center;
+    padding: 32px 0 28px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 36px;
+  }
+  @media (max-width: 600px) { .results-hero { grid-template-columns: 1fr; gap: 18px; } }
+  .score-dial {
+    width: 168px;
+    height: 168px;
+    position: relative;
+  }
+  .score-dial svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .score-dial .track { stroke: var(--bg-deep); }
+  .score-dial .fill { stroke: var(--accent); stroke-linecap: butt; transition: stroke-dashoffset .8s ease; }
+  .score-dial-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .score-pct {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: -.02em;
+    color: var(--ink);
+  }
+  .score-frac {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 4px;
+  }
+  .verdict-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .verdict {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .verdict em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .verdict-sub {
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  @media (max-width: 600px) { .stat-row { grid-template-columns: 1fr; } }
+  .stat-card {
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    padding: 18px 20px;
+  }
+  .stat-card.correct { border-left: 3px solid var(--correct); }
+  .stat-card.partial { border-left: 3px solid var(--gold); }
+  .stat-card.wrong   { border-left: 3px solid var(--wrong); }
+  .stat-num {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .stat-num.correct { color: var(--correct); }
+  .stat-num.partial { color: var(--gold); }
+  .stat-num.wrong   { color: var(--wrong); }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* footer mark */
+  .colophon {
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* MODE & FOCUS SECTIONS (setup additions) */
+  .opt-section { margin-bottom: 28px; }
+  .opt-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+  }
+  .opt-toggle-row.has-detail { border-bottom: none; }
+  .opt-toggle-text { flex: 1; }
+  .opt-toggle-text .ot-title {
+    font-family: var(--display);
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .opt-toggle-text .ot-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .opt-toggle-text .ot-sub.live { color: var(--accent); }
+
+  /* toggle switch */
+  .toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule-strong);
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+    flex-shrink: 0;
+  }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: var(--ink-mute);
+    transition: transform .15s ease, background .15s ease;
+  }
+  .toggle.on {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+  .toggle.on::after {
+    transform: translateX(20px);
+    background: var(--accent);
+  }
+
+  /* topic chips (focus picker) */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    border-top: none;
+  }
+  @media (max-width: 600px) { .topic-grid { grid-template-columns: 1fr; } }
+  .topic-chip {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule);
+    font-family: inherit;
+    text-align: left;
+    color: var(--ink-soft);
+    transition: background .12s ease, border-color .12s ease, color .12s ease;
+  }
+  .topic-chip:hover {
+    border-color: var(--ink-soft);
+    background: var(--bg-raise);
+    color: var(--ink);
+  }
+  .topic-chip.on {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+  .topic-chip-check {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--ink-mute);
+    background: var(--bg-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 10px;
+  }
+  .topic-chip.on .topic-chip-check {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .topic-chip.on .topic-chip-check::after { content: '✓'; }
+  .topic-chip-label {
+    font-size: 13.5px;
+    flex: 1;
+    line-height: 1.3;
+  }
+  .topic-chip-count {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: var(--ink-mute);
+  }
+  .topic-chip.on .topic-chip-count { color: var(--accent); }
+
+  /* time picker */
+  .time-picker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    border-top: none;
+  }
+  @media (max-width: 600px) { .time-picker { grid-template-columns: repeat(2, 1fr); } }
+  .time-chip {
+    cursor: pointer;
+    padding: 12px 8px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule);
+    font-family: inherit;
+    color: var(--ink-soft);
+    text-align: center;
+    transition: background .12s ease, border-color .12s ease, color .12s ease;
+  }
+  .time-chip:hover {
+    border-color: var(--ink-soft);
+    color: var(--ink);
+    background: var(--bg-raise);
+  }
+  .time-chip.on {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .time-chip-num {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .time-chip-unit {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .time-chip.on .time-chip-unit { color: var(--bg); opacity: .7; }
+
+  /* timer badge in quiz */
+  .timer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule-strong);
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .06em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .timer-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .timer-badge.warn {
+    border-color: var(--gold-edge);
+    background: var(--gold-bg);
+    color: var(--gold);
+  }
+  .timer-badge.warn::before { background: var(--gold); }
+  .timer-badge.danger {
+    border-color: var(--wrong-edge);
+    background: var(--wrong-bg);
+    color: var(--wrong);
+    animation: pulse 1s ease-in-out infinite;
+  }
+  .timer-badge.danger::before { background: var(--wrong); }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .55; }
+  }
+
+  /* test-mode notice strip in quiz view */
+  .test-notice {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 9px 14px;
+    background: var(--bg-2);
+    border-left: 2px solid var(--accent);
+    margin-bottom: 16px;
+  }
+  .test-notice strong {
+    color: var(--ink);
+    margin-right: 8px;
+  }
+
+  /* time-up banner on results */
+  .timeup-banner {
+    background: var(--wrong-bg);
+    border: 1px solid var(--wrong-edge);
+    border-left: 3px solid var(--wrong);
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .timeup-banner strong { color: var(--wrong); }
+
+  /* setup summary line */
+  .setup-summary {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+  }
+  .setup-summary .ss-item .ss-key {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 3px;
+  }
+  .setup-summary .ss-item .ss-val {
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .setup-summary .ss-item .ss-val.accent { color: var(--accent); }
+
+  /* utilities */
+  .hidden { display: none !important; }
+  .fade-in { animation: fade .35s ease both; }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* selection color */
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* ── NEW QUESTION TYPES: fitb · scenario ─────────────────────────── */
+  .qtype-tag.fitb     { background: #4E7DAA; color: #ECE6D7; }
+  .qtype-tag.scenario { background: #7B6BA0; color: #ECE6D7; }
+
+  /* Fill-in-the-blank ──────────────────────────────────────────────── */
+  .fitb-wrapper { margin-top: 4px; }
+  .fitb-input {
+    display: block; width: 100%; max-width: 420px;
+    font-family: var(--mono); font-size: 16px; letter-spacing: .04em;
+    padding: 13px 16px; background: var(--bg-deep);
+    border: 2px solid var(--rule-strong); color: var(--ink);
+    outline: none; transition: border-color .15s ease; margin-top: 8px;
+  }
+  .fitb-input:focus      { border-color: var(--accent); }
+  .fitb-input:read-only  { cursor: default; }
+  .fitb-input.is-correct { border-color: var(--correct); background: var(--correct-bg); color: var(--correct); }
+  .fitb-input.is-wrong   { border-color: var(--wrong);   background: var(--wrong-bg);   color: var(--wrong); }
+  .fitb-hint {
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: .1em; color: var(--ink-mute); margin-top: 10px;
+  }
+  .fitb-result {
+    margin-top: 14px; padding: 12px 16px;
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: .03em; line-height: 1.65;
+  }
+  .fitb-result.correct { background: var(--correct-bg); border: 1px solid var(--correct-edge); color: var(--correct); }
+  .fitb-result.wrong   { background: var(--wrong-bg);   border: 1px solid var(--wrong-edge);   color: var(--wrong); }
+  .fitb-result code { font-family: var(--mono); background: rgba(0,0,0,.28); padding: 1px 7px; border-radius: 2px; color: inherit; }
+  .fitb-fb {
+    margin-top: 14px; padding: 12px 16px;
+    border-left: 2px solid var(--rule-strong);
+    font-family: var(--display); font-size: 14px;
+    font-style: italic; color: var(--ink-soft); line-height: 1.5;
+  }
+  .fitb-fb code {
+    font-family: var(--mono); font-style: normal; font-size: .88em;
+    background: var(--bg); border: 1px solid var(--rule); padding: 1px 4px; color: var(--ink);
+  }
+
+  /* Scenario context block ─────────────────────────────────────────── */
+  .scenario-context {
+    background: var(--bg-deep); border-left: 3px solid var(--gold);
+    padding: 14px 18px; margin-bottom: 22px;
+  }
+  .scenario-context-eyebrow {
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .scenario-context-body {
+    font-family: var(--display); font-size: 15px; color: var(--ink-soft); line-height: 1.5;
+  }
+  .scenario-context-body code {
+    font-family: var(--mono); font-size: .88em; color: var(--ink);
+    background: var(--bg); padding: 1px 5px; border-radius: 2px;
+  }
+
+  /* ── EXAM SIMULATION (weighted blueprint mode) ──────────────── */
+  /* The exam toggle uses the gold accent to set it apart from the
+     ordinary (terracotta) focus / timer toggles.                   */
+  .toggle.exam.on { background: var(--gold-bg); border-color: var(--gold); }
+  .toggle.exam.on::after { background: var(--gold); }
+
+  /* Controls that exam mode overrides get visually locked.        */
+  .locked { opacity: .38; pointer-events: none; filter: saturate(.5); }
+
+  /* Blueprint-coverage readout shown under the exam toggle.       */
+  .exam-coverage {
+    border: 1px solid var(--gold-edge);
+    background: var(--gold-bg);
+    padding: 12px 16px;
+    margin-top: 10px;
+  }
+  .exam-coverage .ec-line {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em;
+    color: var(--ink-soft); line-height: 1.7;
+  }
+  .exam-coverage .ec-line strong { color: var(--gold); font-weight: 600; }
+  .exam-coverage .ec-missing { color: var(--ink-mute); }
+
+  /* Per-objective breakdown table on the results screen.          */
+  .obj-break { margin: 34px 0 8px; }
+  .obj-break-title {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 8px; margin-bottom: 4px;
+  }
+  .obj-row {
+    display: grid;
+    grid-template-columns: 1fr 96px 64px;
+    gap: 14px; align-items: center;
+    padding: 9px 2px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .obj-row-label { font-size: 13.5px; color: var(--ink-soft); }
+  .obj-row-bar {
+    height: 6px; background: var(--bg-deep);
+    border: 1px solid var(--rule-strong);
+    position: relative; overflow: hidden;
+  }
+  .obj-row-bar i {
+    position: absolute; inset: 0; right: auto;
+    background: var(--correct);
+  }
+  .obj-row.weak .obj-row-bar i { background: var(--wrong); }
+  .obj-row-pct {
+    font-family: var(--mono); font-size: 12px; text-align: right;
+    color: var(--ink-soft);
+  }
+  .obj-row.weak .obj-row-pct { color: var(--wrong); }
+
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!--
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║  MASTHEAD (top bar)                                              ║
+    ║  All visible text comes from CONFIG.masthead.* in the <script>   ║
+    ║  block below. Do not hardcode subject names here.                ║
+    ╚══════════════════════════════════════════════════════════════════╝
+  -->
+  <header class="masthead">
+    <div class="masthead-left">
+      <span class="codex" id="cfg-masthead-codex"></span>
+      <span class="crumb" id="cfg-masthead-crumb"></span>
+    </div>
+    <span class="stamp" id="cfg-masthead-stamp"></span>
+  </header>
+
+  <!-- SETUP VIEW -->
+  <section id="view-setup" class="fade-in">
+    <div class="hero">
+      <!--
+        Hero block. Text comes from CONFIG.hero.*
+          • eyebrow      → small uppercase mono label above the big title
+          • titleHtml    → the big serif title (HTML allowed: wrap part in <em>…</em> for italic accent colour)
+          • ledeHtml     → paragraph description below the title (HTML allowed, use <code> for monospace)
+      -->
+      <div class="eyebrow" id="cfg-hero-eyebrow"></div>
+      <h1 class="display" id="cfg-hero-title"></h1>
+      <p class="lede" id="cfg-hero-lede"></p>
+    </div>
+
+    <hr class="divider-double" />
+
+    <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  QUIZ-LENGTH PRESETS                                             ║
+      ║  Cards are generated from CONFIG.lengthOptions. To add or remove ║
+      ║  presets, edit that array in the <script> below — no HTML edits  ║
+      ║  needed here.                                                    ║
+      ╚══════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="section-label" id="cfg-length-section-label"></div>
+
+    <div class="count-grid" id="countGrid">
+      <!-- count cards injected by JS from CONFIG.lengthOptions -->
+    </div>
+
+    <div class="section-label" id="cfg-focus-section-label"></div>
+
+    <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  EXAM SIMULATION TOGGLE  (gold switch)                           ║
+      ║  Draws questions per-objective according to the blueprint       ║
+      ║  weights in the pack. All text + numbers come from               ║
+      ║  the pack's `exam` block — no HTML edits needed.                 ║
+      ║  To remove this feature entirely: omit `exam` from the pack.     ║
+      ╚══════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="opt-section" id="examSection">
+      <div class="opt-toggle-row" id="examToggleRow">
+        <div class="opt-toggle-text">
+          <div class="ot-title" id="cfg-exam-title"></div>
+          <div class="ot-sub" id="examSub"></div>
+        </div>
+        <div class="toggle exam" id="examToggle" role="switch" aria-checked="false" tabindex="0"></div>
+      </div>
+      <div class="exam-coverage hidden" id="examCoverage">
+        <div class="ec-line" id="examCoverageLine"></div>
+      </div>
+    </div>
+
+    <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  FOCUS TOGGLE + TOPIC PICKER                                     ║
+      ║  Topic chips are generated from CONFIG.categories. To hide this  ║
+      ║  whole section, set CONFIG.showFocusOption = false.              ║
+      ╚══════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="opt-section" id="focusSection">
+      <div class="opt-toggle-row" id="focusToggleRow">
+        <div class="opt-toggle-text">
+          <div class="ot-title" id="cfg-focus-title"></div>
+          <div class="ot-sub" id="focusSub"></div>
+        </div>
+        <div class="toggle" id="focusToggle" role="switch" aria-checked="false" tabindex="0"></div>
+      </div>
+      <div class="topic-grid hidden" id="topicGrid">
+        <!-- chips injected by JS -->
+      </div>
+    </div>
+
+    <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  TIMER TOGGLE + TIME PICKER                                      ║
+      ║  Time chips are generated from CONFIG.timeOptions. To hide this  ║
+      ║  whole section, set CONFIG.showTimerOption = false.              ║
+      ╚══════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="opt-section" id="timerSection">
+      <div class="opt-toggle-row" id="timerToggleRow">
+        <div class="opt-toggle-text">
+          <div class="ot-title" id="cfg-timer-title"></div>
+          <div class="ot-sub" id="timerSub"></div>
+        </div>
+        <div class="toggle" id="timerToggle" role="switch" aria-checked="false" tabindex="0"></div>
+      </div>
+      <div class="time-picker hidden" id="timePicker">
+        <!-- time chips injected by JS from CONFIG.timeOptions -->
+      </div>
+    </div>
+
+    <!--
+      Meta-row. Labels come from CONFIG.metaLabels. The dynamic values
+      (pool size, randomisation note, etc.) are computed from BANK and
+      written by JS at runtime.
+    -->
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-key" id="cfg-meta-pool-key"></div>
+        <div class="meta-val" id="cfg-meta-pool-val"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-key" id="cfg-meta-rand-key"></div>
+        <div class="meta-val" id="cfg-meta-rand-val"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-key" id="cfg-meta-feedback-key"></div>
+        <div class="meta-val" id="feedbackTimingMeta"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-key" id="cfg-meta-scoring-key"></div>
+        <div class="meta-val" id="cfg-meta-scoring-val"></div>
+      </div>
+    </div>
+
+    <div class="setup-summary">
+      <div class="ss-item">
+        <div class="ss-key">Length</div>
+        <div class="ss-val accent" id="ssLength">20 questions</div>
+      </div>
+      <div class="ss-item">
+        <div class="ss-key">Mode</div>
+        <div class="ss-val" id="ssMode">Practice</div>
+      </div>
+      <div class="ss-item">
+        <div class="ss-key">Focus</div>
+        <div class="ss-val" id="ssFocus">All topics</div>
+      </div>
+      <div class="ss-item">
+        <div class="ss-key">Time</div>
+        <div class="ss-val" id="ssTime">Untimed</div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <span class="crumb" id="poolNote">Drawing from <strong id="poolAvailable" style="color: var(--accent); font-family: var(--display); font-size: 16px; letter-spacing: 0;">81</strong> available questions</span>
+      <button class="btn" id="startBtn">Begin Quiz →</button>
+    </div>
+  </section>
+
+  <!-- QUIZ VIEW -->
+  <section id="view-quiz" class="hidden">
+    <div class="progress-info">
+      <div class="qcount">Question <strong><span id="qNow">1</span></strong> / <span id="qTotal">20</span></div>
+      <div id="progressRight"><span id="checkedCount">0</span> checked</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="test-notice hidden" id="testNotice">
+      <strong>Test mode</strong>Answers are reviewed at the end. Navigate freely with Previous / Next.
+    </div>
+
+    <div class="question-jumper" id="jumper"></div>
+
+    <div id="quizContent"></div>
+
+    <div class="nav-row">
+      <button class="btn ghost" id="prevBtn">← Previous</button>
+      <div class="nav-right">
+        <button class="btn ghost" id="abandonBtn">Abandon</button>
+        <button class="btn primary" id="checkBtn">Check Answer</button>
+        <button class="btn" id="nextBtn">Next →</button>
+        <button class="btn primary" id="finishBtn">View Final Score →</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-results" class="hidden"></section>
+
+  <footer class="colophon">
+    <span id="cfg-footer-left"></span>
+    <span id="cfg-footer-right"></span>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   CONTENT PACK — injected by build.py. The engine below reads
+   everything through the CONFIG / BANK / CATEGORIES adapter.
+   ============================================================ */
+const PACK = {"meta":{"packId":"ge2409","subject":"GE2409 Readings in Philippine History","version":"1.0.3","author":"STI Meycauayan BSIT","updated":"2026-08-24","pageTitle":"GE2409 Readings in Philippine History — Reviewer","masthead":{"codex":"GE2409","crumb":"Readings in Philippine History","stamp":"Reviewer"},"hero":{"eyebrow":"Course Reviewer","titleHtml":"Readings in <em>Philippine History<\/em>","ledeHtml":"Practice questions across the GE2409 lesson handouts — MCQ, multi-select, scenario, and fill-in-the-blank items with instant feedback on every check."},"footer":{"left":"GE2409 Readings in Philippine History · STI handouts","right":"Self-paced practice"}},"categories":[{"key":"01","label":"01 Foundations of Philippine History"},{"key":"02","label":"02 Colonization and Revolution"},{"key":"03","label":"03 Wars and Reconstruction"},{"key":"04","label":"04 Post-War and Authoritarianism"},{"key":"05","label":"05 Democracy and Contemporary Challenges"},{"key":"06","label":"06 Bangsamoro Struggle"},{"key":"07","label":"07 Globalization and Historical Perspectives"}],"questions":[{"cat":"01","type":"mcq","stem":"What is the primary definition of history as an academic field?","options":[{"t":"The memorization of chronological dates and prominent national heroes","c":false,"fb":"Confuses history with simple rote memorization."},{"t":"The study of past human affairs through the critical analysis of available evidence","c":true,"fb":"Defines history as an evidence-based inquiry into past human events."},{"t":"The compilation of traditional folklore passed down strictly through oral storytelling","c":false,"fb":"Restricts history to oral tradition rather than comprehensive evidence analysis."},{"t":"The collection of ancient artifacts to prove the superiority of early civilizations","c":false,"fb":"Misinterprets history as artifact collection for ethnocentric validation."}]},{"cat":"01","type":"mcq","stem":"According to the lesson, how does studying history help societies understand change over time?","options":[{"t":"It provides rigid laws that guarantee future political stability.","c":false,"fb":"Assumes historical study yields predictive laws rather than insights into change factors."},{"t":"It proves that cultural institutions remain static across generations.","c":false,"fb":"Contradicts the principle that societies undergo continuous transformation."},{"t":"It reveals the specific factors and processes that drive major historical events.","c":true,"fb":"Correctly identifies how history explains the causes and mechanisms of social change."},{"t":"It isolates economic shifts from broader social and political movements.","c":false,"fb":"Incorrectly separates economic changes from social and political contexts."}]},{"cat":"01","type":"mcq","stem":"What benefit does analyzing past achievements and mistakes offer to present decision-makers?","options":[{"t":"It allows leaders to perfectly predict economic cycles.","c":false,"fb":"Overstates historical analysis as an exact predictive tool for finance."},{"t":"It offers valuable insights that help inform contemporary choices.","c":true,"fb":"Explains how learning from past outcomes guides modern decision-making."},{"t":"It eliminates the possibility of repeating political conflicts.","c":false,"fb":"Falsely claims historical knowledge guarantees the prevention of conflict."},{"t":"It forces modern governments to replicate ancient administrative systems.","c":false,"fb":"Confuses learning from the past with blindly copying historical governance."}]},{"cat":"01","type":"mcq","stem":"How does the study of history contribute to cultural appreciation?","options":[{"t":"It highlights the superiority of written traditions over unwritten cultures.","c":false,"fb":"Imposes a hierarchical bias rather than fostering genuine cultural appreciation."},{"t":"It encourages students to adopt the religious practices of early ancestors.","c":false,"fb":"Confuses cultural appreciation with mandatory religious practice."},{"t":"It restricts cultural identity to the traditions established after colonization.","c":false,"fb":"Ignores pre-colonial heritage and narrows cultural identity."},{"t":"It fosters empathy and understanding for diverse perspectives and heritage.","c":true,"fb":"Accurately describes how history broadens cultural empathy and perspective."}]},{"cat":"01","type":"mcq","stem":"Why does analyzing historical events enhance a student's critical thinking skills?","options":[{"t":"It requires students to evaluate evidence and interpret competing sources.","c":true,"fb":"Correctly connects critical thinking to evaluating and interpreting historical evidence."},{"t":"It conditions students to accept official government records as absolute truth.","c":false,"fb":"Promotes passive acceptance rather than critical evaluation."},{"t":"It trains students to ignore biased accounts in favor of modern opinions.","c":false,"fb":"Dismisses primary evidence analysis in favor of unverified opinions."},{"t":"It replaces logical reasoning with the memorization of historical terminology.","c":false,"fb":"Replaces critical thinking with passive rote learning."}]},{"cat":"01","type":"multi","stem":"Which of the following items are classified as primary sources in historical research? Select the TWO correct statements.","options":[{"t":"A 16th-century personal diary written by a native village leader","c":true,"fb":"Personal writings from the period are first-hand primary accounts."},{"t":"A 2024 textbook summary explaining pre-colonial Philippine trade","c":false,"fb":"Modern textbook summaries are secondary sources."},{"t":"An official government treaty signed during a peace settlement in 1590","c":true,"fb":"Official contemporary records qualify as primary legal sources."},{"t":"A modern documentary film analyzing ancient Southeast Asian pottery","c":false,"fb":"Modern analytical documentaries are secondary interpretations."},{"t":"A journal article published in 2020 reviewing early writing systems","c":false,"fb":"Academic review articles published centuries later are secondary sources."}]},{"cat":"01","type":"fitb","stem":"The Laguna Copperplate Inscription was discovered in the year ____.","subtype":"year","answer":["1989"],"caseSensitive":false,"fb":"The Laguna Copperplate Inscription was found in 1989 near Lumban, Laguna."},{"cat":"01","type":"mcq","stem":"What is the primary significance of the 75+ illustrations contained in the Boxer Codex (c. 1590)?","options":[{"t":"They prove that Spanish friars introduced textile weaving to early Filipinos.","c":false,"fb":"Falsely attributes indigenous weaving traditions to Spanish friars."},{"t":"They document the exact military tactics used during the Battle of Mactan.","c":false,"fb":"The codex illustrates social life and attire, not specific battle tactics."},{"t":"They provide visual evidence of pre-colonial clothing, weapons, and social hierarchies.","c":true,"fb":"Accurately describes the codex's detailed visual records of indigenous culture."},{"t":"They map out early maritime trade routes across the Pacific Ocean.","c":false,"fb":"Confuses cultural illustrations with nautical maps."}]},{"cat":"01","type":"mcq","stem":"How does the Boxer Codex challenge colonial perspectives regarding early Filipino society?","options":[{"t":"It proves that early Filipinos had already adopted European legal structures.","c":false,"fb":"Early Filipinos had native legal systems, not European ones."},{"t":"It refutes the view that indigenous Filipinos were primitive by showing an organized society.","c":true,"fb":"Demonstrates that pre-colonial society possessed complex attire, status, and organization."},{"t":"It reveals that early Filipinos lacked distinct social classes prior to Spanish rule.","c":false,"fb":"The codex explicitly illustrates stratified social classes."},{"t":"It demonstrates that indigenous communities relied entirely on foreign craftsmen.","c":false,"fb":"Contradicted by the codex's documentation of native craftsmanship."}]},{"cat":"01","type":"fitb","stem":"Printed in the year ____, the Doctrina Christiana was the first book printed in the Philippines.","subtype":"year","answer":["1593"],"caseSensitive":false,"fb":"The Doctrina Christiana was produced in 1593 using wooden block printing."},{"cat":"01","type":"mcq","stem":"What historical milestone is marked by the publication of the Doctrina Christiana in 1593?","options":[{"t":"The formal abolition of the pre-colonial Alipin social class","c":false,"fb":"The book was a catechism, not a socio-legal decree on servitude."},{"t":"The establishment of the first secular university in Southeast Asia","c":false,"fb":"Confuses religious printing with higher education institutions."},{"t":"The beginning of the printing industry in the Philippines and early bilingual literacy.","c":true,"fb":"Marks the start of print culture and bilingual religious education in Spanish and Baybayin."},{"t":"The complete replacement of indigenous spiritual practices within one decade","c":false,"fb":"Overstates the immediate effect of a single printed text on native beliefs."}]},{"cat":"01","type":"multi","stem":"Which of the following economic activities were actively practiced by pre-colonial Filipinos according to the handout? Select the TWO correct statements.","options":[{"t":"Commercial rice agriculture and root crop cultivation","c":true,"fb":"Agriculture including rice and root crops was a core economic activity."},{"t":"Large-scale industrial coal mining and steam power production","c":false,"fb":"Industrial coal mining and steam power are 19th-century developments."},{"t":"International trade with China, India, and Southeast Asian polities","c":true,"fb":"Pre-colonial Filipinos maintained extensive regional trade connections."},{"t":"Mechanized textile manufacturing using imported European machinery","c":false,"fb":"Pre-colonial weaving was done using traditional hand looms, not European machines."},{"t":"Monopolistic galleon commerce controlled exclusively by royal charter","c":false,"fb":"Galleon trade monopolies were established later under Spanish colonial rule."}]},{"cat":"01","type":"scenario","stem":"What historical role did this individual fulfill within early Filipino society?","context":"A community healer in a pre-colonial barangay conducts a ritual using herbal remedies and chants to treat a sick villager while advising the local datu on a village dispute.","options":[{"t":"An encomendero collecting tribute for the colonial government","c":false,"fb":"Encomenderos were Spanish colonial administrators."},{"t":"A babaylan acting as a shaman, healer, and cultural custodian","c":true,"fb":"Describes the multifaceted spiritual, medical, and advisory functions of a babaylan."},{"t":"A Timawa warrior leading a naval expedition against rival merchants","c":false,"fb":"Timawa were free commoners and warriors, not spiritual healers."},{"t":"A Spanish friar translating Latin prayers into indigenous scripts","c":false,"fb":"Friars were Catholic missionaries introduced during Spanish colonization."}]},{"cat":"01","type":"fitb","stem":"Ancient hardwood trading vessels discovered in Butuan that could hold up to 50 people are known as ____.","subtype":"term","answer":["Balangay","Butuan Boat","Balangays"],"caseSensitive":false,"fb":"The Balangay (or Butuan Boat) was a large hardwood vessel that inspired the term \"barangay.\""},{"cat":"01","type":"mcq","stem":"What did the Maritime Jade Road demonstrate about early Filipinos between 2000 BCE and 1000 CE?","options":[{"t":"They were isolated from foreign contact until the arrival of Islam in Mindanao.","c":false,"fb":"The Jade Road proves extensive long-distance maritime connections."},{"t":"They relied exclusively on European traders to acquire precious raw materials.","c":false,"fb":"European trade occurred millennia after the Maritime Jade Road era."},{"t":"They actively participated in a 3,000-year regional trade network trading Taiwanese jade.","c":true,"fb":"Accurately describes the duration and scope of the Maritime Jade Road."},{"t":"They developed wooden block printing technology to record commercial transactions.","c":false,"fb":"Wooden block printing was introduced much later with the Doctrina Christiana."}]},{"cat":"01","type":"mcq","stem":"Which writing script and primary subject matter characterize the Laguna Copperplate Inscription (900 CE)?","options":[{"t":"Baybayin script recording a religious treaty between Tondo and Spain","c":false,"fb":"Misconception: M-kawi-baybayin-script-confusion. Swaps in a later indigenous script, and invents a Spain-Tondo treaty from a period centuries before Spanish contact existed."},{"t":"Kawi script recording the official exoneration of Namwaran's debt","c":true,"fb":"Accurately identifies Kawi script and the debt forgiveness of Namwaran."},{"t":"Latin alphabet detailing the construction of the Balangay boats","c":false,"fb":"Misconception: M-lci-content-misinterpretation. The Latin alphabet only arrived with Spanish colonization, long after this inscription, and its actual subject has nothing to do with boat construction."},{"t":"Kawi script translating Catholic prayers for early indigenous converts","c":false,"fb":"Misconception: M-doctrina-kawi-confusion. Catholic prayer translation describes a different 1593 artifact printed in Baybayin, not this inscription's subject."}]},{"cat":"01","type":"scenario","stem":"Which indigenous writing system is represented by this structural description?","context":"An archivist examines a pre-colonial artifact containing 17 characters (14 consonants and 3 vowels) with diacritical marks indicating modified vowel sounds.","options":[{"t":"Kawi script derived from 19th-century European alphabets","c":false,"fb":"Kawi is an older Southeast Asian script, not a 19th-century European one."},{"t":"Baybayin script formatted as an ancient alphasyllabary","c":true,"fb":"Correctly identifies Baybayin based on its 17-character alphasyllabary structure."},{"t":"Latin script introduced by the Rajahnate of Butuan","c":false,"fb":"Latin script was introduced by Spanish colonizers, not Butuan rajahs."},{"t":"Arabic script brought exclusively by Taiwanese jade traders","c":false,"fb":"Arabic script arrived with Islam in Mindanao, not via jade commerce."}]},{"cat":"01","type":"mcq","stem":"Which characteristic distinguished an Aliping Namamahay from an Aliping Sagigilid in pre-colonial society?","options":[{"t":"Aliping Namamahay lived in their own houses and could not be sold by masters.","c":true,"fb":"Accurately identifies the residential independence and non-saleable status of Namamahay."},{"t":"Aliping Namamahay resided inside the master's home and served without property rights.","c":false,"fb":"Misconception: M-namamahay-residence-error. Describes Aliping Sagigilid instead."},{"t":"Aliping Namamahay were captured strictly through foreign warfare and executed upon debt default.","c":false,"fb":"Misconception: M-chattel-slavery-equating. Exaggerates servitude conditions and ignores property rights."},{"t":"Aliping Namamahay were exempt from all agricultural labor and held hereditary political titles.","c":false,"fb":"Describes the Maginoo class, not dependents."}]},{"cat":"01","type":"scenario","stem":"How was this worker classified under the pre-colonial social structure?","context":"In an ancient barangay, a dependent worker resides directly inside the datu's household, performing daily domestic duties due to an unpaid family debt, and lacks an independent dwelling.","options":[{"t":"Timawa freeman exercising warrior privileges","c":false,"fb":"Timawa were free commoners who owned land, not household dependents."},{"t":"Aliping Sagigilid living within the master's home","c":true,"fb":"Accurately classifies household-dwelling dependents with limited rights as Sagigilid."},{"t":"Aliping Namamahay owning private agricultural land","c":false,"fb":"Misconception: M-sagigilid-rights-overstatement. Namamahay lived independently, unlike Sagigilid."},{"t":"Maginoo noble serving as an adviser to the sultan","c":false,"fb":"Maginoo belonged to the ruling elite class."}]},{"cat":"01","type":"mcq","stem":"What essential characteristic defines a primary source in historical research?","options":[{"t":"It is a modern synthesis written by a certified historian summarizing past events.","c":false,"fb":"Misconception: M-secondary-as-primary. Summaries written long after events are secondary sources."},{"t":"It is a first-hand account or physical evidence created during the period being studied.","c":true,"fb":"Correctly defines primary sources by contemporary creation and direct evidence."},{"t":"It is any printed book that has been preserved for more than one hundred years.","c":false,"fb":"Misconception: M-age-equals-primary. Document age alone does not make a retrospective account primary."},{"t":"It is an official commentary created to correct errors in earlier historical accounts.","c":false,"fb":"Later retrospective commentaries are secondary analyses."}]},{"cat":"01","type":"scenario","stem":"Which document serves as a primary source for this research?","context":"A researcher studying early Spanish colonial administration in Luzon finds four different documents in an archive.","options":[{"t":"A 2015 journal article analyzing Spanish taxation policies in the Philippines","c":false,"fb":"Misconception: M-secondary-as-primary. Modern journal articles are secondary sources."},{"t":"An official letter written in 1595 by a Spanish governor to the King of Spain","c":true,"fb":"Contemporary official correspondence from 1595 is a direct primary source."},{"t":"A 1980 high school textbook chapter summarizing colonial governance","c":false,"fb":"Retrospective textbook chapters are secondary sources."},{"t":"A modern English translation commentary published in 2022 reviewing colonial laws","c":false,"fb":"Modern analytical commentaries are secondary sources."}]},{"cat":"01","type":"scenario","stem":"Which of the following items would NOT be classified as a primary source?","context":"A student compiling materials on pre-colonial Philippine culture gathers a collection of items for analysis.","options":[{"t":"A copper sheet inscribed with legal text in 900 CE","c":false,"fb":"The LCI is a contemporary artifact and primary source."},{"t":"An original manuscript from 1590 featuring illustrations of indigenous attire","c":false,"fb":"The Boxer Codex manuscript is an authentic 16th-century primary source."},{"t":"A modern history podcast episode reviewing pre-colonial maritime trade routes","c":true,"fb":"Modern podcasts analyzing past events are secondary sources, fulfilling the negative condition."},{"t":"A 16th-century printed catechism containing parallel Baybayin prayers","c":false,"fb":"The Doctrina Christiana is a contemporary 1593 primary source."}]},{"cat":"01","type":"mcq","stem":"Why is the Laguna Copperplate Inscription (900 CE) considered a landmark discovery in Philippine historiography?","options":[{"t":"It proves that Spanish friars established written legal codes prior to 1000 CE.","c":false,"fb":"Misconception: M-lci-spanish-origin. Spanish friars arrived centuries later in the 16th century."},{"t":"It demonstrates that pre-colonial Filipinos possessed a legal system, literacy, and organized trade.","c":true,"fb":"Correctly summarizes the LCI's proof of complex pre-colonial societal institutions."},{"t":"It confirms that pre-colonial communities were completely isolated from neighboring Asian polities.","c":false,"fb":"The LCI explicitly mentions places in Java and Mindanao, proving regional trade connections."},{"t":"It provides the first recorded evidence of European military alliances in Southeast Asia.","c":false,"fb":"The LCI contains no European presence or military treaty records."}]},{"cat":"01","type":"scenario","stem":"How does the text of the Laguna Copperplate Inscription refute these early historical claims?","context":"A historian reviews early 20th-century claims that pre-colonial Filipinos lacked written laws, formal commerce, and complex administrative governance before foreign colonization.","options":[{"t":"By recording an official debt cancellation mentioning places in Luzon, Java, and Mindanao","c":true,"fb":"Demonstrates formal legal procedures, debt exoneration, literacy, and international links."},{"t":"By outlining the military deployment of Spanish troops during early pacification campaigns","c":false,"fb":"Spanish troop deployments occurred in the late 16th century, long after 900 CE."},{"t":"By detailing the introduction of Latin alphabet printing by Catholic missionaries","c":false,"fb":"Misconception: M-lci-spanish-origin. The LCI uses Kawi script, not Latin print."},{"t":"By establishing that early barangays were ruled directly by the Sultanate of Sulu","c":false,"fb":"Misconception: M-lci-foreign-dominance. The LCI reflects local governance and regional links, not Sulu rule."}]},{"cat":"01","type":"multi","stem":"Which of the following historical conclusions are directly supported by the discovery of the Laguna Copperplate Inscription? Select the TWO correct statements.","options":[{"t":"Early Filipinos maintained legal mechanisms for recording debt relief and official agreements.","c":true,"fb":"The LCI specifically records the formal exoneration of Namwaran's debt."},{"t":"Pre-colonial society was completely illiterate until the introduction of Baybayin in 1593.","c":false,"fb":"Misconception: M-lci-primitive-myth. LCI proves literacy in Kawi script as early as 900 CE."},{"t":"Regional trade networks connected settlements in Luzon with places in Mindanao and Java.","c":true,"fb":"The document explicitly mentions Tondo, Dewata (Mindanao), and Medang (Java)."},{"t":"Pre-colonial barangays were governed under a unified constitution issued by the King of Spain.","c":false,"fb":"Misconception: M-lci-spanish-origin. Spanish authority did not exist in 900 CE."},{"t":"Indigenous societies lacked any concept of currency or financial obligations.","c":false,"fb":"Misconception: M-lci-primitive-myth. The recording of debt exoneration confirms formal financial concepts."}]},{"cat":"01","type":"mcq","stem":"In the CRISP source-analysis framework, what is the primary focus when performing the \"Check the Source\" step?","options":[{"t":"Determining whether the specific claims made inside the text are scientifically accurate","c":false,"fb":"Misconception: M-check-truth-confusion. Verifying internal truth/bias belongs to \"Investigate the Content.\""},{"t":"Identifying who created the document, when it was produced, and why it was made","c":true,"fb":"Accurately defines checking authorial origin, date, and creation context."},{"t":"Measuring the long-term historical impact the document had on modern Philippine law","c":false,"fb":"Misconception: M-check-significance-confusion. Evaluating impact belongs to \"Point out the Significance.\""},{"t":"Analyzing the demographic background of the people who received the document","c":false,"fb":"Misconception: M-check-audience-confusion. Focuses on \"Recognize the Audience.\""}]},{"cat":"01","type":"scenario","stem":"Which CRISP analysis step is the student performing through this investigation?","context":"A student finds an undated, unsigned manuscript in an archive describing a 16th-century trading expedition. Before reading the content, the student searches watermarks and ink composition to determine who wrote it and when.","options":[{"t":"Situate in History","c":false,"fb":"\"Situate in History\" connects a known source to broader historical narratives."},{"t":"Check the Source","c":true,"fb":"Investigating author identity, creation date, and origin exemplifies \"Check the Source.\""},{"t":"Investigate the Content","c":false,"fb":"Misconception: M-check-truth-confusion. Investigating content involves analyzing internal claims and text bias."},{"t":"Point out the Significance","c":false,"fb":"Misconception: M-check-significance-confusion. Focuses on historical consequences rather than document origin."}]},{"cat":"01","type":"scenario","stem":"Which of the following questions should NOT be asked during this specific step?","context":"A researcher is evaluating an official Spanish decree from 1590 using the \"Check the Source\" step of CRISP.","options":[{"t":"Who was the official author responsible for drafting this decree?","c":false,"fb":"Asking about author identity is a core part of checking the source."},{"t":"In what year and under what political circumstances was this decree issued?","c":false,"fb":"Asking about date and production context belongs to checking the source."},{"t":"Does the text contain hidden personal biases that exaggerate native tax revenues?","c":true,"fb":"Analyzing internal textual bias belongs to \"Investigate the Content,\" answering the negative condition."},{"t":"What motivated the creator to produce this official record?","c":false,"fb":"Asking about author motivation is an essential part of checking the source."}]},{"cat":"01","type":"mcq","stem":"What is the primary objective of the \"Recognize the Audience\" step in the CRISP framework?","options":[{"t":"Identifying the historical author who signed and sealed the original document","c":false,"fb":"Misconception: M-audience-author-confusion. Author identification is part of \"Check the Source.\""},{"t":"Determining the intended recipient to understand how the message was framed","c":true,"fb":"Correctly focuses on the intended recipient and its influence on document framing."},{"t":"Summarizing the key factual points for modern classroom study","c":false,"fb":"Misconception: M-audience-modern-readers. Focuses on historical recipients, not modern students."},{"t":"Evaluating whether the document's arguments led to immediate social reforms","c":false,"fb":"Evaluating broader outcomes belongs to \"Point out the Significance.\""}]},{"cat":"01","type":"scenario","stem":"Which CRISP analysis step is demonstrated by examining how the book's intended readers shaped this bilingual presentation?","context":"A historian points out that the Doctrina Christiana (1593) was printed with parallel Spanish and Baybayin text specifically because the book was designed to educate native Filipino converts alongside the missionaries teaching them.","options":[{"t":"Check the Source","c":false,"fb":"Misconception: M-audience-author-confusion. Focuses on who produced the text and when, not on who it was written for."},{"t":"Recognize the Audience","c":true,"fb":"Analyzing how the intended native-convert and missionary readership shaped the bilingual format exemplifies \"Recognize the Audience.\""},{"t":"Situate in History","c":false,"fb":"Connecting the book to the broader arc of Spanish colonization belongs to \"Situate in History,\" not to analyzing its readership."},{"t":"Investigate the Content","c":false,"fb":"Misconception: M-audience-content-confusion. Analyzing the prayers and claims inside the text is content investigation, not audience analysis."}]},{"cat":"01","type":"scenario","stem":"Which of the following analytical questions is NOT appropriate for this specific step?","context":"A student analyzes a 1593 religious pamphlet to apply the \"Recognize the Audience\" step.","options":[{"t":"Was this text intended for native converts or Spanish missionaries?","c":false,"fb":"Identifying recipient groups is central to recognizing the audience."},{"t":"How did the expectations of the intended readers influence the choice of script?","c":false,"fb":"Examining reader influence on text framing belongs to recognizing the audience."},{"t":"What physical material and wooden block printing technique was used to produce the paper?","c":true,"fb":"Physical manufacturing analysis belongs to \"Check the Source,\" satisfying the negative condition."},{"t":"Why was the tone adjusted specifically to appeal to local village elders?","c":false,"fb":"Analyzing tone adjustments for target listeners belongs to recognizing the audience."}]},{"cat":"01","type":"mcq","stem":"When applying \"Investigate the Content\" in CRISP, what does a historian examine within a primary source?","options":[{"t":"The physical age of the paper and the manufacturer of the binding","c":false,"fb":"Misconception: M-content-source-confusion. Physical origins belong to \"Check the Source.\""},{"t":"The specific claims, internal details, and potential authorial bias within the text","c":true,"fb":"Correctly defines analyzing internal content, claims, and bias."},{"t":"The modern market value of the manuscript in international art auctions","c":false,"fb":"Commercial valuation is irrelevant to critical content analysis."},{"t":"The broader global trade conflicts taking place when the document was signed","c":false,"fb":"Misconception: M-content-context-confusion. Broader historical background belongs to \"Situate in History.\""}]},{"cat":"01","type":"scenario","stem":"Which CRISP analysis step is the researcher executing by detecting this internal perspective and bias?","context":"While reading a colonial report, a researcher notices that the writer consistently describes native trading practices as \"disorderly\" while overstating Spanish tax collections.","options":[{"t":"Recognize the Audience","c":false,"fb":"Focuses on the readers receiving the text, not detecting internal textual bias."},{"t":"Investigate the Content","c":true,"fb":"Examining text details to identify internal perspective and bias is \"Investigate the Content.\""},{"t":"Situate in History","c":false,"fb":"Misconception: M-content-context-confusion. Connecting text to broader era narratives is \"Situate in History.\""},{"t":"Point out the Significance","c":false,"fb":"Assessing overall historical impact is \"Point out the Significance.\""}]},{"cat":"01","type":"multi","stem":"Which of the following actions represent proper execution of the \"Investigate the Content\" step in CRISP? Select the TWO correct statements.","options":[{"t":"Cross-checking internal claims in a diary to identify exaggerated statements","c":true,"fb":"Analyzing internal text claims for exaggeration is core content investigation."},{"t":"Verifying the exact year and place where a copperplate artifact was excavated","c":false,"fb":"Misconception: M-content-source-confusion. Excavation date and place belong to \"Check the Source.\""},{"t":"Analyzing specific word choices in an official report to uncover authorial bias","c":true,"fb":"Examining language choices to reveal bias is essential content investigation."},{"t":"Determining whether a religious catechism changed modern constitutional law","c":false,"fb":"Evaluating modern legal impact belongs to \"Point out the Significance.\""},{"t":"Assuming all written statements in an official logbook are completely objective","c":false,"fb":"Misconception: M-content-objective-fact. Uncritical acceptance violates primary source analysis principles."}]},{"cat":"01","type":"mcq","stem":"What does the CRISP step \"Situate in History\" require a historical researcher to do?","options":[{"t":"Locate the specific physical archive where an artifact is stored today","c":false,"fb":"Misconception: M-situate-source-confusion. Confuses historical context with modern physical storage."},{"t":"Connect the primary source to the broader historical narrative and events of its era","c":true,"fb":"Accurately defines placing a source within its wider historical background."},{"t":"Translate ancient words into modern dialect without changing sentence structure","c":false,"fb":"Misconception: M-situate-definition-confusion. Linguistic translation is not historical contextualization."},{"t":"Evaluate whether the author's personal grammar meets modern publishing standards","c":false,"fb":"Modern grammatical evaluation is irrelevant to historical contextualization."}]},{"cat":"01","type":"scenario","stem":"Which CRISP step is demonstrated by placing this text within the broader narrative of Spanish colonization?","context":"A historian analyzing the Doctrina Christiana (1593) explains how its publication was directly tied to the early expansion of Spanish colonial rule and Catholic missionary efforts in 16th-century Luzon.","options":[{"t":"Check the Source","c":false,"fb":"Focuses strictly on author, date, and document creation details."},{"t":"Situate in History","c":true,"fb":"Linking a document to broader historical movements and eras is \"Situate in History.\""},{"t":"Investigate the Content","c":false,"fb":"Analyzing internal word choices or bias belongs to \"Investigate the Content.\""},{"t":"Recognize the Audience","c":false,"fb":"Identifying specific target readers belongs to \"Recognize the Audience.\""}]},{"cat":"01","type":"scenario","stem":"Which of the following approaches represents a FAILURE to properly execute this step?","context":"A student attempts to \"Situate in History\" an official document recorded in 900 CE.","options":[{"t":"Examining how 10th-century maritime trade networks in Southeast Asia influenced the document","c":false,"fb":"Analyzing regional 10th-century trade networks is proper historical contextualization."},{"t":"Analyzing the document in complete isolation from all other 10th-century regional developments","c":true,"fb":"Misconception: M-situate-isolation-error. Isolating a source from its era fails historical contextualization, satisfying the negative condition."},{"t":"Connecting the document to the rise of early political centers in Luzon and Java","c":false,"fb":"Linking to surrounding political developments is proper historical contextualization."},{"t":"Relating the document's legal concepts to broader Southeast Asian legal traditions of the era","c":false,"fb":"Relating legal terms to contemporary regional traditions is proper historical contextualization."}]},{"cat":"01","type":"mcq","stem":"What is the core objective when performing the \"Point out the Significance\" step in CRISP?","options":[{"t":"Summarizing the document line by line without offering any interpretation","c":false,"fb":"Misconception: M-significance-summary-confusion. Line-by-line restatement is mere repetition, not significance evaluation."},{"t":"Evaluating the overall historical impact of the source and what it reveals about the past","c":true,"fb":"Accurately defines assessing historical value, impact, and historical insights."},{"t":"Recording the exact GPS coordinates where the physical artifact was excavated","c":false,"fb":"Misconception: M-significance-origin-confusion. Archaeological discovery details belong to \"Check the Source.\""},{"t":"Expressing personal emotional reactions to the author's writing style","c":false,"fb":"Misconception: M-significance-opinion-error. Personal emotion does not constitute objective historical significance."}]},{"cat":"01","type":"scenario","stem":"Which CRISP analysis step is highlighted by this final evaluation of the artifact's historical value?","context":"A researcher concludes a paper on the Laguna Copperplate Inscription by explaining how the artifact permanently transformed modern understanding of pre-colonial literacy, law, and statecraft.","options":[{"t":"Point out the Significance","c":true,"fb":"Explaining how an artifact changes understanding of historical narrative is \"Point out the Significance.\""},{"t":"Check the Source","c":false,"fb":"Focuses on the document's physical origins, author, and date."},{"t":"Recognize the Audience","c":false,"fb":"Focuses on the target recipients of the document."},{"t":"Investigate the Content","c":false,"fb":"Focuses on analyzing internal claims and bias within the text."}]},{"cat":"01","type":"multi","stem":"Which of the following statements demonstrate a correct application of \"Point out the Significance\"? Select the TWO correct statements.","options":[{"t":"Explaining how the Boxer Codex refutes colonial assumptions of pre-colonial primitive culture","c":true,"fb":"Highlights the major historical impact of the codex on historiography."},{"t":"Listing the exact number of pages and physical dimensions of a 16th-century manuscript","c":false,"fb":"Misconception: M-significance-origin-confusion. Physical dimensions belong to \"Check the Source.\""},{"t":"Explaining how the Doctrina Christiana highlights the onset of print culture and Christianization","c":true,"fb":"Identifies the broader historical transformation revealed by the source."},{"t":"Paraphrasing the first sentence of an ancient document without analyzing its meaning","c":false,"fb":"Misconception: M-significance-summary-confusion. Paraphrasing without analysis fails to assess historical impact."},{"t":"Stating whether the historian personally enjoyed reading the translated manuscript","c":false,"fb":"Misconception: M-significance-opinion-error. Personal enjoyment is irrelevant to historical significance."}]},{"cat":"01","type":"mcq","stem":"How was political authority organized in the pre-colonial Philippines prior to foreign colonization?","options":[{"t":"Under a centralized monarchy ruled by a single supreme emperor in Luzon","c":false,"fb":"Misconception: M-barangay-monarchy-myth. The pre-colonial Philippines had no single empire or central emperor."},{"t":"Into small, independent settlements called barangays led by local datus","c":true,"fb":"Accurately describes independent barangays governed by local datus."},{"t":"Through a unified network of Spanish colonial provinces governed by friars","c":false,"fb":"Spanish provinces were established after colonization, not pre-colonially."},{"t":"In nomadic tribes without any recognized leaders or political organization","c":false,"fb":"Misconception: M-barangay-no-governance. Ignores structured barangay governance under datus."}]},{"cat":"01","type":"scenario","stem":"What political office and governance structure are illustrated in this scenario?","context":"A pre-colonial community leader expands his settlement's influence by negotiating trade pacts with neighboring coastal settlements, leading warrior defenses, and securing diplomatic alliances.","options":[{"t":"A Spanish encomendero managing a royal estate","c":false,"fb":"Encomenderos were Spanish colonial grant holders."},{"t":"A datu governing an independent barangay","c":true,"fb":"Accurately describes a datu exercising political, economic, and military leadership in a barangay."},{"t":"A Timawa commoner running for provincial election","c":false,"fb":"Timawa were freemen, not political rulers or provincial candidates."},{"t":"A European governor-general establishing a royal court","c":false,"fb":"European governors-general were post-colonial administrative figures."}]},{"cat":"01","type":"multi","stem":"Which of the following statements accurately describe political governance in pre-colonial barangays? Select the TWO correct statements.","options":[{"t":"Datus maintained political authority through alliances, governance, and military leadership.","c":true,"fb":"Accurately reflects how datus built and sustained governance over barangays."},{"t":"All barangays across the Philippine archipelago were subject to a single centralized law code.","c":false,"fb":"Misconception: M-barangay-monarchy-myth. Barangays were independent settlements, not a single empire."},{"t":"Settlements operated as independent political units that engaged in regional trade and warfare.","c":true,"fb":"Reflects the autonomous, self-governing nature of pre-colonial barangays."},{"t":"Datus were appointed directly by foreign monarchs in Spain and China.","c":false,"fb":"Datus derived authority from local nobility lineage, leadership, and alliances."},{"t":"Pre-colonial communities possessed no legal structures or dispute resolution mechanisms.","c":false,"fb":"Misconception: M-barangay-no-governance. Pre-colonial societies maintained custom and legal mechanisms."}]},{"cat":"01","type":"mcq","stem":"Which privileges and duties defined the Maginoo social class in pre-colonial society?","options":[{"t":"They were debt-bonded workers who performed mandatory agricultural labor for commoners.","c":false,"fb":"Misconception: M-maginoo-peasant-labor. Reverses social hierarchy; dependents worked for nobility."},{"t":"They were the ruling class who held political power, owned land, and were exempt from manual labor.","c":true,"fb":"Correctly describes the political, economic, and social status of the Maginoo."},{"t":"They were foreign traders restricted from owning land or engaging in barangay governance.","c":false,"fb":"Foreign traders were external actors, whereas Maginoo were native rulers."},{"t":"They were landless warriors obligated to pay annual tribute to the Alipin class.","c":false,"fb":"Misconception: M-maginoo-peasant-labor. Inverts social roles and obligations."}]},{"cat":"01","type":"scenario","stem":"What colonial social class did these Maginoo families become part of under Spanish rule?","context":"Following Spanish colonization, descendants of pre-colonial datus and rajahs maintained local social prestige and were integrated into the colonial administration as local elites.","options":[{"t":"Aliping Namamahay","c":false,"fb":"Namamahay were pre-colonial household-owning dependents."},{"t":"Principalia","c":true,"fb":"Maginoo nobility were integrated into the Principalia elite during colonial rule."},{"t":"Babaylan","c":false,"fb":"Babaylan were indigenous spiritual shamans."},{"t":"Encomienda","c":false,"fb":"Encomienda was a land and tribute collection system, not a social class of people."}]},{"cat":"01","type":"multi","stem":"Which of the following statements regarding the pre-colonial Maginoo class are correct? Select the TWO correct statements.","options":[{"t":"The class included ruling figures such as datus, rajahs, sultans, and their families.","c":true,"fb":"Accurately lists the nobility titles belonging to the Maginoo class."},{"t":"Members of the Maginoo class were required to perform daily manual labor in communal fields.","c":false,"fb":"Misconception: M-maginoo-peasant-labor. Maginoo were explicitly exempt from manual labor."},{"t":"Their governance systems were influenced by cultural connections with Indian and Malay cultures.","c":true,"fb":"Handout explicitly notes Indian and Malay cultural influences on Maginoo governance."},{"t":"Spanish colonization completely erased all Maginoo family lineages within the first year.","c":false,"fb":"Misconception: M-maginoo-extinction-myth. Maginoo lineages survived and formed the Principalia."},{"t":"Maginoo status was restricted exclusively to foreign Spanish administrators.","c":false,"fb":"Maginoo was an indigenous pre-colonial nobility class."}]},{"cat":"01","type":"mcq","stem":"What role and status did the Timawa hold in the pre-colonial social structure?","options":[{"t":"They were noble rulers who exercised absolute political power over datus.","c":false,"fb":"Ruling nobility were Maginoo; Timawa were free commoners below Maginoo."},{"t":"They were free commoners who could own land, engage in trade, and serve as warriors.","c":true,"fb":"Accurately defines the rights, economic activities, and warrior status of Timawa."},{"t":"They were debt-bonded dependents restricted from participating in community decisions.","c":false,"fb":"Misconception: M-timawa-debt-bonded. Debt-bonded workers were Alipin, not free Timawa."},{"t":"They were foreign captives forced into mandatory domestic servitude.","c":false,"fb":"Captives in domestic servitude were Aliping Sagigilid."}]},{"cat":"01","type":"scenario","stem":"To which social class did this villager belong?","context":"A pre-colonial villager owns a plot of land, operates a small trading vessel, and accompanies the local datu on military campaigns, receiving a portion of captured war spoils.","options":[{"t":"Aliping Sagigilid","c":false,"fb":"Sagigilid lived with masters and lacked independent trading vessels or property."},{"t":"Timawa","c":true,"fb":"Describes a free commoner engaging in trade, landowning, and warrior duty with war spoils."},{"t":"Maginoo","c":false,"fb":"While Maginoo led campaigns, general commoner warriors with land were Timawa."},{"t":"Babaylan","c":false,"fb":"Babaylan were spiritual shamans, not regular warrior-commoners."}]},{"cat":"01","type":"multi","stem":"Which of the following rights and responsibilities applied to the Timawa class? Select the TWO correct statements.","options":[{"t":"They possessed social mobility and could potentially rise to Maginoo status.","c":true,"fb":"Handout explicitly states social mobility allowed Timawa to achieve Maginoo status."},{"t":"They were legally classified as property and could be sold at local markets.","c":false,"fb":"Misconception: M-timawa-debt-bonded. Timawa were free commoners and could not be sold."},{"t":"As warriors, they served the datu during warfare and shared in war spoils.","c":true,"fb":"Accurately describes the military obligation and war spoil rights of Timawa."},{"t":"They were strictly prohibited from owning land or engaging in agriculture.","c":false,"fb":"Timawa actively owned land and worked in farming, fishing, and trade."},{"t":"They were entirely exempt from participating in barangay community decisions.","c":false,"fb":"Timawa had the right to participate in community decisions."}]},{"cat":"01","type":"mcq","stem":"What major historical shift was introduced by the arrival of Islam in Mindanao in the 14th century?","options":[{"t":"The total elimination of all maritime trade routes with China and India","c":false,"fb":"Islamic introduction expanded regional trade rather than eliminating it."},{"t":"The introduction of monotheism and organized political structures like sultanates","c":true,"fb":"Accurately identifies 14th-century monotheism and sultanate governance."},{"t":"The establishment of the first Spanish encomienda administrative systems","c":false,"fb":"Misconception: M-islam-date-error. Encomiendas were Spanish colonial institutions from the 16th century."},{"t":"The replacement of Baybayin script with the Latin alphabet across Luzon","c":false,"fb":"Misconception: M-islam-luzon-arrival. Latin alphabet was introduced by Spaniards, not 14th-century Islam in Mindanao."}]},{"cat":"01","type":"scenario","stem":"What historical development is illustrated by this transformation?","context":"In 14th-century Mindanao, a coastal polity adopts formal Islamic legal codes and establishes a centralized governance system headed by a sultan to manage regional trade and alliances.","options":[{"t":"The arrival of Islam and the development of organized sultanate political structures","c":true,"fb":"Illustrates how 14th-century Islam introduced formal law and sultanate governance."},{"t":"The implementation of Spanish municipal laws under the Principalia","c":false,"fb":"Misconception: M-islam-date-error. Describes 16th/17th-century Spanish colonial administration."},{"t":"The creation of the Laguna Copperplate Inscription under Kawi legal tradition","c":false,"fb":"The LCI is a 900 CE document associated with Luzon/Java, not 14th-century Mindanao sultanates."},{"t":"The decline of maritime trade along the Maritime Jade Road","c":false,"fb":"The Jade Road declined centuries earlier (c. 1000 CE)."}]},{"cat":"01","type":"multi","stem":"Which of the following impact statements regarding the arrival of Islam in Mindanao are accurate? Select the TWO correct statements.","options":[{"t":"It introduced monotheism to the religious landscape of early Philippines.","c":true,"fb":"Islam introduced monotheistic worship alongside indigenous animism."},{"t":"It occurred during the 14th century, prior to European contact.","c":true,"fb":"Handout explicitly places the arrival of Islam in Mindanao in the 14th Century."},{"t":"It prevented early communities from engaging in formal legal or governance systems.","c":false,"fb":"Misconception: M-islam-no-governance. Islam introduced formal legal and governance systems."},{"t":"It was brought to Luzon in 1593 through the publication of the Doctrina Christiana.","c":false,"fb":"Misconception: M-islam-luzon-arrival. The Doctrina Christiana was a Catholic catechism, not Islamic."},{"t":"It restricted political leadership exclusively to Spanish encomenderos.","c":false,"fb":"Misconception: M-islam-date-error. Sultanates were indigenous Islamic political structures."}]},{"cat":"01","type":"mcq","stem":"What is the primary method historians use to study past human events and affairs?","options":[{"t":"Interpreting available evidence and records","c":true,"fb":"History relies directly on analyzing available evidence to reconstruct the past."},{"t":"Relying exclusively on modern oral folklore","c":false,"fb":"Assumes modern oral folklore is the sole evidence used by historians."},{"t":"Generating speculative narratives of events","c":false,"fb":"Confuses evidence-based historical analysis with unverified speculation."},{"t":"Memorizing unverified dates and royal lineages","c":false,"fb":"Reduces historical inquiry to rote memorization without evidence appraisal."}]},{"cat":"01","type":"mcq","stem":"According to the foundational definition of Philippine history, what time span is covered by its recorded events?","options":[{"t":"From pre-colonial times to the present","c":true,"fb":"Philippine history covers all recorded events from pre-colonial societies to today."},{"t":"Exclusively from the 1896 Revolution onward","c":false,"fb":"Excludes the vast pre-colonial and Spanish colonial eras documented in the course."},{"t":"Strictly from the arrival of Magellan in 1521","c":false,"fb":"Overlooks pre-colonial recorded history established by early artifacts and records."},{"t":"Only the post-World War II independence period","c":false,"fb":"Restricts history to contemporary decades, ignoring foundational periods."}]},{"cat":"01","type":"multi","stem":"Which of the following are explicitly identified as core reasons to study history? Select the TWO correct statements.","options":[{"t":"Understanding change over time","c":true,"fb":"It helps explain how and why significant social and political changes occur."},{"t":"Predicting exact future political dates","c":false,"fb":"History provides lessons and patterns, not precise predictive forecasting."},{"t":"Developing critical thinking skills","c":true,"fb":"Evaluating evidence and sources strengthens critical analytical abilities."},{"t":"Establishing a single uniform global culture","c":false,"fb":"Studying history fosters cultural appreciation of diversity, not uniformity."},{"t":"Eliminating the need for primary source inquiry","c":false,"fb":"Historical understanding relies upon investigating primary sources, not removing them."}]},{"cat":"01","type":"mcq","stem":"How does studying history under the objective of \"Understanding Change\" assist modern citizens?","options":[{"t":"It explains the factors causing wars, reforms, and revolutions","c":true,"fb":"It helps analyze how and why major social and political transformations occur."},{"t":"It guarantees that societal crises will never happen again","c":false,"fb":"Assumes historical awareness automatically prevents future crises."},{"t":"It proves that human societies remain fundamentally static","c":false,"fb":"Misunderstands the concept of change as an assertion of permanence."},{"t":"It replaces the need to analyze economic and political factors","c":false,"fb":"Dismisses the causal factors that drive historical transitions."}]},{"cat":"01","type":"mcq","stem":"Which outcome exemplifies the \"Learning from the Past\" rationale for studying history?","options":[{"t":"Evaluating past achievements and mistakes to guide current decisions","c":true,"fb":"Analyzing historical precedents informs present-day problem-solving."},{"t":"Repeating past governance policies without modifying any procedures","c":false,"fb":"Treats history as a script for rigid replication rather than critical learning."},{"t":"Disregarding early pre-colonial customs in modern statecraft","c":false,"fb":"Ignores the value of historical insights in contemporary contexts."},{"t":"Focusing exclusively on victories while deleting past policy failures","c":false,"fb":"Erases mistakes, preventing genuine learning and balanced evaluation."}]},{"cat":"01","type":"mcq","stem":"Why does analyzing historical events cultivate \"Critical Thinking\"?","options":[{"t":"It requires students to evaluate sources and interpret evidence","c":true,"fb":"Assessing provenance, context, and bias sharpens critical analysis."},{"t":"It trains learners to accept every written account as absolute truth","c":false,"fb":"Contradicts critical thinking by promoting unquestioning acceptance."},{"t":"It prioritizes emotional reactions over documented material records","c":false,"fb":"Disregards empirical evidence in favor of unverified sentiment."},{"t":"It eliminates differing interpretations of complex social developments","c":false,"fb":"Assumes historical evidence produces only singular, uncontested answers."}]},{"cat":"01","type":"mcq","stem":"What defines a historical source as a primary source?","options":[{"t":"It is a first-hand account created during the period under study","c":true,"fb":"Primary sources originate directly from the historical period in question."},{"t":"It is an academic textbook summarizing centuries of historical data","c":false,"fb":"M-SEC-ANACHRONISM: Confuses secondary analytical summaries with first-hand sources."},{"t":"It is a modern encyclopedia entry written by professional researchers","c":false,"fb":"M-SEC-ANACHRONISM: Treats retrospective research syntheses as original accounts."},{"t":"It is an interpretive commentary written long after the event occurred","c":false,"fb":"M-SEC-ANACHRONISM: Mistakes post-event commentary for contemporary evidence."}]},{"cat":"01","type":"scenario","stem":"Which item functions as a primary source for the researcher's investigation?","context":"A researcher examining pre-colonial trade in Luzon discovers three items in a library archive: a modern 2024 university textbook chapter on maritime commerce, an excerpt from a 2010 journal article reviewing ancient pottery, and an original 10th-century inscribed metal sheet recovered from a riverbed.","options":[{"t":"The original 10th-century inscribed metal sheet","c":true,"fb":"The physical inscribed sheet is a first-hand artifact from the pre-colonial era."},{"t":"The 2024 university textbook chapter on commerce","c":false,"fb":"M-SEC-ANACHRONISM: Identifies a modern secondary textbook as an original artifact."},{"t":"The 2010 scholarly journal article review","c":false,"fb":"M-SEC-ANACHRONISM: Confuses a recent secondary review paper with historical evidence."},{"t":"All three items because they discuss the same pre-colonial topic","c":false,"fb":"M-SEC-ANACHRONISM: Assumes subject matter determines source type rather than time of origin."}]},{"cat":"01","type":"mcq","stem":"Which of the following materials CANNOT be classified as a primary source?","options":[{"t":"A 2022 published history monograph reviewing pre-colonial barter","c":true,"fb":"Modern retrospective analyses written long after the period are secondary sources."},{"t":"An original handwritten diary kept by an 18th-century local clerk","c":false,"fb":"M-MEDIA-LIMIT: Overlooks that personal contemporary writings are primary records."},{"t":"An official peace treaty signed by two pre-colonial village chiefs","c":false,"fb":"M-MEDIA-LIMIT: Fails to recognize that signed contemporary legal pacts are primary documents."},{"t":"A carved wooden tool excavated from an ancient settlement site","c":false,"fb":"M-MEDIA-LIMIT: Disregards archaeological physical artifacts as primary evidence."}]},{"cat":"01","type":"multi","stem":"Which of the following are explicitly recognized in the course handout as example types of primary sources? Select the TWO correct statements.","options":[{"t":"Letters and Diaries","c":true,"fb":"Personal writings provide direct insight into contemporary individual thoughts."},{"t":"Modern high school history textbooks","c":false,"fb":"M-SEC-ANACHRONISM: Classifies secondary pedagogical summaries as primary source types."},{"t":"Photographs and Artifacts","c":true,"fb":"Visual and physical objects provide material evidence of daily culture and life."},{"t":"Retrospective encyclopedic bibliographies","c":false,"fb":"M-SEC-ANACHRONISM: Confuses modern research indices with contemporary first-hand data."},{"t":"Peer-reviewed historiographical essays","c":false,"fb":"M-SEC-ANACHRONISM: Mistakes modern secondary journal essays for first-hand records."}]},{"cat":"01","type":"mcq","stem":"A historian wants to examine real-time public opinion and events as they unfolded during a historical crisis. Which primary source type is best suited for this purpose?","options":[{"t":"Newspaper articles published during that era","c":true,"fb":"Contemporary newspaper reports capture public reactions and events as they unfolded."},{"t":"Official legislative statutes enacted decades later","c":false,"fb":"M-TYPE-CONFUSION: Confuses immediate journalistic reporting with later legal codifications."},{"t":"Private financial ledgers of an uninvolved foreign firm","c":false,"fb":"M-TYPE-CONFUSION: Selects irrelevant private accounting records over public media reports."},{"t":"Personal diaries written secretly and never shared with the public","c":false,"fb":"M-TYPE-CONFUSION: Confuses private personal reflections with published public sentiment."}]},{"cat":"01","type":"fitb","stem":"Discovered in 1989, the oldest known written document found in the Philippines dates back to the year ____.","subtype":"year","answer":["900 CE","900 AD","900"],"caseSensitive":false,"fb":"The Laguna Copperplate Inscription dates precisely to 900 CE."},{"cat":"01","type":"mcq","stem":"In which script was the Laguna Copperplate Inscription written?","options":[{"t":"Kawi script","c":true,"fb":"The Laguna Copperplate Inscription was inscribed in early Kawi script."},{"t":"Baybayin script","c":false,"fb":"M-LCI-SCRIPT-BAYBAYIN: Confuses pre-colonial Kawi script with later Baybayin characters."},{"t":"Latin script","c":false,"fb":"M-LCI-SCRIPT-BAYBAYIN: Assumes Western European alphabetic writing was used in 900 CE."},{"t":"Arabic script","c":false,"fb":"M-LCI-SCRIPT-BAYBAYIN: Mistakenly attributes 14th-century Islamic script to the 900 CE inscription."}]},{"cat":"01","type":"scenario","stem":"What primary legal and economic transaction does this inscription record?","context":"An epigrapher translates a 900 CE copper document discovered near Laguna de Bay. The text explicitly mentions clearing the gold debt of an individual named Namwaran and references political centers such as Tondo, Dewata in Mindanao, and Medang in Java.","options":[{"t":"The formal forgiveness of Namwaran's debt","c":true,"fb":"The text is an official legal record clearing Namwaran and his descendants of debt."},{"t":"The establishment of an exclusive Catholic diocese","c":false,"fb":"M-LCI-SUBJECT-RELIGION: Anachronistically imposes Spanish colonial religious institutions onto 900 CE."},{"t":"A military declaration of war against Medang","c":false,"fb":"M-LCI-SUBJECT-RELIGION: Interprets a civil debt exoneration document as a military conquest decree."},{"t":"The coronation of a Spanish governor-general","c":false,"fb":"M-LCI-SUBJECT-RELIGION: Confuses pre-colonial Southeast Asian statecraft with Spanish colonial rule."}]},{"cat":"01","type":"multi","stem":"Which conclusions about pre-colonial Philippine society are directly confirmed by the Laguna Copperplate Inscription? Select the THREE correct statements.","options":[{"t":"Early Filipinos possessed an organized legal system","c":true,"fb":"The formal exoneration of debt demonstrates established legal mechanisms."},{"t":"Early communities maintained regional literacy and written records","c":true,"fb":"The sophisticated Kawi inscription confirms literacy and record-keeping."},{"t":"Early Filipinos maintained political and trade ties with Southeast Asia","c":true,"fb":"Mentions of Medang and Dewata prove active regional connections."},{"t":"Pre-colonial governance was unified under a single nationwide king","c":false,"fb":"M-LCI-PRIMITIVE-ISOLATION: Assumes a centralized monarchy rather than regional polities."},{"t":"Pre-colonial Filipinos had no established concept of debt or currency","c":false,"fb":"M-LCI-PRIMITIVE-ISOLATION: Denies the economic sophistication proved by the debt record."}]},{"cat":"01","type":"mcq","stem":"Why is the Laguna Copperplate Inscription considered a landmark discovery in Philippine historiography?","options":[{"t":"It challenges earlier assumptions that pre-colonial Filipinos lacked complex governance","c":true,"fb":"It proves pre-colonial literacy, legal systems, and organized commerce."},{"t":"It proves that Spanish friars introduced the earliest writing systems in Luzon","c":false,"fb":"M-LCI-PRIMITIVE-ISOLATION: Attributes early literacy to Spanish colonial missionaries."},{"t":"It established the first Spanish colonial settlement in Mindanao","c":false,"fb":"M-LCI-PRIMITIVE-ISOLATION: Confuses pre-colonial artifacts with colonial conquest events."},{"t":"It marks the end of indigenous seafaring trade with neighboring Asian polities","c":false,"fb":"M-LCI-PRIMITIVE-ISOLATION: Misinterprets evidence of trade ties as an end to maritime commerce."}]},{"cat":"01","type":"fitb","stem":"Created around 1590, the Boxer Codex manuscript is notable for containing over ____ illustrations depicting Filipino and Southeast Asian cultures.","subtype":"term","answer":["75","75+","seventy-five","seventy five"],"caseSensitive":false,"fb":"The Boxer Codex contains over 75 colored illustrations of clothing, weapons, and society."},{"cat":"01","type":"mcq","stem":"How does the Boxer Codex (c. 1590) challenge colonial perspectives regarding pre-colonial Filipinos?","options":[{"t":"It demonstrates a well-organized society with distinct social hierarchies and rich attire","c":true,"fb":"Visual and written records show sophisticated social organization and material culture."},{"t":"It proves that early Filipinos had no social stratification before Spanish arrival","c":false,"fb":"Denies the complex social hierarchy and ranking documented throughout the manuscript."},{"t":"It documents that pre-colonial indigenous people did not use weapons or craft textiles","c":false,"fb":"Contradicts the text's detailed depictions of ornate indigenous weaponry and clothing."},{"t":"It shows that pre-colonial communities completely lacked contact with Southeast Asia","c":false,"fb":"Ignores the codex's extensive coverage of regional Southeast Asian cultural connections."}]},{"cat":"01","type":"fitb","stem":"Printed in the year ____, the Doctrina Christiana holds the distinction of being the first book ever printed in the Philippines.","subtype":"year","answer":["1593"],"caseSensitive":false,"fb":"The Doctrina Christiana was printed in 1593 using wooden blocks."},{"cat":"01","type":"mcq","stem":"Which two writing scripts were used in the printing of the 1593 Doctrina Christiana?","options":[{"t":"Spanish (Latin alphabet) and Baybayin script","c":true,"fb":"The bilingual missionary text used both Spanish and indigenous Baybayin script."},{"t":"Kawi script and Arabic script","c":false,"fb":"M-DC-SCRIPT-KAWI: Confuses earlier Kawi and southern Arabic scripts with Baybayin."},{"t":"Latin alphabet and Kawi script","c":false,"fb":"M-DC-SCRIPT-KAWI: Mistakenly substitutes Kawi for the Baybayin script used in the book."},{"t":"Sanskrit and Chinese calligraphy","c":false,"fb":"M-DC-SCRIPT-KAWI: Proposes foreign Asian scripts not used in the 1593 catechism."}]},{"cat":"01","type":"multi","stem":"Which of the following are core Catholic prayers included in the bilingual Doctrina Christiana? Select the TWO correct statements.","options":[{"t":"Ama Namin (The Lord's Prayer)","c":true,"fb":"The Lord's Prayer was printed in both Spanish and Baybayin."},{"t":"The Islamic Shahada","c":false,"fb":"M-DC-SECULAR-LAW: Confuses Catholic catechism prayers with Islamic declarations."},{"t":"Aba Ginoo Maria (Hail Mary)","c":true,"fb":"The Hail Mary was one of the core prayers included for religious instruction."},{"t":"The Code of Kalantiaw","c":false,"fb":"M-DC-SECULAR-LAW: Introduces a legal code rather than Catholic instructional prayers."},{"t":"Namwaran's Debt Exoneration Decree","c":false,"fb":"M-DC-SECULAR-LAW: Confuses the content of the LCI with the Doctrina Christiana."}]},{"cat":"01","type":"mcq","stem":"What do the letters in the source analysis acronym CRISP stand for?","options":[{"t":"Check the Source, Recognize the Audience, Investigate the Content, Situate in History, Point out the Significance","c":true,"fb":"These constitute the five standard steps of the CRISP framework."},{"t":"Compare the Script, Review the Author, Identify the Period, Summarize the Text, Publish the Findings","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Replaces standardized analytical steps with invented research terms."},{"t":"Catalog the Story, Reconstruct the Artifact, Inspect the Grammar, Separate the Facts, Preserve the Document","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Substitutes preservation tasks for critical analysis components."},{"t":"Cite the Reference, Read the Annotation, Index the Chronology, Scrutinize the Language, Proofread the Translation","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Confuses citation and editorial proofreading with historical evaluation."}]},{"cat":"01","type":"multi","stem":"Which of the following are valid components of the CRISP primary-source analysis framework? Select the THREE correct statements.","options":[{"t":"Check the Source","c":true,"fb":"Involves verifying who created the source, when, and why."},{"t":"Investigate the Content","c":true,"fb":"Involves analyzing internal claims, perspective, and potential bias."},{"t":"Point out the Significance","c":true,"fb":"Involves evaluating the historical importance and broader impact of the source."},{"t":"Conceal the Author's Biases","c":false,"fb":"M-CRISP-CONTENT-VS-SITUATE: Opposes critical investigation by advocating bias concealment."},{"t":"Memorize the Document Word-for-Word","c":false,"fb":"M-CRISP-CONTENT-VS-SITUATE: Replaces analytical evaluation with mechanical memorization."}]},{"cat":"01","type":"scenario","stem":"Which analytical model is the student demonstrating?","context":"A student analyzes an 1898 newspaper article reporting on the declaration of Philippine independence. To critically appraise the document, the student systematically examines its author's background, identifies the intended readers, dissects the factual arguments for bias, places the article within the Philippine-American geopolitical era, and assesses its impact on national identity.","options":[{"t":"The CRISP framework","c":true,"fb":"The student systematically applies all five steps of the CRISP analysis model."},{"t":"The Encomienda system","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Confuses an economic-administrative labor system with a method of analysis."},{"t":"The Animist ritual cycle","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Mistakenly selects a religious ceremonial practice."},{"t":"The Principalia governance charter","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Confuses a colonial social class structure with source evaluation."}]},{"cat":"01","type":"mcq","stem":"What is the specific focus of the \"Check the Source\" step in the CRISP framework?","options":[{"t":"Investigating who created the source, when, why, and in what context","c":true,"fb":"\"Check the Source\" examines creator provenance, timing, and reliability."},{"t":"Counting the exact number of words and grammatical errors in the text","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Focuses on superficial syntax rather than source provenance."},{"t":"Outlining the modern economic relevance of the document in 2026","c":false,"fb":"M-CRISP-SITUATE-VS-SIGNIFICANCE: Anachronistically looks at modern utility instead of origin."},{"t":"Determining how the document can be translated into foreign languages","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Substitutes linguistic translation for author and context verification."}]},{"cat":"01","type":"scenario","stem":"Which step of the CRISP analysis framework is the historian executing?","context":"While reviewing an 1896 handwritten diary, a historian asks: \"Who penned this entry, on what exact date was it written, what were the author's motives, and under what circumstances was it produced?\"","options":[{"t":"Check the Source","c":true,"fb":"Inquiring about the creator, date, motive, and context is the core of \"Check the Source.\""},{"t":"Recognize the Audience","c":false,"fb":"M-CRISP-AUDIENCE-VS-SOURCE: Confuses author identity and origin with the intended recipient."},{"t":"Situate in History","c":false,"fb":"M-CRISP-SITUATE-VS-SIGNIFICANCE: Confuses checking source authorship with broad narrative context."},{"t":"Point out the Significance","c":false,"fb":"M-CRISP-SITUATE-VS-SIGNIFICANCE: Confuses verifying creator background with evaluating historical impact."}]},{"cat":"01","type":"mcq","stem":"When applying the \"Check the Source\" step, which inquiry would be INCORRECT or irrelevant to that specific stage?","options":[{"t":"\"How does this document alter modern 21st-century environmental policy?\"","c":true,"fb":"Investigating modern policy impact belongs to modern commentary, not source origin verification."},{"t":"\"Who was the author or creator of this document?\"","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Valid inquiry directly assessing authorial provenance."},{"t":"\"In what year and geographical location was this source produced?\"","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Valid inquiry establishing temporal and geographical origin."},{"t":"\"What underlying reason prompted the creator to record this account?\"","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Valid inquiry analyzing the creator's purpose and context."}]},{"cat":"01","type":"mcq","stem":"In the CRISP framework, what does \"Recognize the Audience\" require a researcher to determine?","options":[{"t":"The specific group or individuals for whom the source was created","c":true,"fb":"Identifies the intended readership to understand framing and tone."},{"t":"The modern publisher who reprinted the text in the current century","c":false,"fb":"M-CRISP-AUDIENCE-VS-SOURCE: Confuses current commercial re-publishers with historical recipients."},{"t":"The geological age of the materials upon which the text was inscribed","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Focuses on physical material dating rather than intended readers."},{"t":"The personal biography of the printer who carved the wooden blocks","c":false,"fb":"M-CRISP-AUDIENCE-VS-SOURCE: Confuses production craftsmen with the target audience."}]},{"cat":"01","type":"scenario","stem":"Which CRISP step did the student perform?","context":"A student reads a 1593 Spanish missionary tract and notes: \"This booklet was specifically addressed to newly converted native Filipinos and incoming Spanish friars to ensure standardized religious education.\"","options":[{"t":"Recognize the Audience","c":true,"fb":"Determining the intended recipients and users evaluates the audience."},{"t":"Investigate the Content","c":false,"fb":"M-CRISP-CONTENT-VS-SITUATE: Confuses identifying intended readers with dissecting text arguments."},{"t":"Situate in History","c":false,"fb":"M-CRISP-SITUATE-VS-SIGNIFICANCE: Confuses audience identification with placing events in chronology."},{"t":"Point out the Significance","c":false,"fb":"M-CRISP-SITUATE-VS-SIGNIFICANCE: Confuses target recipient analysis with overall historical significance."}]},{"cat":"01","type":"mcq","stem":"What is the primary objective when conducting the \"Investigate the Content\" step of the CRISP framework?","options":[{"t":"Analyzing what the text states and detecting underlying bias or perspective","c":true,"fb":"Scrutinizes arguments, factual claims, and personal viewpoints."},{"t":"Confirming the physical chemistry of the ink used on the document","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Focuses on material chemistry rather than textual substance."},{"t":"Checking whether the original author had surviving descendants","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Diverts attention to lineage rather than textual analysis."},{"t":"Identifying which modern museum currently owns the physical artifact","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Confuses modern artifact custody with textual interpretation."}]},{"cat":"01","type":"scenario","stem":"Which step of the CRISP framework is the researcher carrying out?","context":"While analyzing a Spanish colonial dispatch regarding local unrest, a researcher highlights the writer's derogatory descriptions of indigenous leaders and notes how the report exaggerates Spanish military control to hide administrative failures.","options":[{"t":"Investigate the Content","c":true,"fb":"Scrutinizing the text's detailed claims to uncover bias and distortion represents this step."},{"t":"Recognize the Audience","c":false,"fb":"M-CRISP-AUDIENCE-VS-SOURCE: Confuses text bias analysis with identifying who received the report."},{"t":"Check the Source","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Confuses analyzing textual substance with checking author credentials."},{"t":"Situate in History","c":false,"fb":"M-CRISP-CONTENT-VS-SITUATE: Confuses internal textual deconstruction with broad era contextualization."}]},{"cat":"01","type":"mcq","stem":"How does a historian execute the \"Situate in History\" step in the CRISP framework?","options":[{"t":"By connecting the primary source to the broader historical context and narrative of its era","c":true,"fb":"Places the document within the wider historical environment and timeline."},{"t":"By proving that the primary source has no connection to any other historical events","c":false,"fb":"M-CRISP-CONTENT-VS-SITUATE: Isolates the document, opposing the goal of contextualization."},{"t":"By deleting all references to foreign contacts and regional trade routes","c":false,"fb":"M-CRISP-CONTENT-VS-SITUATE: Erases external historical ties instead of situating the source."},{"t":"By evaluating only the grammatical correctness of the sentences","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Replaces historical contextualization with grammatical editing."}]},{"cat":"01","type":"scenario","stem":"Which CRISP analysis step is highlighted in this researcher's evaluation?","context":"A researcher examining the Boxer Codex (c. 1590) links its descriptions of maritime trade, social hierarchies, and metallurgy to the wider 16th-century Southeast Asian commerce networks before Spanish colonial consolidation took full effect.","options":[{"t":"Situate in History","c":true,"fb":"Connecting the manuscript to broader regional trade and historical eras exemplifies situating."},{"t":"Check the Source","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Confuses linking to historical context with checking document provenance."},{"t":"Recognize the Audience","c":false,"fb":"M-CRISP-AUDIENCE-VS-SOURCE: Confuses broader historical synthesis with identifying target readers."},{"t":"Investigate the Content","c":false,"fb":"M-CRISP-CONTENT-VS-SITUATE: Confuses broad contextual integration with internal textual analysis."}]},{"cat":"01","type":"mcq","stem":"What is the core question addressed during the \"Point out the Significance\" step of the CRISP framework?","options":[{"t":"Why is this source important and what does it tell us about the people and era?","c":true,"fb":"Evaluates historical impact, meaning, and broader implications."},{"t":"What was the manufacturing cost of the paper or copper sheet?","c":false,"fb":"M-CRISP-SITUATE-VS-SIGNIFICANCE: Confuses material manufacturing expense with historical impact."},{"t":"How many copies of the text were destroyed in wartime?","c":false,"fb":"M-CRISP-SITUATE-VS-SIGNIFICANCE: Focuses on physical loss statistics rather than significance."},{"t":"Which modern languages can this text be translated into?","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Substitutes translation options for historical value assessment."}]},{"cat":"01","type":"scenario","stem":"Which CRISP step does this conclusion represent?","context":"At the end of an analysis of the Laguna Copperplate Inscription, an essay concludes: \"This artifact is profoundly important because it conclusively refutes the claim that pre-colonial Filipinos lacked written legal frameworks and established economic systems.\"","options":[{"t":"Point out the Significance","c":true,"fb":"Explaining why the artifact matters and its transformative impact reflects this step."},{"t":"Check the Source","c":false,"fb":"M-CRISP-SOURCE-VS-CONTENT: Confuses concluding significance with initial creator verification."},{"t":"Recognize the Audience","c":false,"fb":"M-CRISP-AUDIENCE-VS-SOURCE: Confuses historical importance with identifying original readers."},{"t":"Investigate the Content","c":false,"fb":"M-CRISP-CONTENT-VS-SITUATE: Confuses overall impact with line-by-line textual analysis."}]},{"cat":"01","type":"fitb","stem":"Pre-colonial Filipino societies were organized into small, independent settlements known as ____, each led by a datu.","subtype":"term","answer":["barangay","barangays","balangay","balangays"],"caseSensitive":false,"fb":"Pre-colonial communities were organized into independent settlements called barangays."},{"cat":"01","type":"mcq","stem":"How were pre-colonial Philippine barangays politically organized and governed?","options":[{"t":"As independent settlements led by a datu through alliances, governance, and warfare","c":true,"fb":"Barangays were autonomous communities led by a local datu."},{"t":"As provinces governed by a single centralized emperor residing in Manila","c":false,"fb":"M-SOC-CENTRALIZED-EMPIRE: Anachronistically imposes a centralized empire onto independent barangays."},{"t":"As military garrisons controlled entirely by foreign European governors","c":false,"fb":"M-SOC-CENTRALIZED-EMPIRE: Confuses pre-colonial leadership with colonial military command."},{"t":"As leaderless communal societies with no political authority or social structure","c":false,"fb":"M-SOC-CENTRALIZED-EMPIRE: Denies the presence of organized datu leadership and governance."}]},{"cat":"01","type":"multi","stem":"Which of the following statements accurately describe political leadership in pre-colonial barangays? Select the TWO correct statements.","options":[{"t":"Barangays operated as small, autonomous communities","c":true,"fb":"Pre-colonial barangays were independent social and political units."},{"t":"Datus governed through leadership, alliances, and warfare","c":true,"fb":"Datus maintained authority through governance, diplomacy, and military strength."},{"t":"Datus were subject to a supreme national legislative senate","c":false,"fb":"M-SOC-CENTRALIZED-EMPIRE: Projects modern democratic institutions onto pre-colonial barangays."},{"t":"Barangays were prohibited from engaging in warfare or alliances","c":false,"fb":"M-SOC-CENTRALIZED-EMPIRE: Contradicts the reality of inter-barangay alliances and conflict."},{"t":"Datus were selected by Spanish colonial royal appointment","c":false,"fb":"M-SOC-CENTRALIZED-EMPIRE: Confuses pre-colonial authority with Spanish colonial appointments."}]},{"cat":"01","type":"mcq","stem":"Which social class held the highest status and ruling authority in the pre-colonial Philippines?","options":[{"t":"Maginoo","c":true,"fb":"The Maginoo constituted the ruling nobility, including datus and their families."},{"t":"Timawa","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Timawa were the free commoner class, ranked below Maginoo."},{"t":"Aliping Namamahay","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Aliping Namamahay were dependents, not the ruling class."},{"t":"Aliping Sagigilid","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Aliping Sagigilid were household dependents with the fewest rights."}]},{"cat":"01","type":"multi","stem":"Which privileges, roles, and characteristics applied to the Maginoo class in pre-colonial society? Select the THREE correct statements.","options":[{"t":"Exemption from manual labor","c":true,"fb":"The ruling noble class was exempt from performing manual field labor."},{"t":"Ownership of land and exercise of political power","c":true,"fb":"Maginoo held political, military, and landholding authority in the barangay."},{"t":"Formation of the Principalia class under Spanish colonization","c":true,"fb":"After colonization, Maginoo families were integrated into the local Principalia elite."},{"t":"Obligation to serve as debt-bonded household servants","c":false,"fb":"M-SOC-MAGINOO-LABOR: Confuses the ruling nobility with the dependent Alipin class."},{"t":"Complete exclusion from wearing fine clothing or gold ornaments","c":false,"fb":"M-SOC-MAGINOO-LABOR: Contradicts the historical record of Maginoo wearing fine attire."}]},{"cat":"01","type":"scenario","stem":"To which pre-colonial social class does this leader belong?","context":"In a pre-colonial coastal settlement, an elite leader named Rajah Matanda governs the community, enters into trade pacts with foreign merchants, possesses ancestral lands, is exempt from field labor, and claims lineage influenced by Indian and Malay traditions.","options":[{"t":"Maginoo","c":true,"fb":"Datus, rajahs, and their families made up the ruling Maginoo nobility."},{"t":"Timawa","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Timawa were free commoners, not ruling rajahs with datuship authority."},{"t":"Aliping Namamahay","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Confuses the highest ruling elite with independent-dwelling dependents."},{"t":"Aliping Sagigilid","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Confuses the ruling nobility with household debt-bonded servants."}]},{"cat":"01","type":"mcq","stem":"What was the primary social and military role of the Timawa class in pre-colonial Philippine society?","options":[{"t":"Free commoners who owned land, engaged in trade/farming, and served as warriors sharing war spoils","c":true,"fb":"Timawa were free individuals who fought for the datu and shared in war spoils."},{"t":"Debt-bonded servants who were forbidden from owning land or engaging in business","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Confuses free commoners with bonded Alipin servants."},{"t":"Ruling noble datus who were completely exempt from supporting the community in warfare","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Confuses Timawa commoners with the ruling Maginoo nobility."},{"t":"Enslaved captives who had no social mobility and could be sold at any time","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Mischaracterizes freemen as property-less chattel slaves."}]},{"cat":"01","type":"multi","stem":"Which of the following rights and roles characterized the Timawa class in pre-colonial society? Select the TWO correct statements.","options":[{"t":"They had the social mobility to rise to Maginoo status","c":true,"fb":"Timawa could elevate their social standing through wealth, alliances, or bravery."},{"t":"They could own private land and operate businesses","c":true,"fb":"Timawa held property rights and actively conducted farming, fishing, and trade."},{"t":"They were legally bonded to the datu's house and could be sold","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Confuses freemen rights with bonded Aliping Sagigilid status."},{"t":"They were barred from participating in community decisions","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Denies Timawa civic participation in barangay affairs."},{"t":"They were entirely exempt from participating in military expeditions","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Overlooks their crucial duty as warriors supporting the datu."}]},{"cat":"01","type":"scenario","stem":"Which social rank does this individual hold?","context":"A pre-colonial villager cultivates his own land, participates in community consultations, conducts trade with visiting merchants, joins the datu on military campaigns, and receives a designated share of the spoils of war.","options":[{"t":"Timawa","c":true,"fb":"Land ownership, warrior service, war spoils, and trading rights define the Timawa."},{"t":"Aliping Sagigilid","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Sagigilid lived in the master's house with minimal rights."},{"t":"Aliping Namamahay","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Namamahay were debt-bonded workers, not free warrior-commoners."},{"t":"Spanish Encomendero","c":false,"fb":"M-SOC-TIMAWA-NO-PROPERTY: Anachronistically inserts a Spanish colonial trustee."}]},{"cat":"01","type":"mcq","stem":"What was the key distinction between Aliping Namamahay and Aliping Sagigilid in pre-colonial society?","options":[{"t":"Aliping Namamahay lived in their own houses and could not be sold, while Aliping Sagigilid lived with their master","c":true,"fb":"Namamahay lived independently, whereas Sagigilid resided in the master's home."},{"t":"Aliping Namamahay were the ruling nobility, while Aliping Sagigilid were freemen warriors","c":false,"fb":"M-SOC-NAMAMAHAY-SAGIGILID-SWAP: Confuses dependent classes with Maginoo and Timawa ranks."},{"t":"Aliping Sagigilid owned vast tracts of land, while Aliping Namamahay were barred from having families","c":false,"fb":"M-SOC-NAMAMAHAY-SAGIGILID-SWAP: Reverses property rights and invents marriage bans."},{"t":"Aliping Namamahay were permanently enslaved with no rights, while Aliping Sagigilid were Spanish officials","c":false,"fb":"M-SOC-NAMAMAHAY-SAGIGILID-SWAP: Falsely depicts Namamahay as chattel and Sagigilid as colonial officers."}]},{"cat":"01","type":"scenario","stem":"How are Worker A and Worker B correctly classified?","context":"In a pre-colonial village, Worker A lives with his family in an independent home, renders agricultural labor to a master during harvest, and cannot be legally sold. Worker B lives directly inside the master's household, performs daily chores, and has fewer personal rights due to unpaid debt.","options":[{"t":"Worker A is an Aliping Namamahay; Worker B is an Aliping Sagigilid","c":true,"fb":"Worker A demonstrates independent living (Namamahay); Worker B lives in-house (Sagigilid)."},{"t":"Worker A is an Aliping Sagigilid; Worker B is an Aliping Namamahay","c":false,"fb":"M-SOC-NAMAMAHAY-SAGIGILID-SWAP: Directly swaps the definitions and traits of the two Alipin types."},{"t":"Worker A is a Maginoo noble; Worker B is a Timawa freeman","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Confuses dependent laborers with the ruling and freeman classes."},{"t":"Worker A is a Spanish friar; Worker B is an Encomendero","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Introduces Spanish colonial religious and administrative figures."}]},{"cat":"01","type":"mcq","stem":"How could an Alipin in pre-colonial Philippine society transition out of debt bondage?","options":[{"t":"By earning money and paying off debts to buy their freedom","c":true,"fb":"Alipin had the legal right to earn income, pay off obligations, and move up socially."},{"t":"Only by being exiled permanently to a foreign kingdom","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Assumes freedom required foreign banishment rather than debt settlement."},{"t":"By overthrowing the entire barangay system through military rebellion","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Replaces legal debt redemption with violent structural collapse."},{"t":"There was no legal mechanism, as status was unalterable for life","c":false,"fb":"M-SOC-ALIPIN-CHATTEL: Treats pre-colonial debt bondage as a rigid, inescapable lifetime caste."}]},{"cat":"01","type":"multi","stem":"Which of the following were major economic activities practiced by indigenous Filipinos prior to Spanish colonization? Select the THREE correct statements.","options":[{"t":"Agriculture, including cultivating rice, root crops, and fruits","c":true,"fb":"Farming was a staple subsistence and economic activity."},{"t":"Weaving and pottery, producing textiles and ceramic wares","c":true,"fb":"Craftsmanship included ceramic pottery and woven textiles."},{"t":"International trade with China, India, and Southeast Asian polities","c":true,"fb":"Active maritime trade networks connected early Filipinos regionally."},{"t":"Industrial steam-powered railway transportation","c":false,"fb":"Anachronistically introduces 19th-century industrial technology."},{"t":"Operation of large-scale mechanical petroleum refineries","c":false,"fb":"Introduces 20th-century fossil fuel refining into pre-colonial society."}]},{"cat":"01","type":"fitb","stem":"In pre-colonial animist spirituality, rituals, healing ceremonies, and cultural counseling were led by spiritual shamans called ____.","subtype":"term","answer":["babaylan","babaylans","catalonan","catalonans"],"caseSensitive":false,"fb":"Babaylan served as shamans, healers, advisers, and cultural custodians."},{"cat":"01","type":"mcq","stem":"During which century did Islam arrive in Mindanao, introducing monotheism and formal sultanate governance?","options":[{"t":"14th Century","c":true,"fb":"Islam was introduced to Mindanao during the 14th century."},{"t":"16th Century","c":false,"fb":"M-ISLAM-CENTURY-SWAP: Confuses the arrival of Islam with 16th-century Spanish colonization."},{"t":"10th Century","c":false,"fb":"M-ISLAM-CENTURY-SWAP: Confuses Islam's arrival with the era of the 900 CE Laguna Copperplate."},{"t":"19th Century","c":false,"fb":"M-ISLAM-CENTURY-SWAP: Moves the timeline forward to the late Spanish colonial period."}]},{"cat":"01","type":"multi","stem":"What key political and social changes resulted from the introduction of Islam to Mindanao in the 14th century? Select the TWO correct statements.","options":[{"t":"It introduced monotheism into the religious landscape","c":true,"fb":"Islam established monotheistic faith alongside indigenous traditions."},{"t":"It led to the formation of organized sultanates and legal systems","c":true,"fb":"Islamic governance introduced formal legal frameworks and sultanates."},{"t":"It completely eliminated all maritime trade with Asian polities","c":false,"fb":"M-ISLAM-ANIMIST-SYNCRETISM: Falsely claims Islam halted regional trade relations."},{"t":"It forced all southern communities to adopt the Spanish Latin alphabet","c":false,"fb":"M-ISLAM-ANIMIST-SYNCRETISM: Attributes Spanish colonial script policies to Islam."},{"t":"It dissolved all centralized leadership into isolated family units","c":false,"fb":"M-ISLAM-ANIMIST-SYNCRETISM: Contradicts the establishment of organized sultanates."}]},{"cat":"01","type":"scenario","stem":"Which political institution is the historian analyzing?","context":"A historian studies 14th-century political consolidation in southwestern Mindanao and observes the establishment of formal Islamic legal codes, dynastic leadership, and institutionalized diplomatic alliances with neighboring Southeast Asian rulers.","options":[{"t":"The Sultanate system","c":true,"fb":"The introduction of Islam established formal sultanates and structured governance."},{"t":"The Spanish Encomienda","c":false,"fb":"M-ISLAM-ANIMIST-SYNCRETISM: Confuses Islamic governance with Spanish colonial administrative units."},{"t":"The American Commonwealth","c":false,"fb":"M-ISLAM-ANIMIST-SYNCRETISM: Anachronistically cites a 20th-century political system."},{"t":"The Principalia Cabildo","c":false,"fb":"M-ISLAM-ANIMIST-SYNCRETISM: Confuses Islamic statecraft with Spanish municipal councils."}]},{"cat":"01","type":"mcq","stem":"What construction method and capacity characterized the ancient Balangay (Butuan Boat)?","options":[{"t":"Built of hardwood and wooden pegs, carrying up to 50 people","c":true,"fb":"The Balangay was constructed with hardwood planks and wooden pegs for up to 50 passengers."},{"t":"Built of iron plates and steel rivets, carrying up to 500 passengers","c":false,"fb":"M-BALANGAY-METAL-CONSTRUCTION: Anachronistically introduces modern industrial metal shipbuilding."},{"t":"Constructed of hollowed bamboo reeds, carrying a maximum of 2 people","c":false,"fb":"M-BALANGAY-METAL-CONSTRUCTION: Drastically understates the size, craftsmanship, and capacity."},{"t":"Assembled using modern synthetic fiberglass and combustion engines","c":false,"fb":"M-BALANGAY-METAL-CONSTRUCTION: Projects 20th-century synthetic materials into pre-colonial times."}]},{"cat":"01","type":"scenario","stem":"Which cultural artifact was excavated and commemorated in these events?","context":"In 1976, archaeologists excavating in Butuan unearth ancient plank boats joined with wooden pegs that connected early Filipino polities to trade with China as early as 1001 CE. In 2009, a reconstructed replica of this vessel successfully sails across Southeast Asia.","options":[{"t":"The Balangay (Butuan Boat)","c":true,"fb":"The Balangay was discovered in Butuan in 1976 and sailed as a replica in 2009."},{"t":"The Galleon San Diego","c":false,"fb":"M-BALANGAY-METAL-CONSTRUCTION: Confuses indigenous plank boats with Spanish colonial galleons."},{"t":"The Boxer Codex manuscript","c":false,"fb":"M-BALANGAY-METAL-CONSTRUCTION: Confuses a seafaring vessel with an illustrated manuscript."},{"t":"The Doctrina Christiana woodblock","c":false,"fb":"M-BALANGAY-METAL-CONSTRUCTION: Confuses a maritime watercraft with a printed religious text."}]},{"cat":"01","type":"mcq","stem":"What was the primary geographic scope and duration of the ancient Maritime Jade Road?","options":[{"t":"Connecting the Philippines, Taiwan, and Southeast Asia from 2000 BCE to 1000 CE (3,000 years)","c":true,"fb":"The Maritime Jade Road spanned 3,000 years, trading jade primarily from Taiwan."},{"t":"Connecting Manila directly to Acapulco from 1565 to 1815 (250 years)","c":false,"fb":"M-JADE-ROAD-TIMELINE: Confuses the ancient Jade Road with the Spanish Manila Galleon Trade."},{"t":"Linking Luzon to European Atlantic ports from 1898 to 1946 (48 years)","c":false,"fb":"M-JADE-ROAD-TIMELINE: Confuses ancient trade routes with American colonial trade."},{"t":"A domestic overland mountain trail operating exclusively within Mindanao for 50 years","c":false,"fb":"M-JADE-ROAD-TIMELINE: Mischaracterizes a vast maritime network as a local overland path."}]},{"cat":"01","type":"scenario","stem":"Which ancient commercial network is evidenced by these findings?","context":"An archaeologist unearths a collection of green nephrite ornaments in an ancient coastal Philippine burial site. Mineralogical tests show the raw jade originated in Taiwan and was crafted and exchanged through regional seafaring networks between 2000 BCE and 1000 CE.","options":[{"t":"The Maritime Jade Road","c":true,"fb":"The 3,000-year trade network traded jade mainly from Taiwan across Southeast Asia."},{"t":"The Spanish Tobacco Monopoly","c":false,"fb":"M-JADE-ROAD-TIMELINE: Confuses pre-colonial jade networks with an 18th-century Spanish monopoly."},{"t":"The Manila-Acapulco Galleon Trade","c":false,"fb":"M-JADE-ROAD-TIMELINE: Mistakenly selects the trans-Pacific Spanish colonial trade route."},{"t":"The Royal Company of the Philippines","c":false,"fb":"M-JADE-ROAD-TIMELINE: Confuses ancient pre-colonial trade with late colonial chartered companies."}]},{"cat":"01","type":"mcq","stem":"How is the ancient Baybayin script technically structured?","options":[{"t":"As an alphasyllabary consisting of 17 characters (14 consonants and 3 vowels)","c":true,"fb":"Baybayin has 17 core characters (14 consonants and 3 vowels) using vowel marks."},{"t":"As a Latin alphabet consisting of 26 letters (21 consonants and 5 vowels)","c":false,"fb":"M-BAYBAYIN-ALPHABET-LATIN: Confuses the pre-colonial script with the modern Latin alphabet."},{"t":"As an ideographic script of 500 picture symbols representing complete phrases","c":false,"fb":"M-BAYBAYIN-ALPHABET-LATIN: Mistakenly portrays Baybayin as a complex logographic script."},{"t":"As a pure numerical cipher of 9 digits developed exclusively for banking","c":false,"fb":"M-BAYBAYIN-ALPHABET-LATIN: Reduces an alphasyllabic writing system to numerical digits."}]},{"cat":"01","type":"multi","stem":"Which of the following statements accurately describe the history and evolution of Baybayin? Select the TWO correct statements.","options":[{"t":"It evolved from the older Kawi script","c":true,"fb":"Baybayin developed historically out of earlier regional Kawi scripts."},{"t":"It was written vertically and later horizontally","c":true,"fb":"The script transitioned directionally from vertical to horizontal writing."},{"t":"It completely replaced the Latin alphabet during Spanish colonization","c":false,"fb":"M-BAYBAYIN-KAWI-ORIGIN-REVERSE: Inverts history; Baybayin declined as Latin script spread."},{"t":"It originated in Europe and was introduced by Spanish missionaries","c":false,"fb":"M-BAYBAYIN-KAWI-ORIGIN-REVERSE: Misattributes indigenous script origin to European colonizers."},{"t":"It was created in 2018 as a brand-new modern constructed language","c":false,"fb":"M-BAYBAYIN-KAWI-ORIGIN-REVERSE: Confuses the 2018 national bill with the invention of the ancient script."}]}]};
+
+if (!PACK || !Array.isArray(PACK.questions) || PACK.questions.length === 0) {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.innerHTML =
+      '<div style="max-width:560px;margin:20vh auto;font-family:monospace;' +
+      'color:#ECE6D7;background:#1C2027;border:1px solid #3D434F;padding:32px;line-height:1.6;">' +
+      '<strong>Engine template — no content pack injected.</strong><br><br>' +
+      'This file is not meant to be opened directly. Build a reviewer with:<br><br>' +
+      '<code>python3 build.py packs/&lt;pack&gt;.json</code><br><br>' +
+      'then open the file it produces in <code>dist/</code>.</div>';
+  });
+  throw new Error('No content pack injected.');
+}
+
+/* Engine defaults for UI strings a pack may omit. */
+const ENGINE_UI_DEFAULTS = {
+  lengthSectionLabel: "Choose your length",
+  focusSectionLabel:  "Focus & Timing",
+  metaLabels: {
+    poolKey:          "Question pool",
+    poolUnit:         "items",
+    poolTypesNote:    "(MCQ · Multi · Fill-in-Blank · Scenario)",
+    randomisationKey: "Randomisation",
+    randomisationVal: "Both <code>order</code> &amp; <code>choices</code>",
+    feedbackKey:      "Feedback timing",
+    scoringKey:       "Scoring",
+    scoringVal:       "Partial credit on multi-answer"
+  },
+  lengthOptions: [
+    { count: 10, label: "Quick check" },
+    { count: 20, label: "Warm-up", default: true },
+    { count: 35, label: "Standard" },
+    { count: 50, label: "Deep drill" }
+  ],
+  showFocusOption: true,
+  focusTitle:      "Focused test",
+  showTimerOption: true,
+  timerTitle:      "Timed mode",
+  timeOptions: [
+    { minutes:  5 },
+    { minutes: 10, default: true },
+    { minutes: 20 },
+    { minutes: 30 }
+  ],
+  scoreTiers: [
+    { minPct: 90, eyebrow: "Mastery",      verdictHtml: "You <em>know your stuff</em>.",
+      verdictSub: "Top-tier performance. You have a solid grasp of the material." },
+    { minPct: 75, eyebrow: "Strong",       verdictHtml: "Solid <em>command</em> of the material.",
+      verdictSub: "You've got the fundamentals down. A short review of the missed questions and the picture is complete." },
+    { minPct: 60, eyebrow: "Mid-range",    verdictHtml: "You're on the <em>way there</em>.",
+      verdictSub: "The shape is right but a few specifics are loose. Review the items you missed." },
+    { minPct: 40, eyebrow: "Needs review", verdictHtml: "Time for <em>another pass</em>.",
+      verdictSub: "Re-read the material, then come back and try again." },
+    { minPct:  0, eyebrow: "Restart",      verdictHtml: "Start <em>from the top</em>.",
+      verdictSub: "The basics aren't settled yet. Review the material entirely before attempting again." }
+  ]
+};
+
+/* Build CONFIG from pack meta + ui, falling back to engine defaults. */
+const _meta = PACK.meta || {};
+const _ui   = PACK.ui   || {};
+const CONFIG = Object.assign({}, ENGINE_UI_DEFAULTS, _ui, {
+  metaLabels: Object.assign({}, ENGINE_UI_DEFAULTS.metaLabels, _ui.metaLabels || {}),
+  pageTitle: _meta.pageTitle || _meta.subject || "Quiz",
+  masthead: Object.assign(
+    { codex: "MODULE", crumb: _meta.subject || "Quiz", stamp: "Reviewer" },
+    _meta.masthead || {}),
+  hero: Object.assign(
+    { eyebrow: "Self-Assessment Module",
+      titleHtml: _meta.subject || "Quiz",
+      ledeHtml: "" },
+    _meta.hero || {}),
+  footer: Object.assign(
+    { left: _meta.subject || "Quiz",
+      right: _meta.version ? ("Pack v" + _meta.version) : "Self-paced practice" },
+    _meta.footer || {}),
+  examSim: PACK.exam
+    ? Object.assign({ enabled: true, title: "Exam simulation",
+                      minutes: 60, multiplier: 1, passPct: 65 }, PACK.exam)
+    : { enabled: false }
+});
+
+const PASS_PCT = (CONFIG.examSim && CONFIG.examSim.passPct) || 65;
+
+const CATEGORIES = (PACK.categories || []).map(c => ({
+  key: String(c.key), label: c.label || String(c.key), weight: Number(c.weight) || 0
+}));
+
+const BANK = PACK.questions;
+
+
+/* ============================================================
+   applyConfig() — writes CONFIG values into the DOM.
+   You normally do NOT need to edit anything below this point.
+   ============================================================ */
+function applyConfig() {
+  // Browser-tab title
+  document.title = CONFIG.pageTitle;
+
+  // Masthead
+  document.getElementById('cfg-masthead-codex').textContent = CONFIG.masthead.codex;
+  document.getElementById('cfg-masthead-crumb').textContent = CONFIG.masthead.crumb;
+  document.getElementById('cfg-masthead-stamp').textContent = CONFIG.masthead.stamp;
+
+  // Hero
+  document.getElementById('cfg-hero-eyebrow').textContent = CONFIG.hero.eyebrow;
+  document.getElementById('cfg-hero-title').innerHTML      = CONFIG.hero.titleHtml;
+  document.getElementById('cfg-hero-lede').innerHTML       = CONFIG.hero.ledeHtml;
+
+  // Section labels
+  document.getElementById('cfg-length-section-label').textContent = CONFIG.lengthSectionLabel;
+  document.getElementById('cfg-focus-section-label').textContent  = CONFIG.focusSectionLabel;
+
+  // Meta row
+  const pool = BANK.length;
+  document.getElementById('cfg-meta-pool-key').textContent = CONFIG.metaLabels.poolKey;
+  document.getElementById('cfg-meta-pool-val').innerHTML   =
+    `${pool} ${CONFIG.metaLabels.poolUnit} <span style="color: var(--ink-mute); font-size: 14px;">${CONFIG.metaLabels.poolTypesNote}</span>`;
+  document.getElementById('cfg-meta-rand-key').textContent = CONFIG.metaLabels.randomisationKey;
+  document.getElementById('cfg-meta-rand-val').innerHTML   = CONFIG.metaLabels.randomisationVal;
+  document.getElementById('cfg-meta-feedback-key').textContent = CONFIG.metaLabels.feedbackKey;
+  document.getElementById('feedbackTimingMeta').innerHTML  = 'Instant — after each <code>Check</code>';
+  document.getElementById('cfg-meta-scoring-key').textContent = CONFIG.metaLabels.scoringKey;
+  document.getElementById('cfg-meta-scoring-val').innerHTML   = CONFIG.metaLabels.scoringVal;
+
+  // Footer
+  document.getElementById('cfg-footer-left').textContent  = CONFIG.footer.left;
+  document.getElementById('cfg-footer-right').textContent = CONFIG.footer.right;
+
+  // Length cards (quiz-size presets)
+  const countGrid = document.getElementById('countGrid');
+  countGrid.innerHTML = '';
+  CONFIG.lengthOptions.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'count-card' + (opt.default ? ' active' : '');
+    btn.dataset.count = opt.count;
+    btn.innerHTML =
+      `<div class="count-num">${opt.count}</div>` +
+      `<div class="count-label">${opt.label}</div>`;
+    countGrid.appendChild(btn);
+  });
+
+  // Focus section (show / hide as configured)
+  document.getElementById('focusSection').style.display = CONFIG.showFocusOption ? '' : 'none';
+  document.getElementById('cfg-focus-title').textContent = CONFIG.focusTitle;
+
+  // Timer section
+  document.getElementById('timerSection').style.display = CONFIG.showTimerOption ? '' : 'none';
+  document.getElementById('cfg-timer-title').textContent = CONFIG.timerTitle;
+
+  // Exam-simulation section
+  document.getElementById('examSection').style.display =
+    (CONFIG.examSim && CONFIG.examSim.enabled) ? '' : 'none';
+  document.getElementById('cfg-exam-title').textContent =
+    (CONFIG.examSim && CONFIG.examSim.title) || 'Exam simulation';
+
+  // Time chips
+  const timePicker = document.getElementById('timePicker');
+  timePicker.innerHTML = '';
+  CONFIG.timeOptions.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'time-chip' + (opt.default ? ' on' : '');
+    btn.dataset.min = opt.minutes;
+    btn.innerHTML =
+      `<div class="time-chip-num">${opt.minutes}</div>` +
+      `<div class="time-chip-unit">min</div>`;
+    timePicker.appendChild(btn);
+  });
+}
+
+// Default selections derived from CONFIG (used to seed `state` below)
+const CFG_DEFAULT_COUNT =
+  (CONFIG.lengthOptions.find(o => o.default) || CONFIG.lengthOptions[0]).count;
+const CFG_DEFAULT_MINUTES =
+  ((CONFIG.timeOptions || []).find(o => o.default) || (CONFIG.timeOptions || [])[0] || {minutes: 10}).minutes;
+
+
+
+
+
+
+// Every question declares its own `cat` key in the pack. Anything
+// with a missing/unknown key becomes 'other' (excluded from exam
+// simulation, still reachable in normal practice mode).
+BANK.forEach(q => {
+  if (!q.cat || !CATEGORIES.some(c => c.key === q.cat)) q.cat = 'other';
+});
+
+// Per-category counts. Counted from the ACTUAL tagged questions (not
+// from the range arithmetic) so the numbers shown on topic chips and
+// the coverage meter are always truthful, even if a range over-reaches.
+const CAT_COUNTS = Object.fromEntries(
+  CATEGORIES.map(c => [c.key, BANK.filter(q => q.cat === c.key).length])
+);
+
+/* ── Exam-blueprint helpers (engine code — no edits needed) ──────── */
+// How many questions exam mode WANTS in total (weights × multiplier).
+function examTargetTotal() {
+  const m = (CONFIG.examSim && CONFIG.examSim.multiplier) || 1;
+  return CATEGORIES.reduce((s, c) => s + c.weight * m, 0);
+}
+// The per-objective draw plan given what the bank currently holds:
+// [{cat, want, have, take}]  where take = min(want, have).
+function examPlan() {
+  const m = (CONFIG.examSim && CONFIG.examSim.multiplier) || 1;
+  return CATEGORIES.map(c => {
+    const want = c.weight * m;
+    const have = CAT_COUNTS[c.key] || 0;
+    return { cat: c, want, have, take: Math.min(want, have) };
+  });
+}
+
+/* ============================================================
+   STATE & UTILITIES
+   ============================================================ */
+function escapeHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+// Build the DOM from CONFIG before any handlers bind.
+applyConfig();
+
+const state = {
+  count: CFG_DEFAULT_COUNT,
+  questions: [],
+  answers: [],
+  checked: [],   // boolean per question
+  current: 0,
+  // Focus
+  focusEnabled: false,
+  focusedCats: [],          // category keys currently selected, e.g. ['sample-a']
+  // Timer
+  timerEnabled: false,
+  timerMinutes: CFG_DEFAULT_MINUTES,
+  timerEndAt: 0,            // ms epoch when timer expires
+  timerInterval: null,
+  timeUp: false,            // true if quiz auto-finished due to timer
+  timeUsedMs: 0,            // captured when results shown
+  // Exam simulation (weighted blueprint draw)
+  examMode: false,
+  _savedTimerEnabled: false,        // user's timer prefs, restored when
+  _savedTimerMinutes: CFG_DEFAULT_MINUTES, // exam mode is switched off
+};
+
+const $ = id => document.getElementById(id);
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Pool size given current focus selection.
+function poolSize() {
+  if (!state.focusEnabled || state.focusedCats.length === 0) return BANK.length;
+  return BANK.filter(q => state.focusedCats.includes(q.cat)).length;
+}
+
+// Shared question normalizer: shuffles options, strips authoring-only
+// fields, keeps origIdx + cat for review and the objective breakdown.
+function normalizeQuestion(q) {
+  if (q.type === 'fitb') {
+    return { type: q.type, stem: q.stem, answer: q.answer,
+             caseSensitive: q.caseSensitive || false, hint: q.hint || '',
+             fb: q.fb || '', subtype: q.subtype || '', origIdx: q.origIdx, cat: q.cat };
+  }
+  const base = { type: q.type, stem: q.stem,
+                 options: shuffle(q.options.map((o, i) => ({ ...o, origIdx: i }))),
+                 origIdx: q.origIdx, cat: q.cat };
+  if (q.type === 'scenario') base.context = q.context || '';
+  return base;
+}
+
+function buildQuiz(count) {
+  let pool = BANK.map((q, i) => ({ ...q, origIdx: i }));
+  if (state.focusEnabled && state.focusedCats.length > 0) {
+    pool = pool.filter(q => state.focusedCats.includes(q.cat));
+  }
+  const finalCount = Math.min(count, pool.length);
+  const picked  = shuffle(pool).slice(0, finalCount);
+  return picked.map(normalizeQuestion);
+}
+
+// Weighted blueprint draw: take `weight × multiplier` questions from
+// EACH objective (capped at what the bank holds), then shuffle the
+// combined paper so objectives are interleaved like the real exam.
+function buildExamQuiz() {
+  const indexed = BANK.map((q, i) => ({ ...q, origIdx: i }));
+  let paper = [];
+  examPlan().forEach(p => {
+    if (p.take === 0) return;
+    const pool = indexed.filter(q => q.cat === p.cat.key);
+    paper = paper.concat(shuffle(pool).slice(0, p.take));
+  });
+  return shuffle(paper).map(normalizeQuestion);
+}
+
+// Single entry point used by Start and Retake — respects current mode.
+function buildActiveQuiz() {
+  return state.examMode ? buildExamQuiz() : buildQuiz(state.count);
+}
+
+function formatTime(ms) {
+  const total = Math.max(0, Math.ceil(ms / 1000));
+  const m = Math.floor(total / 60);
+  const s = total % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function scoreQuestion(q, selectedIdxs) {
+  // ── Fill-in-the-blank ───────────────────────────────────────────
+  if (q.type === 'fitb') {
+    const userText = typeof selectedIdxs === 'string' ? selectedIdxs.trim() : '';
+    if (!userText) return { score: 0, status: 'skipped', userText: '' };
+    const correct = Array.isArray(q.answer) ? q.answer : [q.answer];
+    const match = correct.some(a =>
+      q.caseSensitive ? a.trim() === userText : a.trim().toLowerCase() === userText.toLowerCase()
+    );
+    return { score: match ? 1 : 0, status: match ? 'correct' : 'wrong', userText };
+  }
+  if (selectedIdxs.length === 0) return { score: 0, status: 'skipped' };
+  // scenario behaves like a single-answer MCQ
+  if (q.type === 'mcq' || q.type === 'scenario') {
+    const isCorrect = q.options[selectedIdxs[0]].c === true;
+    return { score: isCorrect ? 1 : 0, status: isCorrect ? 'correct' : 'wrong' };
+  }
+  const correctIdxs = q.options.map((o,i)=>o.c?i:-1).filter(i=>i>=0);
+  const wrongIdxs   = q.options.map((o,i)=>!o.c?i:-1).filter(i=>i>=0);
+  const C = correctIdxs.length, W = wrongIdxs.length;
+  let score = 0;
+  selectedIdxs.forEach(i => {
+    if (q.options[i].c) score += 1 / C;
+    else                score -= 1 / Math.max(W, 1);
+  });
+  score = Math.max(0, Math.min(1, score));
+  const allCorrectChosen = correctIdxs.every(i => selectedIdxs.includes(i));
+  const noneWrongChosen  = !selectedIdxs.some(i => !q.options[i].c);
+  let status;
+  if (allCorrectChosen && noneWrongChosen) status = 'correct';
+  else if (score === 0) status = 'wrong';
+  else status = 'partial';
+  return { score, status };
+}
+
+/* ============================================================
+   SETUP VIEW
+   ============================================================ */
+
+// ----- length picker -----
+$('countGrid').addEventListener('click', e => {
+  if (state.examMode) return;            // locked during exam simulation
+  const btn = e.target.closest('.count-card');
+  if (!btn) return;
+  document.querySelectorAll('.count-card').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  state.count = parseInt(btn.dataset.count, 10);
+  updateSetupSummary();
+});
+
+// ----- focus toggle + topic chips -----
+function renderTopicGrid() {
+  const grid = $('topicGrid');
+  grid.innerHTML = '';
+  // Objectives with zero questions are hidden until you write them.
+  CATEGORIES.filter(cat => (CAT_COUNTS[cat.key] || 0) > 0).forEach(cat => {
+    const chip = document.createElement('button');
+    chip.className = 'topic-chip';
+    chip.dataset.key = cat.key;
+    if (state.focusedCats.includes(cat.key)) chip.classList.add('on');
+    chip.innerHTML = `
+      <div class="topic-chip-check"></div>
+      <div class="topic-chip-label">${cat.label}</div>
+      <div class="topic-chip-count">${CAT_COUNTS[cat.key]}</div>
+    `;
+    chip.addEventListener('click', () => {
+      const i = state.focusedCats.indexOf(cat.key);
+      if (i >= 0) state.focusedCats.splice(i, 1);
+      else state.focusedCats.push(cat.key);
+      chip.classList.toggle('on');
+      updateSetupSummary();
+    });
+    grid.appendChild(chip);
+  });
+}
+renderTopicGrid();
+
+$('focusToggle').addEventListener('click', () => {
+  if (state.examMode) return;            // locked during exam simulation
+  state.focusEnabled = !state.focusEnabled;
+  $('focusToggle').classList.toggle('on', state.focusEnabled);
+  $('focusToggle').setAttribute('aria-checked', state.focusEnabled);
+  $('topicGrid').classList.toggle('hidden', !state.focusEnabled);
+  // When turning on for the first time, default to "all selected" so user can untoggle.
+  if (state.focusEnabled && state.focusedCats.length === 0) {
+    state.focusedCats = CATEGORIES.filter(c => (CAT_COUNTS[c.key] || 0) > 0).map(c => c.key);
+    renderTopicGrid();
+  }
+  updateSetupSummary();
+});
+$('focusToggle').addEventListener('keydown', e => {
+  if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); $('focusToggle').click(); }
+});
+
+// ----- exam-simulation toggle -----
+// Switching this ON locks length / focus / timer and arms the
+// weighted blueprint draw. Switching it OFF restores whatever the
+// student had selected before.
+$('examToggle').addEventListener('click', () => {
+  state.examMode = !state.examMode;
+  const on = state.examMode;
+  $('examToggle').classList.toggle('on', on);
+  $('examToggle').setAttribute('aria-checked', on);
+
+  if (on) {
+    // Remember the student's own timer prefs, then impose exam timing.
+    state._savedTimerEnabled = state.timerEnabled;
+    state._savedTimerMinutes = state.timerMinutes;
+    state.timerEnabled = true;
+    state.timerMinutes = (CONFIG.examSim && CONFIG.examSim.minutes) || 60;
+    // Exam covers every objective — switch focus off.
+    state.focusEnabled = false;
+    $('focusToggle').classList.remove('on');
+    $('focusToggle').setAttribute('aria-checked', 'false');
+    $('topicGrid').classList.add('hidden');
+    // Reflect timer toggle as on, but hide the minute chips (locked).
+    $('timerToggle').classList.add('on');
+    $('timerToggle').setAttribute('aria-checked', 'true');
+    $('timePicker').classList.add('hidden');
+    // Visually lock the overridden controls.
+    $('countGrid').classList.add('locked');
+    $('focusSection').classList.add('locked');
+    $('timerSection').classList.add('locked');
+    $('examCoverage').classList.remove('hidden');
+  } else {
+    // Hand the controls back, exactly as they were.
+    state.timerEnabled = state._savedTimerEnabled;
+    state.timerMinutes = state._savedTimerMinutes;
+    $('timerToggle').classList.toggle('on', state.timerEnabled);
+    $('timerToggle').setAttribute('aria-checked', state.timerEnabled);
+    $('timePicker').classList.toggle('hidden', !state.timerEnabled);
+    $('countGrid').classList.remove('locked');
+    $('focusSection').classList.remove('locked');
+    $('timerSection').classList.remove('locked');
+    $('examCoverage').classList.add('hidden');
+  }
+  updateSetupSummary();
+});
+$('examToggle').addEventListener('keydown', e => {
+  if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); $('examToggle').click(); }
+});
+
+// ----- timer toggle + time picker -----
+$('timerToggle').addEventListener('click', () => {
+  if (state.examMode) return;            // locked during exam simulation
+  state.timerEnabled = !state.timerEnabled;
+  $('timerToggle').classList.toggle('on', state.timerEnabled);
+  $('timerToggle').setAttribute('aria-checked', state.timerEnabled);
+  $('timePicker').classList.toggle('hidden', !state.timerEnabled);
+  updateSetupSummary();
+});
+$('timerToggle').addEventListener('keydown', e => {
+  if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); $('timerToggle').click(); }
+});
+
+document.querySelectorAll('.time-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.time-chip').forEach(c => c.classList.remove('on'));
+    chip.classList.add('on');
+    state.timerMinutes = parseInt(chip.dataset.min, 10);
+    updateSetupSummary();
+  });
+});
+
+// ----- summary line + start button gating -----
+function updateSetupSummary() {
+  const examCfg = CONFIG.examSim || {};
+
+  /* ── EXAM SIMULATION BRANCH ─────────────────────────────────── */
+  if (state.examMode) {
+    const plan   = examPlan();
+    const drawn  = plan.reduce((s, p) => s + p.take, 0);
+    const target = examTargetTotal();
+    const missing = plan.filter(p => p.take < p.want);
+
+    $('ssLength').textContent = `${drawn} question${drawn === 1 ? '' : 's'}`;
+    $('ssMode').textContent   = 'Exam simulation';
+    $('ssFocus').textContent  = 'All objectives · weighted';
+    $('ssTime').textContent   = `${state.timerMinutes} min`;
+
+    $('examSub').textContent  = 'ON — drawing per the blueprint weights, feedback at the end';
+    $('examSub').classList.add('live');
+    $('focusSub').textContent = 'Locked — the exam draws from every objective';
+    $('focusSub').classList.remove('live');
+    $('timerSub').textContent = `Locked to ${state.timerMinutes} minutes by exam simulation`;
+    $('timerSub').classList.remove('live');
+    $('feedbackTimingMeta').innerHTML = 'Deferred — shown after <code>Finish</code>';
+
+    // Coverage meter: how much of the 40-slot blueprint the bank fills.
+    let cov = `Blueprint coverage: <strong>${drawn} / ${target}</strong> exam slots filled`;
+    if (missing.length > 0) {
+      const keys = missing.map(p => p.cat.key);
+      const shown = keys.slice(0, 8).join(', ') + (keys.length > 8 ? ` +${keys.length - 8} more` : '');
+      cov += ` <span class="ec-missing">· awaiting questions: ${shown}</span>`;
+    } else {
+      cov += ` <span class="ec-missing">· full blueprint — this is a true exam form</span>`;
+    }
+    $('examCoverageLine').innerHTML = cov;
+
+    $('poolAvailable').textContent = drawn;
+    const startBtn = $('startBtn');
+    startBtn.disabled = drawn === 0;
+    startBtn.textContent = drawn === 0 ? 'Bank is empty' : 'Begin Exam →';
+    return;
+  }
+
+  /* ── NORMAL PRACTICE BRANCH ─────────────────────────────────── */
+  $('examSub').textContent = examCfg.enabled === false ? '' :
+    `Replicates the official weighted blueprint — ${examTargetTotal()} questions · ${examCfg.minutes || 60} min · all objectives`;
+  $('examSub').classList.remove('live');
+
+  const available = poolSize();
+  const effectiveCount = Math.min(state.count, available);
+
+  // length
+  $('ssLength').textContent = `${effectiveCount} question${effectiveCount === 1 ? '' : 's'}`;
+
+  // mode
+  $('ssMode').textContent = state.timerEnabled ? 'Timed test' : 'Practice';
+
+  // focus
+  if (!state.focusEnabled || state.focusedCats.length === 0 || state.focusedCats.length === CATEGORIES.length) {
+    $('ssFocus').textContent = 'All topics';
+    $('focusSub').textContent = `All ${BANK.length} questions across ${CATEGORIES.length} topics`;
+    $('focusSub').classList.remove('live');
+  } else {
+    const n = state.focusedCats.length;
+    $('ssFocus').textContent = `${n} topic${n === 1 ? '' : 's'} • ${available} q`;
+    $('focusSub').textContent = `${n} of ${CATEGORIES.length} topics selected — ${available} questions available`;
+    $('focusSub').classList.add('live');
+  }
+
+  // timing
+  if (state.timerEnabled) {
+    $('ssTime').textContent = `${state.timerMinutes} min`;
+    $('timerSub').textContent = `${state.timerMinutes} minutes total — feedback shows at the end`;
+    $('timerSub').classList.add('live');
+    $('feedbackTimingMeta').innerHTML = 'Deferred — shown after <code>Finish</code>';
+  } else {
+    $('ssTime').textContent = 'Untimed';
+    $('timerSub').textContent = 'No time limit — feedback after every Check';
+    $('timerSub').classList.remove('live');
+    $('feedbackTimingMeta').innerHTML = 'Instant — after each <code>Check</code>';
+  }
+
+  // pool note
+  $('poolAvailable').textContent = available;
+
+  // start gating: need at least 1 question available
+  const startBtn = $('startBtn');
+  if (available === 0) {
+    startBtn.disabled = true;
+    startBtn.textContent = 'Pick at least one topic';
+  } else {
+    startBtn.disabled = false;
+    startBtn.textContent = 'Begin Quiz →';
+  }
+}
+updateSetupSummary();
+
+// ----- start the quiz -----
+$('startBtn').addEventListener('click', () => {
+  state.questions = buildActiveQuiz();
+  state.answers   = state.questions.map(q => q.type === 'fitb' ? '' : []);
+  state.checked   = state.questions.map(() => false);
+  state.current   = 0;
+  state.timeUp    = false;
+  state.timeUsedMs = 0;
+
+  $('view-setup').classList.add('hidden');
+  $('view-quiz').classList.remove('hidden');
+  $('view-quiz').classList.add('fade-in');
+  $('qTotal').textContent = state.questions.length;
+
+  // Test-mode notice
+  $('testNotice').classList.toggle('hidden', !state.timerEnabled);
+
+  // Start timer if needed
+  if (state.timerEnabled) {
+    startTimer(state.timerMinutes * 60 * 1000);
+  }
+
+  renderQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+function startTimer(ms) {
+  state.timerEndAt = Date.now() + ms;
+  if (state.timerInterval) clearInterval(state.timerInterval);
+  // tick every 250ms for smoother last-seconds feel
+  state.timerInterval = setInterval(tickTimer, 250);
+  tickTimer();
+}
+
+function stopTimer() {
+  if (state.timerInterval) {
+    clearInterval(state.timerInterval);
+    state.timerInterval = null;
+  }
+}
+
+function tickTimer() {
+  const remaining = state.timerEndAt - Date.now();
+  const badge = $('timerBadge');
+  if (badge) {
+    badge.textContent = formatTime(remaining);
+    badge.classList.remove('warn', 'danger');
+    if (remaining <= 10000)      badge.classList.add('danger');
+    else if (remaining <= 60000) badge.classList.add('warn');
+  }
+  if (remaining <= 0) {
+    stopTimer();
+    state.timeUp = true;
+    state.timeUsedMs = state.timerMinutes * 60 * 1000;
+    // Mark all as checked so review (after results) shows per-question feedback.
+    state.checked = state.checked.map(() => true);
+    showResults();
+  }
+}
+
+/* ============================================================
+   QUIZ VIEW
+   ============================================================ */
+function renderQuiz() {
+  const q = state.questions[state.current];
+  const isFitb     = q.type === 'fitb';
+  const isScenario = q.type === 'scenario';
+  const isMulti    = q.type === 'multi';
+  const isChecked = state.checked[state.current];
+  const allChecked = state.checked.every(c => c);
+  // "Active" timed session: timer is on AND we haven't finished yet.
+  const timedActive = state.timerEnabled && !allChecked;
+  const selectedIdxs = state.answers[state.current];
+
+  $('qNow').textContent = state.current + 1;
+
+  // Test-mode notice strip — only during an active timed session.
+  $('testNotice').classList.toggle('hidden', !timedActive);
+
+  // Right side of progress row: timer in active timed mode, otherwise checked count
+  const progressRight = $('progressRight');
+  if (timedActive) {
+    progressRight.innerHTML = `<div class="timer-badge" id="timerBadge">${formatTime(state.timerEndAt - Date.now())}</div>`;
+    tickTimer();
+  } else {
+    const checkedN = state.checked.filter(c => c).length;
+    progressRight.innerHTML = `<span id="checkedCount">${checkedN}</span> checked`;
+  }
+
+  // Progress bar fill: count "answered" during timed mode, "checked" otherwise.
+  const filledN = timedActive
+    ? state.answers.filter(a => a.length > 0).length
+    : state.checked.filter(c => c).length;
+  $('progressFill').style.width = (filledN / state.questions.length * 100) + '%';
+
+  // Jumper
+  const jumper = $('jumper');
+  jumper.innerHTML = '';
+  state.questions.forEach((qq, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'jump-dot';
+    if (timedActive) {
+      // During active timed session, don't reveal correctness — just answered vs not.
+      if (state.answers[i].length > 0) dot.classList.add('has-selection');
+    } else if (state.checked[i]) {
+      const r = scoreQuestion(qq, state.answers[i]);
+      if (r.status === 'correct')      dot.classList.add('checked-correct');
+      else if (r.status === 'partial') dot.classList.add('checked-partial');
+      else                              dot.classList.add('checked-wrong');
+    } else if (state.answers[i].length > 0) {
+      dot.classList.add('has-selection');
+    }
+    if (i === state.current) dot.classList.add('current');
+    dot.textContent = i + 1;
+    dot.addEventListener('click', () => { state.current = i; renderQuiz(); });
+    jumper.appendChild(dot);
+  });
+
+  // Build question card
+  let tagLabel, tagClass;
+  if (isFitb)          { tagLabel = 'Fill in the blank'; tagClass = 'fitb'; }
+  else if (isScenario) { tagLabel = 'Scenario';          tagClass = 'scenario'; }
+  else if (isMulti)    { tagLabel = 'Select all that apply'; tagClass = 'multi'; }
+  else                 { tagLabel = 'Single answer';      tagClass = ''; }
+
+  let html = '<div class="qcard fade-in">';
+
+  // Verdict banner if checked
+  let r = null;
+  if (isChecked) {
+    r = scoreQuestion(q, selectedIdxs);
+    let vCls, vIcon, vTitle, vSub;
+    if (r.status === 'correct') {
+      vCls = 'correct'; vIcon = '\u2713';
+      vTitle = 'Correct';
+      vSub = isFitb ? 'Your answer matched.' : (isMulti ? 'You picked every right answer.' : '+1 point');
+    } else if (r.status === 'partial') {
+      vCls = 'partial'; vIcon = '\u25D0';
+      vTitle = 'Partial credit';
+      vSub = `Score: ${r.score.toFixed(2)} / 1.00`;
+    } else if (r.status === 'wrong') {
+      vCls = 'wrong'; vIcon = '\u2715';
+      vTitle = 'Incorrect';
+      vSub = isFitb ? "Your answer wasn\u2019t matched \u2014 see below."
+                    : (isMulti ? 'See the marked correct answers below.'
+                               : 'See the correct answer below.');
+    } else {
+      vCls = 'wrong'; vIcon = '?';
+      vTitle = 'Skipped';
+      vSub = isFitb ? 'No answer was entered.' : 'No selection was made.';
+    }
+    html += `
+      <div class="qverdict ${vCls}">
+        <div class="qverdict-icon">${vIcon}</div>
+        <div class="qverdict-text"><strong>${vTitle}</strong>${vSub}</div>
+      </div>
+    `;
+  }
+
+  html += `<span class="qtype-tag ${tagClass}">${tagLabel}</span>`;
+  if (isScenario && q.context) {
+    html += `<div class="scenario-context"><div class="scenario-context-eyebrow">Situation</div><div class="scenario-context-body">${q.context}</div></div>`;
+  }
+  html += `<div class="qstem">${q.stem}</div>`;
+
+  if (isFitb) {
+    // ── Fill-in-the-blank input ────────────────────────────────────
+    const inputCls = isChecked ? (r && r.status === 'correct' ? 'is-correct' : 'is-wrong') : '';
+    html += `<div class="fitb-wrapper">`;
+    html += `<input type="text" class="fitb-input ${inputCls}" ${isChecked ? 'readonly' : ''} placeholder="Type your answer\u2026">`;
+    if (!isChecked && q.hint) {
+      html += `<div class="fitb-hint">\u2192 Hint: ${q.hint}</div>`;
+    }
+    if (isChecked && r) {
+      const ca = Array.isArray(q.answer) ? q.answer : [q.answer];
+      if (r.status === 'correct') {
+        html += `<div class="fitb-result correct">\u2713 Correct \u2014 <code>${escapeHtml(ca[0])}</code></div>`;
+      } else {
+        const ut = r.userText || '';
+        html += `<div class="fitb-result wrong">`;
+        html += ut
+          ? `<div>\u2715 Your answer: <code>${escapeHtml(ut)}</code></div>`
+          : `<div>\u2715 No answer entered.</div>`;
+        html += `<div style="margin-top:6px">Correct: <code>${escapeHtml(ca[0])}</code>`;
+        if (ca.length > 1) html += ` <span style="color:var(--ink-mute)"> or <code>${escapeHtml(ca[1])}</code></span>`;
+        html += `</div></div>`;
+      }
+      if (q.fb) html += `<div class="fitb-fb">${q.fb}</div>`;
+    }
+    html += `</div>`;
+  } else {
+    // ── MCQ / Multi / Scenario options ────────────────────────────
+    html += `<div class="options">`;
+    q.options.forEach((opt, i) => {
+      const wasSelected = selectedIdxs.includes(i);
+      let cls = '';
+      let marker;
+      let tagsHtml = '';
+      let showFeedback = false;
+
+      if (isChecked) {
+        cls += ' locked';
+        if (opt.c && wasSelected) {
+          cls += ' is-correct';
+          marker = '\u2713';
+          tagsHtml = '<span class="opt-tag you">Your pick</span><span class="opt-tag ans">Correct</span>';
+          showFeedback = true;
+        } else if (opt.c && !wasSelected) {
+          cls += ' is-missed';
+          marker = '\u25CB';
+          tagsHtml = '<span class="opt-tag miss">Correct answer</span>';
+          showFeedback = true;
+        } else if (!opt.c && wasSelected) {
+          cls += ' is-wrong';
+          marker = '\u2715';
+          tagsHtml = '<span class="opt-tag you">Your pick</span>';
+          showFeedback = true;
+        } else {
+          marker = isMulti ? '' : String.fromCharCode(65 + i);
+        }
+      } else {
+        if (wasSelected) cls += ' selected';
+        marker = isMulti ? (wasSelected ? '\u2713' : '') : String.fromCharCode(65 + i);
+      }
+
+      html += `
+        <div class="opt ${cls}" data-type="${q.type}" data-idx="${i}">
+          <div class="opt-main">
+            <div class="opt-marker">${marker}</div>
+            <div class="opt-text">${opt.t}${tagsHtml}</div>
+          </div>
+          ${showFeedback ? `<div class="opt-feedback">${opt.fb}</div>` : ''}
+        </div>
+      `;
+    });
+    html += `</div>`;
+  }
+  html += `</div>`; // close .qcard
+
+  $('quizContent').innerHTML = html;
+
+  // ── Input / click wiring ─────────────────────────────────────────
+  if (isFitb) {
+    const input = $('quizContent').querySelector('.fitb-input');
+    if (input) {
+      const stored = typeof state.answers[state.current] === 'string' ? state.answers[state.current] : '';
+      input.value = isChecked ? (r ? r.userText || '' : stored) : stored;
+      if (!isChecked) {
+        input.addEventListener('input', e => {
+          state.answers[state.current] = e.target.value;
+          $('checkBtn').disabled = e.target.value.trim() === '';
+        });
+        input.addEventListener('keydown', e => {
+          if (e.key === 'Enter' && !$('checkBtn').disabled) $('checkBtn').click();
+        });
+        input.focus();
+      }
+    }
+  } else if (!isChecked) {
+    $('quizContent').querySelectorAll('.opt').forEach(el => {
+      el.addEventListener('click', () => {
+        const idx = parseInt(el.dataset.idx, 10);
+        const arr = state.answers[state.current];
+        if (q.type === 'mcq' || q.type === 'scenario') {
+          state.answers[state.current] = [idx];
+        } else {
+          const at = arr.indexOf(idx);
+          if (at >= 0) arr.splice(at, 1);
+          else arr.push(idx);
+        }
+        renderQuiz();
+      });
+    });
+  }
+
+  // Buttons
+  $('prevBtn').disabled = state.current === 0;
+  const isLast = state.current === state.questions.length - 1;
+
+  if (timedActive) {
+    // Active timed session: no Check, free navigation, Finish always available.
+    $('checkBtn').classList.add('hidden');
+    $('nextBtn').classList.remove('hidden');
+    $('nextBtn').disabled = isLast;
+    $('finishBtn').classList.remove('hidden');
+  } else {
+    // Practice mode (or post-finish review): original flow.
+    if (!isChecked) {
+      $('checkBtn').classList.remove('hidden');
+      $('checkBtn').disabled = selectedIdxs.length === 0;
+      $('nextBtn').classList.add('hidden');
+      $('finishBtn').classList.add('hidden');
+    } else {
+      $('checkBtn').classList.add('hidden');
+      if (isLast && allChecked) {
+        $('nextBtn').classList.add('hidden');
+        $('finishBtn').classList.remove('hidden');
+      } else {
+        $('nextBtn').classList.remove('hidden');
+        $('nextBtn').disabled = isLast;
+        $('finishBtn').classList.toggle('hidden', !allChecked);
+      }
+    }
+  }
+}
+
+$('prevBtn').addEventListener('click', () => {
+  if (state.current > 0) { state.current--; renderQuiz(); }
+});
+$('nextBtn').addEventListener('click', () => {
+  if (state.current < state.questions.length - 1) {
+    state.current++;
+    renderQuiz();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+$('checkBtn').addEventListener('click', () => {
+  if (state.answers[state.current].length === 0) return;
+  state.checked[state.current] = true;
+  renderQuiz();
+});
+$('finishBtn').addEventListener('click', () => {
+  if (state.timerEnabled && !state.timeUp) {
+    state.timeUsedMs = (state.timerMinutes * 60 * 1000) - Math.max(0, state.timerEndAt - Date.now());
+    stopTimer();
+  }
+  // Mark all as checked so review (after results) shows per-question feedback.
+  state.checked = state.checked.map(() => true);
+  showResults();
+});
+$('abandonBtn').addEventListener('click', () => {
+  if (confirm('Abandon this quiz and return to setup? Your progress will be lost.')) {
+    stopTimer();
+    state.timeUp = false;
+    $('view-quiz').classList.add('hidden');
+    $('view-setup').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+/* ============================================================
+   RESULTS VIEW (final summary)
+   ============================================================ */
+function showResults() {
+  $('view-quiz').classList.add('hidden');
+  const view = $('view-results');
+  view.classList.remove('hidden');
+  view.classList.add('fade-in');
+
+  const breakdown = state.questions.map((q, i) => {
+    const r = scoreQuestion(q, state.answers[i]);
+    return { q, selected: state.answers[i], ...r };
+  });
+  const totalScore = breakdown.reduce((s, b) => s + b.score, 0);
+  const total = breakdown.length;
+  const pct = Math.round((totalScore / total) * 100);
+  const correctCount = breakdown.filter(b => b.status === 'correct').length;
+  const partialCount = breakdown.filter(b => b.status === 'partial').length;
+  const wrongCount   = breakdown.filter(b => b.status === 'wrong' || b.status === 'skipped').length;
+
+  // Score tier lookup — driven by CONFIG.scoreTiers (edit at the top of <script>)
+  const tier = CONFIG.scoreTiers.find(t => pct >= t.minPct)
+            || CONFIG.scoreTiers[CONFIG.scoreTiers.length - 1];
+  const eyebrow    = tier.eyebrow;
+  const verdict    = tier.verdictHtml;
+  const verdictSub = tier.verdictSub;
+
+  // Optional time-up banner
+  const timeupHtml = state.timeUp
+    ? `<div class="timeup-banner"><strong>Time's up.</strong> The quiz auto-submitted when the ${state.timerMinutes}-minute timer expired. Unanswered questions are counted as skipped.</div>`
+    : '';
+
+  // Optional time-used line under the dial
+  const timeUsedHtml = state.timerEnabled
+    ? `<div class="score-frac" style="margin-top: 8px;">Time used: ${formatTime(state.timeUsedMs)} / ${state.timerMinutes}:00</div>`
+    : '';
+
+  /* ── Per-objective breakdown ──────────────────────────────────
+     Shown whenever the paper spans 2+ objectives (always true in
+     exam simulation). Rows under the pack's pass mark (default 65%) —
+     are flagged red: those are the objectives to drill next.       */
+  let objHtml = '';
+  {
+    const byCat = {};
+    breakdown.forEach(b => {
+      const k = b.q.cat || 'other';
+      (byCat[k] = byCat[k] || { score: 0, n: 0 }).score += b.score;
+      byCat[k].n += 1;
+    });
+    const catKeys = Object.keys(byCat);
+    if (catKeys.length >= 2) {
+      const rows = CATEGORIES
+        .filter(c => byCat[c.key])
+        .map(c => ({ label: c.label, ...byCat[c.key] }))
+        .concat(byCat['other'] ? [{ label: 'Uncategorised', ...byCat['other'] }] : [])
+        .map(r => {
+          const p = Math.round((r.score / r.n) * 100);
+          return `<div class="obj-row${p < PASS_PCT ? ' weak' : ''}">
+                    <div class="obj-row-label">${r.label}</div>
+                    <div class="obj-row-bar"><i style="width:${p}%"></i></div>
+                    <div class="obj-row-pct">${r.score.toFixed(1)}/${r.n} · ${p}%</div>
+                  </div>`;
+        }).join('');
+      objHtml = `<div class="obj-break">
+                   <div class="obj-break-title">Performance by objective — red rows are below the ~${PASS_PCT}% pass line</div>
+                   ${rows}
+                 </div>`;
+    }
+  }
+
+  // Auto-accumulate session results into localStorage (for health analysis & loop closure)
+  try {
+    const packId = _meta.packId || _meta.subject || 'quiz';
+    const storageKey = 'quizforge_history_' + packId;
+    const history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    const record = {
+      timestamp: new Date().toISOString(),
+      packId: packId,
+      score: totalScore,
+      total: total,
+      pct: pct,
+      results: breakdown.map(b => ({
+        stem: b.q.stem,
+        cat: b.q.cat || 'other',
+        type: b.q.type,
+        score: b.score,
+        status: b.status
+      }))
+    };
+    history.push(record);
+    localStorage.setItem(storageKey, JSON.stringify(history));
+  } catch (e) {
+    // localStorage might be unavailable or disabled
+  }
+
+  view.innerHTML = `
+    ${timeupHtml}
+    <div class="results-hero">
+      <div class="score-dial">
+        <svg viewBox="0 0 120 120">
+          <circle class="track" cx="60" cy="60" r="52" fill="none" stroke-width="9"/>
+          <circle class="fill"  cx="60" cy="60" r="52" fill="none" stroke-width="9"
+                  stroke-dasharray="${(2*Math.PI*52).toFixed(2)}"
+                  stroke-dashoffset="${((2*Math.PI*52)*(1 - pct/100)).toFixed(2)}"/>
+        </svg>
+        <div class="score-dial-inner">
+          <div class="score-pct">${pct}<span style="font-size: 24px; color: var(--ink-mute);">%</span></div>
+          <div class="score-frac">${totalScore.toFixed(1)} / ${total}</div>
+        </div>
+      </div>
+      <div>
+        <div class="verdict-eyebrow">${eyebrow}</div>
+        <div class="verdict">${verdict}</div>
+        <div class="verdict-sub">${verdictSub}</div>
+        ${timeUsedHtml}
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card correct">
+        <div class="stat-num correct">${correctCount}</div>
+        <div class="stat-label">Fully correct</div>
+      </div>
+      <div class="stat-card partial">
+        <div class="stat-num partial">${partialCount}</div>
+        <div class="stat-label">Partial credit</div>
+      </div>
+      <div class="stat-card wrong">
+        <div class="stat-num wrong">${wrongCount}</div>
+        <div class="stat-label">Incorrect / skipped</div>
+      </div>
+    </div>
+
+    ${objHtml}
+
+    <div class="btn-row">
+      <button class="btn ghost" id="reviewSetupBtn">← Change quiz length</button>
+      <button class="btn ghost" id="exportResultsBtn">⤓ Export JSON</button>
+      <div class="nav-right">
+        <button class="btn ghost" id="reviewBackBtn">↩ Back to questions</button>
+        <button class="btn primary" id="retakeBtn">↻ Retake (new shuffle)</button>
+      </div>
+    </div>
+  `;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  $('exportResultsBtn').addEventListener('click', () => {
+    try {
+      const packId = _meta.packId || _meta.subject || 'quiz';
+      const storageKey = 'quizforge_history_' + packId;
+      const history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      const exportData = {
+        packId: packId,
+        subject: _meta.subject || packId,
+        exportedAt: new Date().toISOString(),
+        sessions: history.length > 0 ? history : [{
+          timestamp: new Date().toISOString(),
+          packId: packId,
+          score: totalScore,
+          total: total,
+          pct: pct,
+          results: breakdown.map(b => ({
+            stem: b.q.stem,
+            cat: b.q.cat || 'other',
+            type: b.q.type,
+            score: b.score,
+            status: b.status
+          }))
+        }]
+      };
+      const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${packId}-results-${new Date().toISOString().slice(0,10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      alert('Could not export results: ' + err);
+    }
+  });
+
+  $('retakeBtn').addEventListener('click', () => {
+    state.questions = buildActiveQuiz();
+    state.answers   = state.questions.map(q => q.type === 'fitb' ? '' : []);
+    state.checked   = state.questions.map(() => false);
+    state.current   = 0;
+    state.timeUp    = false;
+    state.timeUsedMs = 0;
+    view.classList.add('hidden');
+    $('view-quiz').classList.remove('hidden');
+    $('qTotal').textContent = state.questions.length;
+    // Restart timer if timed mode is on
+    if (state.timerEnabled) {
+      startTimer(state.timerMinutes * 60 * 1000);
+    }
+    renderQuiz();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  $('reviewBackBtn').addEventListener('click', () => {
+    view.classList.add('hidden');
+    $('view-quiz').classList.remove('hidden');
+    state.current = 0;
+    renderQuiz();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  $('reviewSetupBtn').addEventListener('click', () => {
+    view.classList.add('hidden');
+    $('view-setup').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+</script>
+</body>
+</html>
