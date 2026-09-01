@@ -1,0 +1,2472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IT2311 Principles of Communication — Reviewer</title>
+<meta property="og:title" content="IT2311 Principles of Communication — Reviewer" />
+<meta property="og:description" content="Practice questions across the IT2311 lesson handouts — MCQ, multi-select, scenario, and fill-in-the-blank items with instant feedback on every check." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #14171C;
+    --bg-2:         #1C2027;
+    --bg-deep:      #242932;
+    --bg-raise:     #2C313B;
+    --ink:          #ECE6D7;
+    --ink-soft:     #B8B2A4;
+    --ink-mute:     #7A7468;
+    --rule:         #2E333D;
+    --rule-strong:  #3D434F;
+    --accent:       #D86B4E;
+    --accent-deep:  #6B2818;
+    --accent-soft:  #3A1F18;
+    --correct:      #7BB876;
+    --correct-bg:   #1A2B1F;
+    --correct-edge: #2E4A35;
+    --wrong:        #D55C4A;
+    --wrong-bg:     #2D1816;
+    --wrong-edge:   #4A2722;
+    --gold:         #D4A04A;
+    --gold-bg:      #2A2010;
+    --gold-edge:    #4A3818;
+    --shadow:       0 1px 0 rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.5);
+    --display:      "Fraunces", "Times New Roman", serif;
+    --body:         "IBM Plex Sans", -apple-system, system-ui, sans-serif;
+    --mono:         "JetBrains Mono", "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    background-image:
+      radial-gradient(1200px 700px at 5% -15%, rgba(216,107,78,.10), transparent 60%),
+      radial-gradient(1000px 600px at 105% 115%, rgba(123,184,118,.05), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.025 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    padding: 48px 24px 80px;
+  }
+
+  .shell { max-width: 880px; margin: 0 auto; }
+
+  /* MASTHEAD */
+  .masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 36px;
+  }
+  .masthead-left {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .codex {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 3px 8px;
+    background: var(--bg);
+  }
+  .crumb {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .stamp {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* SETUP VIEW */
+  .hero { padding: 28px 0 20px; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .display {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(48px, 7vw, 86px);
+    line-height: .95;
+    letter-spacing: -.02em;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .display em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .display .slash {
+    font-family: var(--mono);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--gold);
+    font-size: .8em;
+  }
+  .lede {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin-bottom: 8px;
+  }
+  .lede code {
+    font-family: var(--mono);
+    font-size: .85em;
+    background: var(--bg-deep);
+    color: var(--ink);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  .divider-double {
+    border: 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    height: 4px;
+    margin: 36px 0 28px;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .section-label::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+  }
+
+  /* COUNT PICKER */
+  .count-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) { .count-grid { grid-template-columns: repeat(2, 1fr); } }
+  .count-card {
+    cursor: pointer;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    padding: 22px 18px;
+    text-align: left;
+    font-family: inherit;
+    color: var(--ink);
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    position: relative;
+  }
+  .count-card:hover {
+    background: var(--bg-deep);
+    border-color: var(--ink-soft);
+    transform: translateY(-2px);
+  }
+  .count-card.active {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .count-card.active .count-num,
+  .count-card.active .count-label { color: var(--bg); }
+  .count-card.active::after {
+    content: "✓";
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-family: var(--display);
+    font-size: 18px;
+    color: var(--accent);
+  }
+  .count-num {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .count-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .meta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 32px;
+    padding: 18px 20px;
+    background: var(--bg-2);
+    border-left: 3px solid var(--accent);
+  }
+  @media (max-width: 600px) { .meta-row { grid-template-columns: 1fr; } }
+  .meta-item .meta-key {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 4px;
+  }
+  .meta-item .meta-val {
+    font-family: var(--display);
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .meta-item .meta-val code {
+    font-family: var(--mono);
+    font-size: 14px;
+    background: var(--bg-deep);
+    color: var(--ink);
+    padding: 1px 6px;
+  }
+
+  /* BUTTONS */
+  .btn {
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--bg);
+    transition: background .15s ease, color .15s ease, transform .15s ease, border-color .15s ease;
+  }
+  .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn:disabled { opacity: .25; cursor: not-allowed; }
+  .btn:disabled:hover { background: var(--ink); border-color: var(--ink); }
+
+  .btn.ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--rule-strong);
+  }
+  .btn.ghost:hover {
+    background: var(--bg-deep);
+    color: var(--ink);
+    border-color: var(--ink-soft);
+  }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .btn.primary:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+
+  .btn-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  /* QUIZ VIEW */
+  .progress-bar {
+    height: 4px;
+    background: var(--bg-deep);
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width .3s ease;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .progress-info .qcount {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .progress-info .qcount strong { color: var(--accent); font-weight: 400; }
+
+  .qcard {
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    padding: 32px 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+  }
+
+  /* per-question verdict banner */
+  .qverdict {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    margin: -32px -30px 26px;
+    border-bottom: 1px solid;
+  }
+  .qverdict-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-size: 18px;
+    line-height: 1;
+  }
+  .qverdict-text {
+    flex: 1;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  .qverdict-text strong {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-right: 12px;
+  }
+  .qverdict.correct {
+    background: var(--correct-bg);
+    border-bottom-color: var(--correct-edge);
+    color: var(--correct);
+  }
+  .qverdict.correct .qverdict-icon { background: var(--correct); color: var(--correct-bg); }
+  .qverdict.partial {
+    background: var(--gold-bg);
+    border-bottom-color: var(--gold-edge);
+    color: var(--gold);
+  }
+  .qverdict.partial .qverdict-icon { background: var(--gold); color: var(--gold-bg); }
+  .qverdict.wrong {
+    background: var(--wrong-bg);
+    border-bottom-color: var(--wrong-edge);
+    color: var(--wrong);
+  }
+  .qverdict.wrong .qverdict-icon { background: var(--wrong); color: var(--wrong-bg); }
+
+  .qtype-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: var(--ink);
+    color: var(--bg);
+    margin-bottom: 18px;
+  }
+  .qtype-tag.multi { background: var(--gold); color: var(--bg); }
+  .qstem {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 26px;
+    letter-spacing: -.005em;
+  }
+  .qstem code {
+    font-family: var(--mono);
+    font-size: .82em;
+    background: var(--bg-deep);
+    color: var(--ink);
+    padding: 1px 6px;
+    border-radius: 2px;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .opt {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 18px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    transition: background .12s ease, border-color .12s ease;
+    user-select: none;
+  }
+  .opt-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .opt:hover:not(.locked) {
+    border-color: var(--ink-soft);
+    background: var(--bg-raise);
+  }
+  .opt.locked { cursor: default; }
+  .opt-marker {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    background: var(--bg-2);
+    margin-top: 1px;
+  }
+  .opt[data-type="mcq"] .opt-marker,
+  .opt[data-type="scenario"] .opt-marker { border-radius: 50%; }
+  .opt.selected .opt-marker {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .opt.selected {
+    border-color: var(--ink-soft);
+    background: var(--bg-raise);
+  }
+  .opt-text {
+    flex: 1;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .opt-text code {
+    font-family: var(--mono);
+    font-size: .92em;
+    color: var(--ink);
+    background: var(--bg);
+    padding: 1px 5px;
+    border-radius: 2px;
+    border: 1px solid var(--rule);
+  }
+  .opt.selected .opt-text { color: var(--ink); }
+
+  /* checked / locked option states */
+  .opt.is-correct {
+    background: var(--correct-bg);
+    border-color: var(--correct-edge);
+  }
+  .opt.is-correct .opt-marker {
+    background: var(--correct);
+    border-color: var(--correct);
+    color: var(--correct-bg);
+  }
+  .opt.is-correct .opt-text { color: var(--ink); }
+
+  .opt.is-wrong {
+    background: var(--wrong-bg);
+    border-color: var(--wrong-edge);
+    margin-bottom: 24px;
+  }
+  .opt.is-wrong .opt-marker {
+    background: var(--wrong);
+    border-color: var(--wrong);
+    color: var(--wrong-bg);
+  }
+  .opt.is-wrong .opt-text { color: var(--ink); }
+
+  .opt.is-missed {
+    background: var(--gold-bg);
+    border-color: var(--gold-edge);
+    border-style: dashed;
+  }
+  .opt.is-missed .opt-marker {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--gold-bg);
+  }
+  .opt.is-missed .opt-text { color: var(--ink); }
+
+  .opt-tag {
+    display: inline-block;
+    margin-left: 8px;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    color: var(--bg);
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  .opt-tag.you { background: var(--ink); }
+  .opt-tag.ans { background: var(--correct); }
+  .opt-tag.miss { background: var(--gold); }
+
+  .opt-feedback {
+    margin-top: 10px;
+    margin-left: 36px;
+    padding-left: 14px;
+    border-left: 2px solid var(--rule-strong);
+    font-family: var(--display);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .opt-feedback code {
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: .88em;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 1px 4px;
+    color: var(--ink);
+  }
+
+  /* nav */
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .nav-right { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .question-jumper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .jump-dot {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--rule-strong);
+    background: var(--bg-2);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    cursor: pointer;
+    transition: all .12s ease;
+    position: relative;
+  }
+  .jump-dot:hover { border-color: var(--ink-soft); color: var(--ink); }
+  .jump-dot.has-selection {
+    background: var(--bg-deep);
+    color: var(--ink);
+    border-color: var(--ink-mute);
+  }
+  .jump-dot.checked-correct {
+    background: var(--correct);
+    color: var(--bg);
+    border-color: var(--correct);
+  }
+  .jump-dot.checked-partial {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+  }
+  .jump-dot.checked-wrong {
+    background: var(--wrong);
+    color: var(--bg);
+    border-color: var(--wrong);
+  }
+  .jump-dot.current {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* RESULTS VIEW */
+  .results-hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: center;
+    padding: 32px 0 28px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 36px;
+  }
+  @media (max-width: 600px) { .results-hero { grid-template-columns: 1fr; gap: 18px; } }
+  .score-dial {
+    width: 168px;
+    height: 168px;
+    position: relative;
+  }
+  .score-dial svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .score-dial .track { stroke: var(--bg-deep); }
+  .score-dial .fill { stroke: var(--accent); stroke-linecap: butt; transition: stroke-dashoffset .8s ease; }
+  .score-dial-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .score-pct {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: -.02em;
+    color: var(--ink);
+  }
+  .score-frac {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 4px;
+  }
+  .verdict-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .verdict {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .verdict em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .verdict-sub {
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  @media (max-width: 600px) { .stat-row { grid-template-columns: 1fr; } }
+  .stat-card {
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    padding: 18px 20px;
+  }
+  .stat-card.correct { border-left: 3px solid var(--correct); }
+  .stat-card.partial { border-left: 3px solid var(--gold); }
+  .stat-card.wrong   { border-left: 3px solid var(--wrong); }
+  .stat-num {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .stat-num.correct { color: var(--correct); }
+  .stat-num.partial { color: var(--gold); }
+  .stat-num.wrong   { color: var(--wrong); }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* footer mark */
+  .colophon {
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  /* MODE & FOCUS SECTIONS (setup additions) */
+  .opt-section { margin-bottom: 28px; }
+  .opt-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+  }
+  .opt-toggle-row.has-detail { border-bottom: none; }
+  .opt-toggle-text { flex: 1; }
+  .opt-toggle-text .ot-title {
+    font-family: var(--display);
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .opt-toggle-text .ot-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .opt-toggle-text .ot-sub.live { color: var(--accent); }
+
+  /* toggle switch */
+  .toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule-strong);
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+    flex-shrink: 0;
+  }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: var(--ink-mute);
+    transition: transform .15s ease, background .15s ease;
+  }
+  .toggle.on {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+  .toggle.on::after {
+    transform: translateX(20px);
+    background: var(--accent);
+  }
+
+  /* topic chips (focus picker) */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    border-top: none;
+  }
+  @media (max-width: 600px) { .topic-grid { grid-template-columns: 1fr; } }
+  .topic-chip {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule);
+    font-family: inherit;
+    text-align: left;
+    color: var(--ink-soft);
+    transition: background .12s ease, border-color .12s ease, color .12s ease;
+  }
+  .topic-chip:hover {
+    border-color: var(--ink-soft);
+    background: var(--bg-raise);
+    color: var(--ink);
+  }
+  .topic-chip.on {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+  .topic-chip-check {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--ink-mute);
+    background: var(--bg-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 10px;
+  }
+  .topic-chip.on .topic-chip-check {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .topic-chip.on .topic-chip-check::after { content: '✓'; }
+  .topic-chip-label {
+    font-size: 13.5px;
+    flex: 1;
+    line-height: 1.3;
+  }
+  .topic-chip-count {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: var(--ink-mute);
+  }
+  .topic-chip.on .topic-chip-count { color: var(--accent); }
+
+  /* time picker */
+  .time-picker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 14px 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-strong);
+    border-top: none;
+  }
+  @media (max-width: 600px) { .time-picker { grid-template-columns: repeat(2, 1fr); } }
+  .time-chip {
+    cursor: pointer;
+    padding: 12px 8px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule);
+    font-family: inherit;
+    color: var(--ink-soft);
+    text-align: center;
+    transition: background .12s ease, border-color .12s ease, color .12s ease;
+  }
+  .time-chip:hover {
+    border-color: var(--ink-soft);
+    color: var(--ink);
+    background: var(--bg-raise);
+  }
+  .time-chip.on {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .time-chip-num {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .time-chip-unit {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .time-chip.on .time-chip-unit { color: var(--bg); opacity: .7; }
+
+  /* timer badge in quiz */
+  .timer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule-strong);
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .06em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .timer-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .timer-badge.warn {
+    border-color: var(--gold-edge);
+    background: var(--gold-bg);
+    color: var(--gold);
+  }
+  .timer-badge.warn::before { background: var(--gold); }
+  .timer-badge.danger {
+    border-color: var(--wrong-edge);
+    background: var(--wrong-bg);
+    color: var(--wrong);
+    animation: pulse 1s ease-in-out infinite;
+  }
+  .timer-badge.danger::before { background: var(--wrong); }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .55; }
+  }
+
+  /* test-mode notice strip in quiz view */
+  .test-notice {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 9px 14px;
+    background: var(--bg-2);
+    border-left: 2px solid var(--accent);
+    margin-bottom: 16px;
+  }
+  .test-notice strong {
+    color: var(--ink);
+    margin-right: 8px;
+  }
+
+  /* time-up banner on results */
+  .timeup-banner {
+    background: var(--wrong-bg);
+    border: 1px solid var(--wrong-edge);
+    border-left: 3px solid var(--wrong);
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .timeup-banner strong { color: var(--wrong); }
+
+  /* setup summary line */
+  .setup-summary {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+  }
+  .setup-summary .ss-item .ss-key {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 3px;
+  }
+  .setup-summary .ss-item .ss-val {
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .setup-summary .ss-item .ss-val.accent { color: var(--accent); }
+
+  /* utilities */
+  .hidden { display: none !important; }
+  .fade-in { animation: fade .35s ease both; }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* selection color */
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* ── NEW QUESTION TYPES: fitb · scenario ─────────────────────────── */
+  .qtype-tag.fitb     { background: #4E7DAA; color: #ECE6D7; }
+  .qtype-tag.scenario { background: #7B6BA0; color: #ECE6D7; }
+
+  /* Fill-in-the-blank ──────────────────────────────────────────────── */
+  .fitb-wrapper { margin-top: 4px; }
+  .fitb-input {
+    display: block; width: 100%; max-width: 420px;
+    font-family: var(--mono); font-size: 16px; letter-spacing: .04em;
+    padding: 13px 16px; background: var(--bg-deep);
+    border: 2px solid var(--rule-strong); color: var(--ink);
+    outline: none; transition: border-color .15s ease; margin-top: 8px;
+  }
+  .fitb-input:focus      { border-color: var(--accent); }
+  .fitb-input:read-only  { cursor: default; }
+  .fitb-input.is-correct { border-color: var(--correct); background: var(--correct-bg); color: var(--correct); }
+  .fitb-input.is-wrong   { border-color: var(--wrong);   background: var(--wrong-bg);   color: var(--wrong); }
+  .fitb-hint {
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: .1em; color: var(--ink-mute); margin-top: 10px;
+  }
+  .fitb-result {
+    margin-top: 14px; padding: 12px 16px;
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: .03em; line-height: 1.65;
+  }
+  .fitb-result.correct { background: var(--correct-bg); border: 1px solid var(--correct-edge); color: var(--correct); }
+  .fitb-result.wrong   { background: var(--wrong-bg);   border: 1px solid var(--wrong-edge);   color: var(--wrong); }
+  .fitb-result code { font-family: var(--mono); background: rgba(0,0,0,.28); padding: 1px 7px; border-radius: 2px; color: inherit; }
+  .fitb-fb {
+    margin-top: 14px; padding: 12px 16px;
+    border-left: 2px solid var(--rule-strong);
+    font-family: var(--display); font-size: 14px;
+    font-style: italic; color: var(--ink-soft); line-height: 1.5;
+  }
+  .fitb-fb code {
+    font-family: var(--mono); font-style: normal; font-size: .88em;
+    background: var(--bg); border: 1px solid var(--rule); padding: 1px 4px; color: var(--ink);
+  }
+
+  /* Scenario context block ─────────────────────────────────────────── */
+  .scenario-context {
+    background: var(--bg-deep); border-left: 3px solid var(--gold);
+    padding: 14px 18px; margin-bottom: 22px;
+  }
+  .scenario-context-eyebrow {
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .scenario-context-body {
+    font-family: var(--display); font-size: 15px; color: var(--ink-soft); line-height: 1.5;
+  }
+  .scenario-context-body code {
+    font-family: var(--mono); font-size: .88em; color: var(--ink);
+    background: var(--bg); padding: 1px 5px; border-radius: 2px;
+  }
+
+  /* ── EXAM SIMULATION (weighted blueprint mode) ──────────────── */
+  /* The exam toggle uses the gold accent to set it apart from the
+     ordinary (terracotta) focus / timer toggles.                   */
+  .toggle.exam.on { background: var(--gold-bg); border-color: var(--gold); }
+  .toggle.exam.on::after { background: var(--gold); }
+
+  /* Controls that exam mode overrides get visually locked.        */
+  .locked { opacity: .38; pointer-events: none; filter: saturate(.5); }
+
+  /* Blueprint-coverage readout shown under the exam toggle.       */
+  .exam-coverage {
+    border: 1px solid var(--gold-edge);
+    background: var(--gold-bg);
+    padding: 12px 16px;
+    margin-top: 10px;
+  }
+  .exam-coverage .ec-line {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em;
+    color: var(--ink-soft); line-height: 1.7;
+  }
+  .exam-coverage .ec-line strong { color: var(--gold); font-weight: 600; }
+  .exam-coverage .ec-missing { color: var(--ink-mute); }
+
+  /* Per-objective breakdown table on the results screen.          */
+  .obj-break { margin: 34px 0 8px; }
+  .obj-break-title {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-mute);
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 8px; margin-bottom: 4px;
+  }
+  .obj-row {
+    display: grid;
+    grid-template-columns: 1fr 96px 64px;
+    gap: 14px; align-items: center;
+    padding: 9px 2px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .obj-row-label { font-size: 13.5px; color: var(--ink-soft); }
+  .obj-row-bar {
+    height: 6px; background: var(--bg-deep);
+    border: 1px solid var(--rule-strong);
+    position: relative; overflow: hidden;
+  }
+  .obj-row-bar i {
+    position: absolute; inset: 0; right: auto;
+    background: var(--correct);
+  }
+  .obj-row.weak .obj-row-bar i { background: var(--wrong); }
+  .obj-row-pct {
+    font-family: var(--mono); font-size: 12px; text-align: right;
+    color: var(--ink-soft);
+  }
+  .obj-row.weak .obj-row-pct { color: var(--wrong); }
+
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!--
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║  MASTHEAD (top bar)                                              ║
+    ║  All visible text comes from CONFIG.masthead.* in the <script>   ║
+    ║  block below. Do not hardcode subject names here.                ║
+    ╚══════════════════════════════════════════════════════════════════╝
+  -->
+  <header class="masthead">
+    <div class="masthead-left">
+      <span class="codex" id="cfg-masthead-codex"></span>
+      <span class="crumb" id="cfg-masthead-crumb"></span>
+    </div>
+    <span class="stamp" id="cfg-masthead-stamp"></span>
+  </header>
+
+  <!-- SETUP VIEW -->
+  <section id="view-setup" class="fade-in">
+    <div class="hero">
+      <!--
+        Hero block. Text comes from CONFIG.hero.*
+          • eyebrow      → small uppercase mono label above the big title
+          • titleHtml    → the big serif title (HTML allowed: wrap part in <em>…</em> for italic accent colour)
+          • ledeHtml     → paragraph description below the title (HTML allowed, use <code> for monospace)
+      -->
+      <div class="eyebrow" id="cfg-hero-eyebrow"></div>
+      <h1 class="display" id="cfg-hero-title"></h1>
+      <p class="lede" id="cfg-hero-lede"></p>
+    </div>
+
+    <hr class="divider-double" />
+
+    <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  QUIZ-LENGTH PRESETS                                             ║
+      ║  Cards are generated from CONFIG.lengthOptions. To add or remove ║
+      ║  presets, edit that array in the <script> below — no HTML edits  ║
+      ║  needed here.                                                    ║
+      ╚══════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="section-label" id="cfg-length-section-label"></div>
+
+    <div class="count-grid" id="countGrid">
+      <!-- count cards injected by JS from CONFIG.lengthOptions -->
+    </div>
+
+    <div class="section-label" id="cfg-focus-section-label"></div>
+
+    <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  EXAM SIMULATION TOGGLE  (gold switch)                           ║
+      ║  Draws questions per-objective according to the blueprint       ║
+      ║  weights in the pack. All text + numbers come from               ║
+      ║  the pack's `exam` block — no HTML edits needed.                 ║
+      ║  To remove this feature entirely: omit `exam` from the pack.     ║
+      ╚══════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="opt-section" id="examSection">
+      <div class="opt-toggle-row" id="examToggleRow">
+        <div class="opt-toggle-text">
+          <div class="ot-title" id="cfg-exam-title"></div>
+          <div class="ot-sub" id="examSub"></div>
+        </div>
+        <div class="toggle exam" id="examToggle" role="switch" aria-checked="false" tabindex="0"></div>
+      </div>
+      <div class="exam-coverage hidden" id="examCoverage">
+        <div class="ec-line" id="examCoverageLine"></div>
+      </div>
+    </div>
+
+    <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  FOCUS TOGGLE + TOPIC PICKER                                     ║
+      ║  Topic chips are generated from CONFIG.categories. To hide this  ║
+      ║  whole section, set CONFIG.showFocusOption = false.              ║
+      ╚══════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="opt-section" id="focusSection">
+      <div class="opt-toggle-row" id="focusToggleRow">
+        <div class="opt-toggle-text">
+          <div class="ot-title" id="cfg-focus-title"></div>
+          <div class="ot-sub" id="focusSub"></div>
+        </div>
+        <div class="toggle" id="focusToggle" role="switch" aria-checked="false" tabindex="0"></div>
+      </div>
+      <div class="topic-grid hidden" id="topicGrid">
+        <!-- chips injected by JS -->
+      </div>
+    </div>
+
+    <!--
+      ╔══════════════════════════════════════════════════════════════════╗
+      ║  TIMER TOGGLE + TIME PICKER                                      ║
+      ║  Time chips are generated from CONFIG.timeOptions. To hide this  ║
+      ║  whole section, set CONFIG.showTimerOption = false.              ║
+      ╚══════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="opt-section" id="timerSection">
+      <div class="opt-toggle-row" id="timerToggleRow">
+        <div class="opt-toggle-text">
+          <div class="ot-title" id="cfg-timer-title"></div>
+          <div class="ot-sub" id="timerSub"></div>
+        </div>
+        <div class="toggle" id="timerToggle" role="switch" aria-checked="false" tabindex="0"></div>
+      </div>
+      <div class="time-picker hidden" id="timePicker">
+        <!-- time chips injected by JS from CONFIG.timeOptions -->
+      </div>
+    </div>
+
+    <!--
+      Meta-row. Labels come from CONFIG.metaLabels. The dynamic values
+      (pool size, randomisation note, etc.) are computed from BANK and
+      written by JS at runtime.
+    -->
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-key" id="cfg-meta-pool-key"></div>
+        <div class="meta-val" id="cfg-meta-pool-val"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-key" id="cfg-meta-rand-key"></div>
+        <div class="meta-val" id="cfg-meta-rand-val"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-key" id="cfg-meta-feedback-key"></div>
+        <div class="meta-val" id="feedbackTimingMeta"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-key" id="cfg-meta-scoring-key"></div>
+        <div class="meta-val" id="cfg-meta-scoring-val"></div>
+      </div>
+    </div>
+
+    <div class="setup-summary">
+      <div class="ss-item">
+        <div class="ss-key">Length</div>
+        <div class="ss-val accent" id="ssLength">20 questions</div>
+      </div>
+      <div class="ss-item">
+        <div class="ss-key">Mode</div>
+        <div class="ss-val" id="ssMode">Practice</div>
+      </div>
+      <div class="ss-item">
+        <div class="ss-key">Focus</div>
+        <div class="ss-val" id="ssFocus">All topics</div>
+      </div>
+      <div class="ss-item">
+        <div class="ss-key">Time</div>
+        <div class="ss-val" id="ssTime">Untimed</div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <span class="crumb" id="poolNote">Drawing from <strong id="poolAvailable" style="color: var(--accent); font-family: var(--display); font-size: 16px; letter-spacing: 0;">81</strong> available questions</span>
+      <button class="btn" id="startBtn">Begin Quiz →</button>
+    </div>
+  </section>
+
+  <!-- QUIZ VIEW -->
+  <section id="view-quiz" class="hidden">
+    <div class="progress-info">
+      <div class="qcount">Question <strong><span id="qNow">1</span></strong> / <span id="qTotal">20</span></div>
+      <div id="progressRight"><span id="checkedCount">0</span> checked</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="test-notice hidden" id="testNotice">
+      <strong>Test mode</strong>Answers are reviewed at the end. Navigate freely with Previous / Next.
+    </div>
+
+    <div class="question-jumper" id="jumper"></div>
+
+    <div id="quizContent"></div>
+
+    <div class="nav-row">
+      <button class="btn ghost" id="prevBtn">← Previous</button>
+      <div class="nav-right">
+        <button class="btn ghost" id="abandonBtn">Abandon</button>
+        <button class="btn primary" id="checkBtn">Check Answer</button>
+        <button class="btn" id="nextBtn">Next →</button>
+        <button class="btn primary" id="finishBtn">View Final Score →</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-results" class="hidden"></section>
+
+  <footer class="colophon">
+    <span id="cfg-footer-left"></span>
+    <span id="cfg-footer-right"></span>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   CONTENT PACK — injected by build.py. The engine below reads
+   everything through the CONFIG / BANK / CATEGORIES adapter.
+   ============================================================ */
+const PACK = {"meta":{"packId":"it2311","subject":"IT2311 Principles of Communication","version":"1.0.5","author":"STI Meycauayan BSIT","updated":"2026-09-01","pageTitle":"IT2311 Principles of Communication — Reviewer","masthead":{"codex":"IT2311","crumb":"Principles of Communication","stamp":"Reviewer"},"hero":{"eyebrow":"Course Reviewer","titleHtml":"Principles of <em>Communication<\/em>","ledeHtml":"Practice questions across the IT2311 lesson handouts — MCQ, multi-select, scenario, and fill-in-the-blank items with instant feedback on every check."},"footer":{"left":"IT2311 Principles of Communication · STI handouts","right":"Self-paced practice"}},"ui":{"lengthOptions":[{"count":10,"label":"Quick check"},{"count":20,"label":"Warm-up","default":true},{"count":35,"label":"Standard"},{"count":50,"label":"Deep drill"}],"timeOptions":[{"minutes":5},{"minutes":10,"default":true},{"minutes":20},{"minutes":30}]},"categories":[{"key":"01","label":"01 Communication Systems"},{"key":"02","label":"02 Signals and Spectra"},{"key":"04","label":"04 Frequency and Phase Modulation"},{"key":"05","label":"05 Noise and Distortion"},{"key":"06","label":"06 Reception and Detection"},{"key":"07","label":"07 Information Theory"}],"questions":[{"cat":"01","type":"scenario","stem":"Which approach satisfies the requirement?","context":"A marine monitoring station must detect underwater engine sounds without sending any sound pulse into the water.","options":[{"t":"Active sonar that measures a reflected echo","c":false,"fb":"[M2] This assumes all underwater detection must depend on an emitted pulse and its reflection."},{"t":"Passive sonar using sensitive hydrophones","c":true,"fb":"Passive sonar listens for sounds already present in the water."},{"t":"Free-space radio directed below the water","c":false,"fb":"[M1] This substitutes a different channel instead of selecting the listening-only sonar behavior."},{"t":"Active sonar that repeatedly transmits pulses","c":false,"fb":"[M3] This focuses on sonar hardware while overlooking that transmitting pulses violates the requirement."}]},{"cat":"01","type":"mcq","stem":"Which statement correctly describes active sonar?","options":[{"t":"It carries information through an optical fiber.","c":false,"fb":"[M1] This confuses an underwater sensing method with a light-based communication channel."},{"t":"It only listens for naturally occurring underwater sounds.","c":false,"fb":"[M2] This assigns the defining listening-only behavior of the contrasting sonar mode."},{"t":"It uses reflected echoes to determine underwater distance and movement direction.","c":true,"fb":"Active sonar sends a signal and evaluates the returning echo."},{"t":"It requires simultaneous two-way voice communication.","c":false,"fb":"[M3] This confuses sonar behavior with a communication-direction category."}]},{"cat":"01","type":"mcq","stem":"A receiver stage must produce an increased version of a weak input signal. Which component is required?","options":[{"t":"Mixer","c":false,"fb":"[M3] This selects a component because it processes signals, but its defining operation is combining them."},{"t":"Amplifier","c":true,"fb":"An amplifier increases the version of the signal applied to its input."},{"t":"Oscillator","c":false,"fb":"[M1] This assumes the needed signal should be generated rather than increased from an existing input."},{"t":"Tuned circuit","c":false,"fb":"[M2] This confuses responsiveness to a frequency with increasing signal level."}]},{"cat":"01","type":"mcq","stem":"Which behavior is NOT the defining function of an amplifier?","options":[{"t":"Accepting an input signal","c":false,"fb":"An amplifier works from an applied input signal."},{"t":"Producing an increased version","c":false,"fb":"Increasing the input version is its defining receiver function."},{"t":"Raising the signal supplied to a later stage","c":false,"fb":"This is consistent with producing an increased signal version."},{"t":"Generating a repeated waveform without input","c":true,"fb":"That behavior defines a different receiver component, not an amplifier."}]},{"cat":"01","type":"mcq","stem":"Which receiver component can produce a continuous, repeated, alternating waveform without an input?","options":[{"t":"Oscillator","c":true,"fb":"This is the defining behavior of an oscillator."},{"t":"Amplifier","c":false,"fb":"[M2] This assumes increasing an existing signal is the same as generating a waveform."},{"t":"Filter","c":false,"fb":"[M3] This treats frequency-dependent signal processing as waveform generation."},{"t":"Mixer","c":false,"fb":"[M1] A mixer operates on two or more supplied signals rather than producing the stated waveform independently."}]},{"cat":"01","type":"multi","stem":"Which TWO statements are consistent with an oscillator as described in the handout? Select the TWO correct statements.","options":[{"t":"It produces a repeated alternating waveform.","c":true,"fb":"Repetition and alternation characterize its output."},{"t":"It must receive two signals before operating.","c":false,"fb":"[M1] This imports the input requirement of a combining component."},{"t":"It can produce its waveform without an input.","c":true,"fb":"Independent waveform production is part of the definition."},{"t":"Its only role is to attenuate unwanted frequencies.","c":false,"fb":"[M3] This assigns frequency-removal behavior to waveform generation."},{"t":"It merely enlarges a weak applied signal.","c":false,"fb":"[M2] This substitutes input amplification for independent generation."}]},{"cat":"01","type":"mcq","stem":"What is the defining operation of a mixer?","options":[{"t":"Producing a waveform without input","c":false,"fb":"[M2] This ignores that mixing begins with multiple supplied signals."},{"t":"Combining two or more electronic signals","c":true,"fb":"A mixer combines multiple signals into one or two outputs."},{"t":"Increasing only the input amplitude","c":false,"fb":"[M1] This reduces the operation to signal enlargement instead of combination."},{"t":"Attenuating every frequency equally","c":false,"fb":"[M3] This treats mixing as a frequency-removal operation."}]},{"cat":"01","type":"scenario","stem":"Which component performs this operation?","context":"Two electronic signals enter one receiver stage. The stage produces a new combined output for later processing.","options":[{"t":"Filter","c":false,"fb":"[M3] The presence of signal processing does not mean frequencies are being selectively attenuated."},{"t":"Amplifier","c":false,"fb":"[M1] Increasing one signal does not account for the combination of two inputs."},{"t":"Tuned circuit","c":false,"fb":"[M2] Frequency responsiveness does not explain the two-input combination."},{"t":"Mixer","c":true,"fb":"A mixer accepts two or more signals and produces combined output signals."}]},{"cat":"01","type":"mcq","stem":"Which pair of components forms the tuned or resonant circuit described in the handout?","options":[{"t":"Resistor and transistor","c":false,"fb":"[M2] This substitutes unrelated parts and omits both elements in the stated resonant combination."},{"t":"Amplifier and filter","c":false,"fb":"[M1] This combines receiver functions rather than the required circuit elements."},{"t":"Inductor and capacitor","c":true,"fb":"A tuned circuit combines an inductor and capacitor."},{"t":"Oscillator and mixer","c":false,"fb":"[M3] These are receiver components, but they do not constitute the stated resonant pair."}]},{"cat":"01","type":"mcq","stem":"What behavior results from combining an inductor and capacitor as a tuned circuit?","options":[{"t":"The circuit becomes responsive to a frequency.","c":true,"fb":"Frequency responsiveness is the stated purpose of the resonant combination."},{"t":"The circuit creates binary characters.","c":false,"fb":"[M3] This assigns a coding function to a frequency-responsive circuit."},{"t":"The circuit combines two message signals.","c":false,"fb":"[M1] This mistakes resonance for multi-signal combination."},{"t":"The circuit generates a waveform without input.","c":false,"fb":"[M3] This confuses responsiveness with independent waveform production."}]},{"cat":"01","type":"mcq","stem":"Which receiver component amplifies specific frequencies while attenuating others?","options":[{"t":"Oscillator","c":false,"fb":"[M1] This selects waveform generation rather than differing treatment of frequencies."},{"t":"Mixer","c":false,"fb":"[M3] Combining signals does not by itself favor some frequencies and weaken others."},{"t":"Amplifier","c":false,"fb":"[M2] This overlooks the requirement to treat frequency groups differently."},{"t":"Filter","c":true,"fb":"A filter favors specified frequencies and attenuates others."}]},{"cat":"01","type":"scenario","stem":"Which stage should process the signal?","context":"A receiver contains a desired frequency together with unwanted frequencies. A stage must favor the desired frequency and reduce the others.","options":[{"t":"Filter","c":true,"fb":"A filter can favor specific frequencies while attenuating unwanted ones."},{"t":"Mixer","c":false,"fb":"[M3] Combining signals would not directly satisfy the selective-frequency requirement."},{"t":"Oscillator","c":false,"fb":"[M1] Producing a new waveform does not selectively reduce the unwanted frequencies."},{"t":"Amplifier","c":false,"fb":"[M2] General signal enlargement could also enlarge unwanted content."}]},{"cat":"01","type":"mcq","stem":"Which behavior is NOT consistent with the handout's description of a filter?","options":[{"t":"Favoring selected frequencies","c":false,"fb":"Selective treatment of frequencies is consistent with filtering."},{"t":"Attenuating other frequencies","c":false,"fb":"Weakening other frequencies is part of the stated behavior."},{"t":"Treating different frequencies differently","c":false,"fb":"This follows from favoring some frequencies and attenuating others."},{"t":"Combining two inputs as its defining operation","c":true,"fb":"A filter is characterized by frequency selection, not by combining multiple inputs."}]},{"cat":"01","type":"mcq","stem":"A television broadcaster sends programming to a television set, but the set cannot send information back through that connection. What mode is used?","options":[{"t":"Full duplex","c":false,"fb":"[M2] This assumes simultaneous return transmission exists even though the receiver cannot reply."},{"t":"Simplex","c":true,"fb":"Simplex carries information in one direction only."},{"t":"Half-duplex","c":false,"fb":"[M2] Taking turns still requires both directions, which this connection lacks."},{"t":"Analog","c":false,"fb":"[M3] This classifies the signal form instead of its allowed direction."}]},{"cat":"01","type":"mcq","stem":"Which statement distinguishes duplex communication from simplex communication?","options":[{"t":"Duplex always uses a digital signal.","c":false,"fb":"[M3] This confuses transmission direction with analog or digital signal form."},{"t":"Duplex requires only one physical device.","c":false,"fb":"[M3] Direction is not determined by simply counting devices."},{"t":"Duplex permits information in both directions.","c":true,"fb":"Two-way transmission is the common property of duplex modes."},{"t":"Duplex permits transmission in only one direction.","c":false,"fb":"[M1] This assigns the defining limitation of simplex to duplex."}]},{"cat":"01","type":"mcq","stem":"A ground-based television station transmits programming to a satellite over a one-way connection. What is this connection?","options":[{"t":"Simplex uplink","c":true,"fb":"The signal travels one way from the ground toward the satellite."},{"t":"Simplex downlink","c":false,"fb":"[M2] This reverses the direction relative to the satellite."},{"t":"Full-duplex link","c":false,"fb":"[M1] This assumes the connection supports a simultaneous return signal."},{"t":"Half-duplex link","c":false,"fb":"[M3] This treats a one-way connection as though its direction alternated."}]},{"cat":"01","type":"mcq","stem":"A satellite sends television programming to a home antenna, and the home antenna does not reply through that connection. How should the link be classified?","options":[{"t":"Half-duplex uplink","c":false,"fb":"[M2] Both the satellite-relative direction and capability are misclassified."},{"t":"Full-duplex downlink","c":false,"fb":"[M1] The receiving endpoint cannot transmit back through the connection."},{"t":"Simplex uplink","c":false,"fb":"[M2] This reverses the direction of travel from satellite to ground."},{"t":"Simplex downlink","c":true,"fb":"It is a one-way transmission from the satellite to a ground receiver."}]},{"cat":"01","type":"mcq","stem":"Two people on a telephone can talk and listen simultaneously. Which mode does this demonstrate?","options":[{"t":"Simplex","c":false,"fb":"[M2] This ignores that information can travel in both directions."},{"t":"Full duplex","c":true,"fb":"Full duplex permits simultaneous transmission and reception."},{"t":"Half-duplex","c":false,"fb":"[M3] Half-duplex requires the parties to take turns."},{"t":"Downlink","c":false,"fb":"[M1] This substitutes a one-way satellite-direction term for a duplex mode."}]},{"cat":"01","type":"multi","stem":"Which TWO statements correctly describe half-duplex communication? Select the TWO correct statements.","options":[{"t":"It supports communication in both directions.","c":true,"fb":"Half-duplex is a form of two-way communication."},{"t":"Both parties transmit simultaneously.","c":false,"fb":"[M3] This assigns full-duplex timing to half-duplex operation."},{"t":"The direction alternates.","c":true,"fb":"Transmitting and receiving occur by taking turns."},{"t":"The receiver can never send information back.","c":false,"fb":"[M2] This reduces half-duplex to one-way simplex communication."},{"t":"Every two-way link must operate this way.","c":false,"fb":"[M1] This overlooks the simultaneous alternative provided by full duplex."}]},{"cat":"01","type":"mcq","stem":"Which property defines an analog signal?","options":[{"t":"It varies only between binary 0 and 1.","c":false,"fb":"[M2] This substitutes discrete binary levels for continuous variation."},{"t":"It is always a single-frequency sine wave.","c":false,"fb":"[M1] A sine wave is one example, not the only analog signal."},{"t":"It is a continuously varying voltage or current.","c":true,"fb":"Continuous variation is the defining characteristic given in the handout."},{"t":"It must represent letters using ASCII.","c":false,"fb":"[M3] This assigns a digital character-coding requirement to analog signals."}]},{"cat":"01","type":"multi","stem":"Which THREE are identified in the handout as analog signals? Select the THREE correct statements.","options":[{"t":"Voice voltage","c":true,"fb":"Voice voltage varies according to sound information."},{"t":"Television signal","c":true,"fb":"A television signal is listed as a typical analog signal."},{"t":"Sine-wave tone","c":true,"fb":"A sine wave is a single-frequency analog signal."},{"t":"Serial binary code","c":false,"fb":"[M2] This uses discrete binary increments rather than continuous variation."},{"t":"Morse-code marks","c":false,"fb":"[M1] The handout categorizes Morse code as a digital-signal example."}]},{"cat":"01","type":"mcq","stem":"A light sensor produces a voltage that follows gradual changes in light level. Why is the output analog?","options":[{"t":"It is sent only through free space.","c":false,"fb":"[M3] The transmission medium does not determine whether the signal varies continuously."},{"t":"It uses seven units between words.","c":false,"fb":"[M1] This imports a Morse timing rule unrelated to sensor variation."},{"t":"It contains only fixed binary steps.","c":false,"fb":"[M2] Fixed discrete steps would contradict the described gradual variation."},{"t":"It varies continuously with the detected light.","c":true,"fb":"A sensor can produce an analog signal that follows a physical variation."}]},{"cat":"01","type":"mcq","stem":"How does a digital signal vary according to the handout?","options":[{"t":"Continuously at every possible value","c":false,"fb":"[M2] This assigns the defining behavior of an analog signal."},{"t":"In discrete increments","c":true,"fb":"Digital signals change through separate levels or increments."},{"t":"Only as a single-frequency sine wave","c":false,"fb":"[M1] This mistakes an analog waveform example for the definition of digital signaling."},{"t":"Only when carried by optical fiber","c":false,"fb":"[M3] Signal form is not restricted to one communication medium."}]},{"cat":"01","type":"multi","stem":"Which THREE are listed as digital-signal examples? Select the THREE correct statements.","options":[{"t":"Telegraph or Morse code","c":true,"fb":"Morse signaling is identified as digital."},{"t":"Continuous-wave code","c":true,"fb":"CW code is included among the handout's digital examples."},{"t":"Serial binary code","c":true,"fb":"Serial binary signaling changes using discrete values."},{"t":"Voice voltage","c":false,"fb":"[M2] Voice voltage follows continuous sound variation."},{"t":"Television signal","c":false,"fb":"[M1] The handout lists television signals with typical analog signals."}]},{"cat":"01","type":"mcq","stem":"How does continuous-wave code represent Morse information?","options":[{"t":"By switching a sine-wave carrier on and off for short or long durations","c":true,"fb":"Short and long carrier durations represent dots and dashes."},{"t":"By varying voice voltage continuously","c":false,"fb":"[M3] This substitutes analog voice behavior for keyed radio telegraphy."},{"t":"By keeping the carrier permanently on","c":false,"fb":"[M1] This ignores the off periods required to separate keyed marks."},{"t":"By using only the carrier's direction of travel","c":false,"fb":"[M2] Direction does not encode the short and long Morse marks."}]},{"cat":"01","type":"mcq","stem":"When converting the Morse letter R, dot-dash-dot, into a CW signal, what should represent the dash?","options":[{"t":"A short sine-wave duration","c":false,"fb":"[M2] This reverses the duration assigned to the long Morse mark."},{"t":"A long sine-wave duration","c":true,"fb":"In CW signaling, a long carrier-on duration represents a dash."},{"t":"A permanently absent carrier","c":false,"fb":"[M1] An off interval separates marks but does not represent the dash itself."},{"t":"A continuously varying voice voltage","c":false,"fb":"[M3] This replaces keyed carrier duration with analog voice variation."}]},{"cat":"01","type":"mcq","stem":"Which action is NOT part of the handout's CW conversion procedure?","options":[{"t":"Obtain the character's Morse-code value.","c":false,"fb":"The Morse pattern must be known before its carrier durations can be produced."},{"t":"Use a short sine-wave duration for a dot.","c":false,"fb":"A short duration is the specified representation of a dot."},{"t":"Use a long sine-wave duration for a dash.","c":false,"fb":"A long duration is the specified representation of a dash."},{"t":"Convert each mark into a continuously varying voice voltage.","c":true,"fb":"CW conversion uses keyed carrier durations rather than analog voice variation."}]},{"cat":"01","type":"mcq","stem":"What is ASCII according to the handout?","options":[{"t":"An underwater echo technique","c":false,"fb":"[M1] This confuses character representation with sonar behavior."},{"t":"A receiver frequency-selection circuit","c":false,"fb":"[M1] This assigns a hardware function to a digital communication code."},{"t":"A commonly used digital communication code","c":true,"fb":"ASCII is identified as the American Standard Code for Information Interchange."},{"t":"A continuously varying voice signal","c":false,"fb":"[M3] This substitutes analog information for coded digital characters."}]},{"cat":"01","type":"mcq","stem":"In the binary signal representation described in the handout, where is a binary 1 placed?","options":[{"t":"At the specified height or amplitude","c":true,"fb":"A 1 is represented at the given amplitude level."},{"t":"At the starting voltage only","c":false,"fb":"[M2] This reverses the stated placement of binary 1 and binary 0."},{"t":"In a seven-unit blank interval","c":false,"fb":"[M1] This imports a Morse word-spacing rule into binary level representation."},{"t":"As a long sine-wave carrier duration","c":false,"fb":"[M3] This confuses binary voltage levels with CW keying durations."}]},{"cat":"01","type":"scenario","stem":"Which description is correct?","context":"A computer converts a character to its ASCII binary value and sends the bits one after another through a wire.","options":[{"t":"ASCII cannot pass through an electrical conductor.","c":false,"fb":"[M1] This treats ASCII as though it were restricted to a different physical medium."},{"t":"The character must first become a continuous voice voltage.","c":false,"fb":"[M3] This assumes digital character data requires analog voice conversion."},{"t":"Every 0 must be placed at the specified high amplitude.","c":false,"fb":"[M2] This reverses the level assigned to 0 in the stated representation."},{"t":"The binary code is being transferred serially.","c":true,"fb":"Sending the bits one after another is serial transfer."}]},{"cat":"01","type":"mcq","stem":"Which sequence correctly gives the five blocks of a communication system?","options":[{"t":"Source, Channel, Transmitter, Destination, Receiver","c":false,"fb":"This places the channel before the device that prepares the message for transmission."},{"t":"Transmitter, Source, Receiver, Channel, Destination","c":false,"fb":"This starts processing before identifying where the message originates."},{"t":"Information Source, Transmitter, Channel, Receiver, Destination","c":true,"fb":"This is the five-stage order specified in the handout."},{"t":"Information Source, Receiver, Channel, Transmitter, Destination","c":false,"fb":"This reverses the transmitting and receiving stages around the channel."}]},{"cat":"01","type":"mcq","stem":"Which input device and conversion are correctly matched?","options":[{"t":"Microphone: sound to electronic audio signal","c":true,"fb":"A microphone converts voice sound into an electronic audio signal."},{"t":"Camera: pressure to serial binary code","c":false,"fb":"A camera responds to light information rather than pressure."},{"t":"Keyboard: light scene to video signal","c":false,"fb":"A keyboard enters messages that can be converted to binary codes."},{"t":"Light transducer: audio signal to sound","c":false,"fb":"The stated input transducer converts a physical light quantity into an electronic signal."}]},{"cat":"01","type":"mcq","stem":"Which channel-description pairing is correct?","options":[{"t":"Electrical conductor: carries all messages on a light wave","c":false,"fb":"Light-wave carriage identifies optical media rather than a metal conductor."},{"t":"Optical medium: may use fiber-optic cable or a light pipe","c":true,"fb":"Fiber-optic cable and light pipe are the optical-media examples given."},{"t":"Free space: requires a pair of metal wires","c":false,"fb":"Free-space communication is wireless rather than wire-bound."},{"t":"Water: used only for television broadcasting","c":false,"fb":"Water is identified as the medium in special systems such as sonar."}]},{"cat":"01","type":"mcq","stem":"A Morse-code message contains a dot, a dash, a gap within one letter, a gap between letters, and a gap between words. Which timing sequence is correct?","options":[{"t":"1, 3, 1, 3, 7 units","c":true,"fb":"These values follow the dot, dash, intra-letter, inter-letter, and inter-word timing rules."},{"t":"1, 2, 3, 5, 7 units","c":false,"fb":"This treats Morse timing as an increasing sequence rather than using its defined intervals."},{"t":"3, 1, 3, 1, 7 units","c":false,"fb":"This reverses the timings of dots and dashes and of the two shorter spacing types."},{"t":"1, 3, 3, 1, 7 units","c":false,"fb":"This exchanges the one-unit intra-letter gap with the three-unit inter-letter gap."}]},{"cat":"01","type":"multi","stem":"Which FIVE year-event-person or organization combinations agree with the handout's history table? Select the FIVE correct statements.","options":[{"t":"1837: telegraph, Samuel Morse","c":true,"fb":"The table associates Morse's telegraph invention with 1837."},{"t":"1876: telephone, Alexander Graham Bell","c":true,"fb":"The telephone milestone is associated with Bell and 1876."},{"t":"1887: radio-wave discovery, Heinrich Hertz","c":true,"fb":"Hertz's radio-wave discovery is listed for 1887."},{"t":"1901: transatlantic radio contact, Guglielmo Marconi","c":true,"fb":"Marconi's first transatlantic radio contact is listed for 1901."},{"t":"1906: amplitude modulation, Reginald Fessenden","c":true,"fb":"Fessenden's amplitude-modulation milestone is listed for 1906."},{"t":"1920: first radio broadcast, Bell Laboratories","c":false,"fb":"This combines the broadcast year with an organization associated with a later hardware milestone."},{"t":"1923: television demonstration, Tim Berners-Lee","c":false,"fb":"This places a later Internet figure into the early television milestone."},{"t":"2007: first LTE networks, Apple iPhone","c":false,"fb":"This merges the iPhone milestone with the later LTE network milestone."},{"t":"2019: beginning of 5G service, United States","c":false,"fb":"This replaces the country identified in the handout for the 2019 milestone."}]},{"cat":"01","type":"mcq","stem":"In communication systems, what does the term \"information\" or \"intelligence signal\" refer to?","options":[{"t":"The message represented in the form of an electronic signal","c":true,"fb":"In electronic systems, the message is called information or an intelligence signal and takes the form of an electronic signal."},{"t":"The physical electronic channel used to carry a signal","c":false,"fb":"The physical medium is the communication channel, not the intelligence signal."},{"t":"The electronic circuit stages that amplify incoming signals","c":false,"fb":"These circuits process a transmitted signal rather than constitute the original message."},{"t":"The final destination device that receives a signal","c":false,"fb":"The final recipient is the destination, while the intelligence signal is the electronic form of the message."}]},{"cat":"01","type":"mcq","stem":"Which form of communication relies on body language rather than spoken words or electronic devices?","options":[{"t":"Nonverbal communication","c":true,"fb":"The handout identifies body language as an example of nonverbal communication."},{"t":"Verbal communication","c":false,"fb":"Verbal communication involves spoken or written language rather than body language."},{"t":"Electronic communication","c":false,"fb":"Electronic communication involves electronic devices, transmitters, and receivers."},{"t":"Print communication","c":false,"fb":"Print communication involves printed text rather than physical body language."}]},{"cat":"01","type":"scenario","stem":"Which option correctly identifies Ana's original voice message and Ben's role in the block diagram?","context":"Ana speaks a voice message into a communication system. Ben receives the recovered message and understands what Ana said.","options":[{"t":"Ana's original message is at the Information Source, while Ben represents the Destination.","c":true,"fb":"The Information Source is where the message originates, while the Destination receives and processes the message to understand it."},{"t":"Ana's original message is at the Destination, while Ben represents the Information Source.","c":false,"fb":"This reverses the starting and final blocks of the communication system."},{"t":"Ana's original message is the Channel, while Ben represents the Transmitter.","c":false,"fb":"The channel carries the signal, and the transmitter converts the message into a suitable electronic form."},{"t":"Ana and Ben both represent the Receiver because both are involved in communication.","c":false,"fb":"Ana is associated with the message's origin, while Ben is the final recipient who understands it."}]},{"cat":"01","type":"scenario","stem":"What is the primary role of the Transmitter block in this system?","context":"A podcaster records an episode in a studio. The podcaster speaks ideas into a recording microphone connected to a transmitter.","options":[{"t":"It originates the podcaster's thoughts and ideas.","c":false,"fb":"Originating the message is the function of the Information Source."},{"t":"It converts the original voice message into an electronic form suitable for transmission.","c":true,"fb":"The first step of transmission is converting the message into an electronic form suitable for transmission."},{"t":"It acts as the physical medium that carries the signal through free space.","c":false,"fb":"The medium carrying the signal is the communication channel."},{"t":"It serves as the final destination that comprehends the recorded audio.","c":false,"fb":"Receiving and understanding the message is the role of the Destination block."}]},{"cat":"01","type":"mcq","stem":"Who is associated with the discovery of radio waves in 1887?","options":[{"t":"Heinrich Hertz","c":true,"fb":"Heinrich Hertz is identified with the discovery of radio waves in 1887."},{"t":"Guglielmo Marconi","c":false,"fb":"Marconi is associated with the first transatlantic radio contact in 1901."},{"t":"Reginald Fessenden","c":false,"fb":"Fessenden is associated with the invention of amplitude modulation in 1906."},{"t":"Samuel Morse","c":false,"fb":"Morse is associated with the invention of the telegraph in 1837."}]},{"cat":"01","type":"mcq","stem":"Which organization is associated with the first radio broadcast in 1920?","options":[{"t":"KDKA Pittsburgh","c":true,"fb":"The handout identifies KDKA Pittsburgh with the first radio broadcast in 1920."},{"t":"Bell Laboratories","c":false,"fb":"Bell Laboratories is associated with the invention of the transistor in 1948."},{"t":"BlackBerry","c":false,"fb":"BlackBerry is listed among the companies associated with the first smartphones during 1996–2001."},{"t":"Apple","c":false,"fb":"Apple is associated with the development of the iPhone in 2007."}]},{"cat":"01","type":"mcq","stem":"What communication milestone is associated with Vladimir Zworykin in 1923?","options":[{"t":"The invention and demonstration of the television","c":true,"fb":"Vladimir Zworykin is associated with the invention and demonstration of television in 1923."},{"t":"The discovery of radio waves","c":false,"fb":"Heinrich Hertz is associated with the discovery of radio waves in 1887."},{"t":"The invention of amplitude modulation","c":false,"fb":"Reginald Fessenden is associated with amplitude modulation in 1906."},{"t":"The first use of walkie-talkies","c":false,"fb":"The first use of two-way radios or walkie-talkies is associated with the United States in 1939."}]},{"cat":"01","type":"mcq","stem":"Which organization invented the transistor in 1948?","options":[{"t":"Bell Laboratories","c":true,"fb":"The handout associates Bell Laboratories with the invention of the transistor in 1948."},{"t":"KDKA Pittsburgh","c":false,"fb":"KDKA Pittsburgh is associated with the first radio broadcast in 1920."},{"t":"Apple","c":false,"fb":"Apple is associated with the development of the iPhone in 2007."},{"t":"Nokia","c":false,"fb":"Nokia is listed among the companies associated with the first smartphones during 1996–2001."}]},{"cat":"01","type":"mcq","stem":"Who are associated with the invention of the integrated circuit during 1958–1969?","options":[{"t":"Jack Kilby and Robert Noyce","c":true,"fb":"The handout identifies Jack Kilby and Robert Noyce as the inventors associated with the integrated circuit."},{"t":"Heinrich Hertz and Guglielmo Marconi","c":false,"fb":"Hertz is associated with radio waves, while Marconi is associated with the first transatlantic radio contact."},{"t":"Samuel Morse and Alexander Graham Bell","c":false,"fb":"Morse is associated with the telegraph, while Bell is associated with the telephone."},{"t":"Vladimir Zworykin and Reginald Fessenden","c":false,"fb":"Zworykin is associated with television, while Fessenden is associated with amplitude modulation."}]},{"cat":"01","type":"mcq","stem":"According to Table 1 of the handout, who is associated with the 1982–1990 development and first use of the Internet?","options":[{"t":"Tim Berners-Lee","c":true,"fb":"Table 1 explicitly associates Tim Berners-Lee with the development and first use of the Internet during 1982–1990."},{"t":"Alexander Graham Bell","c":false,"fb":"Bell is associated with the invention of the telephone in 1876."},{"t":"Vladimir Zworykin","c":false,"fb":"Zworykin is associated with the invention and demonstration of television in 1923."},{"t":"Jack Kilby","c":false,"fb":"Kilby is associated with the invention of the integrated circuit together with Robert Noyce."}]},{"cat":"01","type":"scenario","stem":"Which milestone from Table 1 is being described?","context":"A technology retrospective highlights a 2007 milestone in the United States that transformed modern mobile communication and smartphone design.","options":[{"t":"The development of Apple's iPhone","c":true,"fb":"Table 1 identifies the development of Apple's iPhone as a 2007 milestone in the United States."},{"t":"The first use of two-way radios","c":false,"fb":"Two-way radios are listed as a 1939 milestone in the United States."},{"t":"The deployment of the Global Positioning System","c":false,"fb":"GPS deployment is listed as a 1995 milestone in the United States."},{"t":"The first wireless local area networks","c":false,"fb":"The first wireless LANs are listed as a 1997 milestone in the United States."}]},{"cat":"01","type":"mcq","stem":"According to Table 1, which country or region is specifically associated with the 2019 beginning of 5G cellular service?","options":[{"t":"Uruguay","c":true,"fb":"Table 1 identifies Uruguay as the location associated with the beginning of 5G cellular service in 2019."},{"t":"United States","c":false,"fb":"The United States is associated with milestones such as the 1975 personal computer, 1995 GPS, and 2007 iPhone."},{"t":"Worldwide","c":false,"fb":"Worldwide scope is associated with the 1996–2001 first smartphones and 2009 4G LTE networks."},{"t":"KDKA Pittsburgh","c":false,"fb":"KDKA Pittsburgh is the station associated with the 1920 first radio broadcast."}]},{"cat":"01","type":"scenario","stem":"Based on the handout's categories of electronic communication, how is this overall system classified?","context":"An operator sends directional control signals to an airborne drone. At the same time, a camera mounted on the drone transmits live video back to the operator.","options":[{"t":"Simplex transmission, because the operator sends control signals in one direction.","c":false,"fb":"While the forward control link alone is simple, video transmitted back to the operator makes the overall system a duplex transmission."},{"t":"Duplex transmission, because the camera transmits video back to the operator.","c":true,"fb":"The handout states that duplex transmission occurs if the drone's camera transmits video back to the operator."},{"t":"Simplex downlink, because only one-way programming from a satellite is involved.","c":false,"fb":"A simplex downlink describes one-way transmission from a satellite to a home antenna."},{"t":"Single-frequency analog tone, because signals only travel through free space.","c":false,"fb":"A single-frequency tone describes a sine wave, not a two-way directional communication link."}]},{"cat":"01","type":"mcq","stem":"Which communication systems are identified in the handout as utilizing half-duplex communications?","options":[{"t":"Television broadcasting and remote control","c":false,"fb":"Television broadcasting and remote control are examples of one-way simplex communication."},{"t":"Military, fire, aircraft, and marine radio transmissions","c":true,"fb":"The handout explicitly states that most military, fire, aircraft, and marine radio transmissions utilize half-duplex communications."},{"t":"People communicating simultaneously on a telephone","c":false,"fb":"A telephone conversation where people talk and listen simultaneously is a full-duplex system."},{"t":"Simplex satellite downlinks to home antennas","c":false,"fb":"Satellite downlinks are one-way simplex transmissions where the receiver does not transmit back."}]},{"cat":"01","type":"mcq","stem":"According to Table 1, which milestone occurred in the United States in 1939?","options":[{"t":"The invention of the transistor","c":false,"fb":"The invention of the transistor is associated with Bell Laboratories in 1948."},{"t":"The invention and demonstration of the television","c":false,"fb":"Television invention and demonstration is associated with Vladimir Zworykin in 1923."},{"t":"The first use of two-way radios (walkie-talkies)","c":true,"fb":"Table 1 lists the first use of two-way radios (walkie-talkies) in the United States in 1939."},{"t":"The first wireless local area networks (LANs)","c":false,"fb":"The first wireless LANs are listed as a 1997 milestone in the United States."}]},{"cat":"01","type":"mcq","stem":"According to Table 1, which milestone occurred in the United States in 1975?","options":[{"t":"The first personal computers","c":true,"fb":"Table 1 identifies the United States with the first personal computers in 1975."},{"t":"The development and the first use of the Internet","c":false,"fb":"The development and first use of the Internet is listed for 1982–1990 with Tim Berners-Lee."},{"t":"The invention of the integrated circuit","c":false,"fb":"The integrated circuit was invented during 1958–1969 by Jack Kilby and Robert Noyce."},{"t":"The development of Apple's iPhone","c":false,"fb":"The development of Apple's iPhone is listed under the United States in 2007."}]},{"cat":"01","type":"mcq","stem":"According to Table 1, which milestone occurred in the United States in 1995?","options":[{"t":"The first transatlantic radio contact made","c":false,"fb":"The first transatlantic radio contact was made by Guglielmo Marconi in 1901."},{"t":"The deployment of Global Positioning System (GPS)","c":true,"fb":"Table 1 associates the deployment of GPS with the United States in 1995."},{"t":"The beginning of 5G cellular service","c":false,"fb":"The beginning of 5G cellular service occurred in Uruguay in 2019."},{"t":"The first fourth-generation LTE cellular networks","c":false,"fb":"The first 4G LTE cellular networks are listed as a worldwide milestone in 2009."}]},{"cat":"01","type":"mcq","stem":"According to Table 1, which milestone occurred worldwide during the period 1996–2001?","options":[{"t":"The invention of amplitude modulation","c":false,"fb":"Amplitude modulation was invented by Reginald Fessenden in 1906."},{"t":"The rise of social media","c":false,"fb":"The rise of social media is associated with the United States during 2004–2006."},{"t":"The first smartphones by BlackBerry, Nokia, and Palm","c":true,"fb":"Table 1 identifies 1996–2001 and Worldwide for the first smartphones by BlackBerry, Nokia, and Palm."},{"t":"The first fourth-generation LTE cellular networks","c":false,"fb":"The first 4G LTE cellular networks are listed as a worldwide milestone in 2009."}]},{"cat":"01","type":"mcq","stem":"According to Table 1, which milestone occurred in the United States in 1997?","options":[{"t":"The first wireless local area networks (LANs)","c":true,"fb":"Table 1 lists the first wireless local area networks (LANs) in the United States in 1997."},{"t":"The invention of the telegraph","c":false,"fb":"Samuel Morse invented the telegraph in 1837 and patented it in 1844."},{"t":"The first use of two-way radios (walkie-talkies)","c":false,"fb":"Two-way radios are listed as a 1939 milestone in the United States."},{"t":"The first radio broadcast","c":false,"fb":"The first radio broadcast was transmitted by KDKA Pittsburgh in 1920."}]},{"cat":"01","type":"mcq","stem":"According to Table 1, which milestone occurred in the United States during the period 2004–2006?","options":[{"t":"The development and the first use of the Internet","c":false,"fb":"The development and first use of the Internet occurred during 1982–1990."},{"t":"The rise of social media","c":true,"fb":"Table 1 designates the 2004–2006 period as the milestone for the rise of social media in the United States."},{"t":"The discovery of radio waves","c":false,"fb":"Heinrich Hertz discovered radio waves in 1887."},{"t":"The beginning of 5G cellular service","c":false,"fb":"The beginning of 5G cellular service occurred in Uruguay in 2019."}]},{"cat":"01","type":"mcq","stem":"According to Table 1, which milestone occurred worldwide in 2009?","options":[{"t":"The first fourth-generation LTE cellular networks","c":true,"fb":"Table 1 lists 2009 and Worldwide for the first fourth-generation LTE cellular networks."},{"t":"The beginning of 5G cellular service","c":false,"fb":"The beginning of 5G cellular service occurred in Uruguay in 2019."},{"t":"The development of Apple's iPhone","c":false,"fb":"The development of Apple's iPhone is listed as a 2007 milestone in the United States."},{"t":"The invention of the telephone","c":false,"fb":"Alexander Graham Bell invented the telephone in 1876."}]}]};
+
+if (!PACK || !Array.isArray(PACK.questions) || PACK.questions.length === 0) {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.innerHTML =
+      '<div style="max-width:560px;margin:20vh auto;font-family:monospace;' +
+      'color:#ECE6D7;background:#1C2027;border:1px solid #3D434F;padding:32px;line-height:1.6;">' +
+      '<strong>Engine template — no content pack injected.</strong><br><br>' +
+      'This file is not meant to be opened directly. Build a reviewer with:<br><br>' +
+      '<code>python3 build.py packs/&lt;pack&gt;.json</code><br><br>' +
+      'then open the file it produces in <code>dist/</code>.</div>';
+  });
+  throw new Error('No content pack injected.');
+}
+
+/* Engine defaults for UI strings a pack may omit. */
+const ENGINE_UI_DEFAULTS = {
+  lengthSectionLabel: "Choose your length",
+  focusSectionLabel:  "Focus & Timing",
+  metaLabels: {
+    poolKey:          "Question pool",
+    poolUnit:         "items",
+    poolTypesNote:    "(MCQ · Multi · Fill-in-Blank · Scenario)",
+    randomisationKey: "Randomisation",
+    randomisationVal: "Both <code>order</code> &amp; <code>choices</code>",
+    feedbackKey:      "Feedback timing",
+    scoringKey:       "Scoring",
+    scoringVal:       "Partial credit on multi-answer"
+  },
+  lengthOptions: [
+    { count: 10, label: "Quick check" },
+    { count: 20, label: "Warm-up", default: true },
+    { count: 35, label: "Standard" },
+    { count: 50, label: "Deep drill" }
+  ],
+  showFocusOption: true,
+  focusTitle:      "Focused test",
+  showTimerOption: true,
+  timerTitle:      "Timed mode",
+  timeOptions: [
+    { minutes:  5 },
+    { minutes: 10, default: true },
+    { minutes: 20 },
+    { minutes: 30 }
+  ],
+  scoreTiers: [
+    { minPct: 90, eyebrow: "Mastery",      verdictHtml: "You <em>know your stuff</em>.",
+      verdictSub: "Top-tier performance. You have a solid grasp of the material." },
+    { minPct: 75, eyebrow: "Strong",       verdictHtml: "Solid <em>command</em> of the material.",
+      verdictSub: "You've got the fundamentals down. A short review of the missed questions and the picture is complete." },
+    { minPct: 60, eyebrow: "Mid-range",    verdictHtml: "You're on the <em>way there</em>.",
+      verdictSub: "The shape is right but a few specifics are loose. Review the items you missed." },
+    { minPct: 40, eyebrow: "Needs review", verdictHtml: "Time for <em>another pass</em>.",
+      verdictSub: "Re-read the material, then come back and try again." },
+    { minPct:  0, eyebrow: "Restart",      verdictHtml: "Start <em>from the top</em>.",
+      verdictSub: "The basics aren't settled yet. Review the material entirely before attempting again." }
+  ]
+};
+
+/* Build CONFIG from pack meta + ui, falling back to engine defaults. */
+const _meta = PACK.meta || {};
+const _ui   = PACK.ui   || {};
+const CONFIG = Object.assign({}, ENGINE_UI_DEFAULTS, _ui, {
+  metaLabels: Object.assign({}, ENGINE_UI_DEFAULTS.metaLabels, _ui.metaLabels || {}),
+  pageTitle: _meta.pageTitle || _meta.subject || "Quiz",
+  masthead: Object.assign(
+    { codex: "MODULE", crumb: _meta.subject || "Quiz", stamp: "Reviewer" },
+    _meta.masthead || {}),
+  hero: Object.assign(
+    { eyebrow: "Self-Assessment Module",
+      titleHtml: _meta.subject || "Quiz",
+      ledeHtml: "" },
+    _meta.hero || {}),
+  footer: Object.assign(
+    { left: _meta.subject || "Quiz",
+      right: _meta.version ? ("Pack v" + _meta.version) : "Self-paced practice" },
+    _meta.footer || {}),
+  examSim: PACK.exam
+    ? Object.assign({ enabled: true, title: "Exam simulation",
+                      minutes: 60, multiplier: 1, passPct: 65 }, PACK.exam)
+    : { enabled: false }
+});
+
+const PASS_PCT = (CONFIG.examSim && CONFIG.examSim.passPct) || 65;
+
+const CATEGORIES = (PACK.categories || []).map(c => ({
+  key: String(c.key), label: c.label || String(c.key), weight: Number(c.weight) || 0
+}));
+
+const BANK = PACK.questions;
+
+
+/* ============================================================
+   applyConfig() — writes CONFIG values into the DOM.
+   You normally do NOT need to edit anything below this point.
+   ============================================================ */
+function applyConfig() {
+  // Browser-tab title
+  document.title = CONFIG.pageTitle;
+
+  // Masthead
+  document.getElementById('cfg-masthead-codex').textContent = CONFIG.masthead.codex;
+  document.getElementById('cfg-masthead-crumb').textContent = CONFIG.masthead.crumb;
+  document.getElementById('cfg-masthead-stamp').textContent = CONFIG.masthead.stamp;
+
+  // Hero
+  document.getElementById('cfg-hero-eyebrow').textContent = CONFIG.hero.eyebrow;
+  document.getElementById('cfg-hero-title').innerHTML      = CONFIG.hero.titleHtml;
+  document.getElementById('cfg-hero-lede').innerHTML       = CONFIG.hero.ledeHtml;
+
+  // Section labels
+  document.getElementById('cfg-length-section-label').textContent = CONFIG.lengthSectionLabel;
+  document.getElementById('cfg-focus-section-label').textContent  = CONFIG.focusSectionLabel;
+
+  // Meta row
+  const pool = BANK.length;
+  document.getElementById('cfg-meta-pool-key').textContent = CONFIG.metaLabels.poolKey;
+  document.getElementById('cfg-meta-pool-val').innerHTML   =
+    `${pool} ${CONFIG.metaLabels.poolUnit} <span style="color: var(--ink-mute); font-size: 14px;">${CONFIG.metaLabels.poolTypesNote}</span>`;
+  document.getElementById('cfg-meta-rand-key').textContent = CONFIG.metaLabels.randomisationKey;
+  document.getElementById('cfg-meta-rand-val').innerHTML   = CONFIG.metaLabels.randomisationVal;
+  document.getElementById('cfg-meta-feedback-key').textContent = CONFIG.metaLabels.feedbackKey;
+  document.getElementById('feedbackTimingMeta').innerHTML  = 'Instant — after each <code>Check</code>';
+  document.getElementById('cfg-meta-scoring-key').textContent = CONFIG.metaLabels.scoringKey;
+  document.getElementById('cfg-meta-scoring-val').innerHTML   = CONFIG.metaLabels.scoringVal;
+
+  // Footer
+  document.getElementById('cfg-footer-left').textContent  = CONFIG.footer.left;
+  document.getElementById('cfg-footer-right').textContent = CONFIG.footer.right;
+
+  // Length cards (quiz-size presets)
+  const countGrid = document.getElementById('countGrid');
+  countGrid.innerHTML = '';
+  CONFIG.lengthOptions.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'count-card' + (opt.default ? ' active' : '');
+    btn.dataset.count = opt.count;
+    btn.innerHTML =
+      `<div class="count-num">${opt.count}</div>` +
+      `<div class="count-label">${opt.label}</div>`;
+    countGrid.appendChild(btn);
+  });
+
+  // Focus section (show / hide as configured)
+  document.getElementById('focusSection').style.display = CONFIG.showFocusOption ? '' : 'none';
+  document.getElementById('cfg-focus-title').textContent = CONFIG.focusTitle;
+
+  // Timer section
+  document.getElementById('timerSection').style.display = CONFIG.showTimerOption ? '' : 'none';
+  document.getElementById('cfg-timer-title').textContent = CONFIG.timerTitle;
+
+  // Exam-simulation section
+  document.getElementById('examSection').style.display =
+    (CONFIG.examSim && CONFIG.examSim.enabled) ? '' : 'none';
+  document.getElementById('cfg-exam-title').textContent =
+    (CONFIG.examSim && CONFIG.examSim.title) || 'Exam simulation';
+
+  // Time chips
+  const timePicker = document.getElementById('timePicker');
+  timePicker.innerHTML = '';
+  CONFIG.timeOptions.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'time-chip' + (opt.default ? ' on' : '');
+    btn.dataset.min = opt.minutes;
+    btn.innerHTML =
+      `<div class="time-chip-num">${opt.minutes}</div>` +
+      `<div class="time-chip-unit">min</div>`;
+    timePicker.appendChild(btn);
+  });
+}
+
+// Default selections derived from CONFIG (used to seed `state` below)
+const CFG_DEFAULT_COUNT =
+  (CONFIG.lengthOptions.find(o => o.default) || CONFIG.lengthOptions[0]).count;
+const CFG_DEFAULT_MINUTES =
+  ((CONFIG.timeOptions || []).find(o => o.default) || (CONFIG.timeOptions || [])[0] || {minutes: 10}).minutes;
+
+
+
+
+
+
+// Every question declares its own `cat` key in the pack. Anything
+// with a missing/unknown key becomes 'other' (excluded from exam
+// simulation, still reachable in normal practice mode).
+BANK.forEach(q => {
+  if (!q.cat || !CATEGORIES.some(c => c.key === q.cat)) q.cat = 'other';
+});
+
+// Per-category counts. Counted from the ACTUAL tagged questions (not
+// from the range arithmetic) so the numbers shown on topic chips and
+// the coverage meter are always truthful, even if a range over-reaches.
+const CAT_COUNTS = Object.fromEntries(
+  CATEGORIES.map(c => [c.key, BANK.filter(q => q.cat === c.key).length])
+);
+
+/* ── Exam-blueprint helpers (engine code — no edits needed) ──────── */
+// How many questions exam mode WANTS in total (weights × multiplier).
+function examTargetTotal() {
+  const m = (CONFIG.examSim && CONFIG.examSim.multiplier) || 1;
+  return CATEGORIES.reduce((s, c) => s + c.weight * m, 0);
+}
+// The per-objective draw plan given what the bank currently holds:
+// [{cat, want, have, take}]  where take = min(want, have).
+function examPlan() {
+  const m = (CONFIG.examSim && CONFIG.examSim.multiplier) || 1;
+  return CATEGORIES.map(c => {
+    const want = c.weight * m;
+    const have = CAT_COUNTS[c.key] || 0;
+    return { cat: c, want, have, take: Math.min(want, have) };
+  });
+}
+
+/* ============================================================
+   STATE & UTILITIES
+   ============================================================ */
+function escapeHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+// Build the DOM from CONFIG before any handlers bind.
+applyConfig();
+
+const state = {
+  count: CFG_DEFAULT_COUNT,
+  questions: [],
+  answers: [],
+  checked: [],   // boolean per question
+  current: 0,
+  // Focus
+  focusEnabled: false,
+  focusedCats: [],          // category keys currently selected, e.g. ['sample-a']
+  // Timer
+  timerEnabled: false,
+  timerMinutes: CFG_DEFAULT_MINUTES,
+  timerEndAt: 0,            // ms epoch when timer expires
+  timerInterval: null,
+  timeUp: false,            // true if quiz auto-finished due to timer
+  timeUsedMs: 0,            // captured when results shown
+  // Exam simulation (weighted blueprint draw)
+  examMode: false,
+  _savedTimerEnabled: false,        // user's timer prefs, restored when
+  _savedTimerMinutes: CFG_DEFAULT_MINUTES, // exam mode is switched off
+};
+
+const $ = id => document.getElementById(id);
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Pool size given current focus selection.
+function poolSize() {
+  if (!state.focusEnabled || state.focusedCats.length === 0) return BANK.length;
+  return BANK.filter(q => state.focusedCats.includes(q.cat)).length;
+}
+
+// Shared question normalizer: shuffles options, strips authoring-only
+// fields, keeps origIdx + cat for review and the objective breakdown.
+function normalizeQuestion(q) {
+  if (q.type === 'fitb') {
+    return { type: q.type, stem: q.stem, answer: q.answer,
+             caseSensitive: q.caseSensitive || false, hint: q.hint || '',
+             fb: q.fb || '', subtype: q.subtype || '', origIdx: q.origIdx, cat: q.cat };
+  }
+  const base = { type: q.type, stem: q.stem,
+                 options: shuffle(q.options.map((o, i) => ({ ...o, origIdx: i }))),
+                 origIdx: q.origIdx, cat: q.cat };
+  if (q.type === 'scenario') base.context = q.context || '';
+  return base;
+}
+
+function buildQuiz(count) {
+  let pool = BANK.map((q, i) => ({ ...q, origIdx: i }));
+  if (state.focusEnabled && state.focusedCats.length > 0) {
+    pool = pool.filter(q => state.focusedCats.includes(q.cat));
+  }
+  const finalCount = Math.min(count, pool.length);
+  const picked  = shuffle(pool).slice(0, finalCount);
+  return picked.map(normalizeQuestion);
+}
+
+// Weighted blueprint draw: take `weight × multiplier` questions from
+// EACH objective (capped at what the bank holds), then shuffle the
+// combined paper so objectives are interleaved like the real exam.
+function buildExamQuiz() {
+  const indexed = BANK.map((q, i) => ({ ...q, origIdx: i }));
+  let paper = [];
+  examPlan().forEach(p => {
+    if (p.take === 0) return;
+    const pool = indexed.filter(q => q.cat === p.cat.key);
+    paper = paper.concat(shuffle(pool).slice(0, p.take));
+  });
+  return shuffle(paper).map(normalizeQuestion);
+}
+
+// Single entry point used by Start and Retake — respects current mode.
+function buildActiveQuiz() {
+  return state.examMode ? buildExamQuiz() : buildQuiz(state.count);
+}
+
+function formatTime(ms) {
+  const total = Math.max(0, Math.ceil(ms / 1000));
+  const m = Math.floor(total / 60);
+  const s = total % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function scoreQuestion(q, selectedIdxs) {
+  // ── Fill-in-the-blank ───────────────────────────────────────────
+  if (q.type === 'fitb') {
+    const userText = typeof selectedIdxs === 'string' ? selectedIdxs.trim() : '';
+    if (!userText) return { score: 0, status: 'skipped', userText: '' };
+    const correct = Array.isArray(q.answer) ? q.answer : [q.answer];
+    const match = correct.some(a =>
+      q.caseSensitive ? a.trim() === userText : a.trim().toLowerCase() === userText.toLowerCase()
+    );
+    return { score: match ? 1 : 0, status: match ? 'correct' : 'wrong', userText };
+  }
+  if (selectedIdxs.length === 0) return { score: 0, status: 'skipped' };
+  // scenario behaves like a single-answer MCQ
+  if (q.type === 'mcq' || q.type === 'scenario') {
+    const isCorrect = q.options[selectedIdxs[0]].c === true;
+    return { score: isCorrect ? 1 : 0, status: isCorrect ? 'correct' : 'wrong' };
+  }
+  const correctIdxs = q.options.map((o,i)=>o.c?i:-1).filter(i=>i>=0);
+  const wrongIdxs   = q.options.map((o,i)=>!o.c?i:-1).filter(i=>i>=0);
+  const C = correctIdxs.length, W = wrongIdxs.length;
+  let score = 0;
+  selectedIdxs.forEach(i => {
+    if (q.options[i].c) score += 1 / C;
+    else                score -= 1 / Math.max(W, 1);
+  });
+  score = Math.max(0, Math.min(1, score));
+  const allCorrectChosen = correctIdxs.every(i => selectedIdxs.includes(i));
+  const noneWrongChosen  = !selectedIdxs.some(i => !q.options[i].c);
+  let status;
+  if (allCorrectChosen && noneWrongChosen) status = 'correct';
+  else if (score === 0) status = 'wrong';
+  else status = 'partial';
+  return { score, status };
+}
+
+/* ============================================================
+   SETUP VIEW
+   ============================================================ */
+
+// ----- length picker -----
+$('countGrid').addEventListener('click', e => {
+  if (state.examMode) return;            // locked during exam simulation
+  const btn = e.target.closest('.count-card');
+  if (!btn) return;
+  document.querySelectorAll('.count-card').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  state.count = parseInt(btn.dataset.count, 10);
+  updateSetupSummary();
+});
+
+// ----- focus toggle + topic chips -----
+function renderTopicGrid() {
+  const grid = $('topicGrid');
+  grid.innerHTML = '';
+  // Objectives with zero questions are hidden until you write them.
+  CATEGORIES.filter(cat => (CAT_COUNTS[cat.key] || 0) > 0).forEach(cat => {
+    const chip = document.createElement('button');
+    chip.className = 'topic-chip';
+    chip.dataset.key = cat.key;
+    if (state.focusedCats.includes(cat.key)) chip.classList.add('on');
+    chip.innerHTML = `
+      <div class="topic-chip-check"></div>
+      <div class="topic-chip-label">${cat.label}</div>
+      <div class="topic-chip-count">${CAT_COUNTS[cat.key]}</div>
+    `;
+    chip.addEventListener('click', () => {
+      const i = state.focusedCats.indexOf(cat.key);
+      if (i >= 0) state.focusedCats.splice(i, 1);
+      else state.focusedCats.push(cat.key);
+      chip.classList.toggle('on');
+      updateSetupSummary();
+    });
+    grid.appendChild(chip);
+  });
+}
+renderTopicGrid();
+
+$('focusToggle').addEventListener('click', () => {
+  if (state.examMode) return;            // locked during exam simulation
+  state.focusEnabled = !state.focusEnabled;
+  $('focusToggle').classList.toggle('on', state.focusEnabled);
+  $('focusToggle').setAttribute('aria-checked', state.focusEnabled);
+  $('topicGrid').classList.toggle('hidden', !state.focusEnabled);
+  // When turning on for the first time, default to "all selected" so user can untoggle.
+  if (state.focusEnabled && state.focusedCats.length === 0) {
+    state.focusedCats = CATEGORIES.filter(c => (CAT_COUNTS[c.key] || 0) > 0).map(c => c.key);
+    renderTopicGrid();
+  }
+  updateSetupSummary();
+});
+$('focusToggle').addEventListener('keydown', e => {
+  if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); $('focusToggle').click(); }
+});
+
+// ----- exam-simulation toggle -----
+// Switching this ON locks length / focus / timer and arms the
+// weighted blueprint draw. Switching it OFF restores whatever the
+// student had selected before.
+$('examToggle').addEventListener('click', () => {
+  state.examMode = !state.examMode;
+  const on = state.examMode;
+  $('examToggle').classList.toggle('on', on);
+  $('examToggle').setAttribute('aria-checked', on);
+
+  if (on) {
+    // Remember the student's own timer prefs, then impose exam timing.
+    state._savedTimerEnabled = state.timerEnabled;
+    state._savedTimerMinutes = state.timerMinutes;
+    state.timerEnabled = true;
+    state.timerMinutes = (CONFIG.examSim && CONFIG.examSim.minutes) || 60;
+    // Exam covers every objective — switch focus off.
+    state.focusEnabled = false;
+    $('focusToggle').classList.remove('on');
+    $('focusToggle').setAttribute('aria-checked', 'false');
+    $('topicGrid').classList.add('hidden');
+    // Reflect timer toggle as on, but hide the minute chips (locked).
+    $('timerToggle').classList.add('on');
+    $('timerToggle').setAttribute('aria-checked', 'true');
+    $('timePicker').classList.add('hidden');
+    // Visually lock the overridden controls.
+    $('countGrid').classList.add('locked');
+    $('focusSection').classList.add('locked');
+    $('timerSection').classList.add('locked');
+    $('examCoverage').classList.remove('hidden');
+  } else {
+    // Hand the controls back, exactly as they were.
+    state.timerEnabled = state._savedTimerEnabled;
+    state.timerMinutes = state._savedTimerMinutes;
+    $('timerToggle').classList.toggle('on', state.timerEnabled);
+    $('timerToggle').setAttribute('aria-checked', state.timerEnabled);
+    $('timePicker').classList.toggle('hidden', !state.timerEnabled);
+    $('countGrid').classList.remove('locked');
+    $('focusSection').classList.remove('locked');
+    $('timerSection').classList.remove('locked');
+    $('examCoverage').classList.add('hidden');
+  }
+  updateSetupSummary();
+});
+$('examToggle').addEventListener('keydown', e => {
+  if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); $('examToggle').click(); }
+});
+
+// ----- timer toggle + time picker -----
+$('timerToggle').addEventListener('click', () => {
+  if (state.examMode) return;            // locked during exam simulation
+  state.timerEnabled = !state.timerEnabled;
+  $('timerToggle').classList.toggle('on', state.timerEnabled);
+  $('timerToggle').setAttribute('aria-checked', state.timerEnabled);
+  $('timePicker').classList.toggle('hidden', !state.timerEnabled);
+  updateSetupSummary();
+});
+$('timerToggle').addEventListener('keydown', e => {
+  if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); $('timerToggle').click(); }
+});
+
+document.querySelectorAll('.time-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.time-chip').forEach(c => c.classList.remove('on'));
+    chip.classList.add('on');
+    state.timerMinutes = parseInt(chip.dataset.min, 10);
+    updateSetupSummary();
+  });
+});
+
+// ----- summary line + start button gating -----
+function updateSetupSummary() {
+  const examCfg = CONFIG.examSim || {};
+
+  /* ── EXAM SIMULATION BRANCH ─────────────────────────────────── */
+  if (state.examMode) {
+    const plan   = examPlan();
+    const drawn  = plan.reduce((s, p) => s + p.take, 0);
+    const target = examTargetTotal();
+    const missing = plan.filter(p => p.take < p.want);
+
+    $('ssLength').textContent = `${drawn} question${drawn === 1 ? '' : 's'}`;
+    $('ssMode').textContent   = 'Exam simulation';
+    $('ssFocus').textContent  = 'All objectives · weighted';
+    $('ssTime').textContent   = `${state.timerMinutes} min`;
+
+    $('examSub').textContent  = 'ON — drawing per the blueprint weights, feedback at the end';
+    $('examSub').classList.add('live');
+    $('focusSub').textContent = 'Locked — the exam draws from every objective';
+    $('focusSub').classList.remove('live');
+    $('timerSub').textContent = `Locked to ${state.timerMinutes} minutes by exam simulation`;
+    $('timerSub').classList.remove('live');
+    $('feedbackTimingMeta').innerHTML = 'Deferred — shown after <code>Finish</code>';
+
+    // Coverage meter: how much of the 40-slot blueprint the bank fills.
+    let cov = `Blueprint coverage: <strong>${drawn} / ${target}</strong> exam slots filled`;
+    if (missing.length > 0) {
+      const keys = missing.map(p => p.cat.key);
+      const shown = keys.slice(0, 8).join(', ') + (keys.length > 8 ? ` +${keys.length - 8} more` : '');
+      cov += ` <span class="ec-missing">· awaiting questions: ${shown}</span>`;
+    } else {
+      cov += ` <span class="ec-missing">· full blueprint — this is a true exam form</span>`;
+    }
+    $('examCoverageLine').innerHTML = cov;
+
+    $('poolAvailable').textContent = drawn;
+    const startBtn = $('startBtn');
+    startBtn.disabled = drawn === 0;
+    startBtn.textContent = drawn === 0 ? 'Bank is empty' : 'Begin Exam →';
+    return;
+  }
+
+  /* ── NORMAL PRACTICE BRANCH ─────────────────────────────────── */
+  $('examSub').textContent = examCfg.enabled === false ? '' :
+    `Replicates the official weighted blueprint — ${examTargetTotal()} questions · ${examCfg.minutes || 60} min · all objectives`;
+  $('examSub').classList.remove('live');
+
+  const available = poolSize();
+  const effectiveCount = Math.min(state.count, available);
+
+  // length
+  $('ssLength').textContent = `${effectiveCount} question${effectiveCount === 1 ? '' : 's'}`;
+
+  // mode
+  $('ssMode').textContent = state.timerEnabled ? 'Timed test' : 'Practice';
+
+  // focus
+  if (!state.focusEnabled || state.focusedCats.length === 0 || state.focusedCats.length === CATEGORIES.length) {
+    $('ssFocus').textContent = 'All topics';
+    $('focusSub').textContent = `All ${BANK.length} questions across ${CATEGORIES.length} topics`;
+    $('focusSub').classList.remove('live');
+  } else {
+    const n = state.focusedCats.length;
+    $('ssFocus').textContent = `${n} topic${n === 1 ? '' : 's'} • ${available} q`;
+    $('focusSub').textContent = `${n} of ${CATEGORIES.length} topics selected — ${available} questions available`;
+    $('focusSub').classList.add('live');
+  }
+
+  // timing
+  if (state.timerEnabled) {
+    $('ssTime').textContent = `${state.timerMinutes} min`;
+    $('timerSub').textContent = `${state.timerMinutes} minutes total — feedback shows at the end`;
+    $('timerSub').classList.add('live');
+    $('feedbackTimingMeta').innerHTML = 'Deferred — shown after <code>Finish</code>';
+  } else {
+    $('ssTime').textContent = 'Untimed';
+    $('timerSub').textContent = 'No time limit — feedback after every Check';
+    $('timerSub').classList.remove('live');
+    $('feedbackTimingMeta').innerHTML = 'Instant — after each <code>Check</code>';
+  }
+
+  // pool note
+  $('poolAvailable').textContent = available;
+
+  // start gating: need at least 1 question available
+  const startBtn = $('startBtn');
+  if (available === 0) {
+    startBtn.disabled = true;
+    startBtn.textContent = 'Pick at least one topic';
+  } else {
+    startBtn.disabled = false;
+    startBtn.textContent = 'Begin Quiz →';
+  }
+}
+updateSetupSummary();
+
+// ----- start the quiz -----
+$('startBtn').addEventListener('click', () => {
+  state.questions = buildActiveQuiz();
+  state.answers   = state.questions.map(q => q.type === 'fitb' ? '' : []);
+  state.checked   = state.questions.map(() => false);
+  state.current   = 0;
+  state.timeUp    = false;
+  state.timeUsedMs = 0;
+
+  $('view-setup').classList.add('hidden');
+  $('view-quiz').classList.remove('hidden');
+  $('view-quiz').classList.add('fade-in');
+  $('qTotal').textContent = state.questions.length;
+
+  // Test-mode notice
+  $('testNotice').classList.toggle('hidden', !state.timerEnabled);
+
+  // Start timer if needed
+  if (state.timerEnabled) {
+    startTimer(state.timerMinutes * 60 * 1000);
+  }
+
+  renderQuiz();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+function startTimer(ms) {
+  state.timerEndAt = Date.now() + ms;
+  if (state.timerInterval) clearInterval(state.timerInterval);
+  // tick every 250ms for smoother last-seconds feel
+  state.timerInterval = setInterval(tickTimer, 250);
+  tickTimer();
+}
+
+function stopTimer() {
+  if (state.timerInterval) {
+    clearInterval(state.timerInterval);
+    state.timerInterval = null;
+  }
+}
+
+function tickTimer() {
+  const remaining = state.timerEndAt - Date.now();
+  const badge = $('timerBadge');
+  if (badge) {
+    badge.textContent = formatTime(remaining);
+    badge.classList.remove('warn', 'danger');
+    if (remaining <= 10000)      badge.classList.add('danger');
+    else if (remaining <= 60000) badge.classList.add('warn');
+  }
+  if (remaining <= 0) {
+    stopTimer();
+    state.timeUp = true;
+    state.timeUsedMs = state.timerMinutes * 60 * 1000;
+    // Mark all as checked so review (after results) shows per-question feedback.
+    state.checked = state.checked.map(() => true);
+    showResults();
+  }
+}
+
+/* ============================================================
+   QUIZ VIEW
+   ============================================================ */
+function renderQuiz() {
+  const q = state.questions[state.current];
+  const isFitb     = q.type === 'fitb';
+  const isScenario = q.type === 'scenario';
+  const isMulti    = q.type === 'multi';
+  const isChecked = state.checked[state.current];
+  const allChecked = state.checked.every(c => c);
+  // "Active" timed session: timer is on AND we haven't finished yet.
+  const timedActive = state.timerEnabled && !allChecked;
+  const selectedIdxs = state.answers[state.current];
+
+  $('qNow').textContent = state.current + 1;
+
+  // Test-mode notice strip — only during an active timed session.
+  $('testNotice').classList.toggle('hidden', !timedActive);
+
+  // Right side of progress row: timer in active timed mode, otherwise checked count
+  const progressRight = $('progressRight');
+  if (timedActive) {
+    progressRight.innerHTML = `<div class="timer-badge" id="timerBadge">${formatTime(state.timerEndAt - Date.now())}</div>`;
+    tickTimer();
+  } else {
+    const checkedN = state.checked.filter(c => c).length;
+    progressRight.innerHTML = `<span id="checkedCount">${checkedN}</span> checked`;
+  }
+
+  // Progress bar fill: count "answered" during timed mode, "checked" otherwise.
+  const filledN = timedActive
+    ? state.answers.filter(a => a.length > 0).length
+    : state.checked.filter(c => c).length;
+  $('progressFill').style.width = (filledN / state.questions.length * 100) + '%';
+
+  // Jumper
+  const jumper = $('jumper');
+  jumper.innerHTML = '';
+  state.questions.forEach((qq, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'jump-dot';
+    if (timedActive) {
+      // During active timed session, don't reveal correctness — just answered vs not.
+      if (state.answers[i].length > 0) dot.classList.add('has-selection');
+    } else if (state.checked[i]) {
+      const r = scoreQuestion(qq, state.answers[i]);
+      if (r.status === 'correct')      dot.classList.add('checked-correct');
+      else if (r.status === 'partial') dot.classList.add('checked-partial');
+      else                              dot.classList.add('checked-wrong');
+    } else if (state.answers[i].length > 0) {
+      dot.classList.add('has-selection');
+    }
+    if (i === state.current) dot.classList.add('current');
+    dot.textContent = i + 1;
+    dot.addEventListener('click', () => { state.current = i; renderQuiz(); });
+    jumper.appendChild(dot);
+  });
+
+  // Build question card
+  let tagLabel, tagClass;
+  if (isFitb)          { tagLabel = 'Fill in the blank'; tagClass = 'fitb'; }
+  else if (isScenario) { tagLabel = 'Scenario';          tagClass = 'scenario'; }
+  else if (isMulti)    { tagLabel = 'Select all that apply'; tagClass = 'multi'; }
+  else                 { tagLabel = 'Single answer';      tagClass = ''; }
+
+  let html = '<div class="qcard fade-in">';
+
+  // Verdict banner if checked
+  let r = null;
+  if (isChecked) {
+    r = scoreQuestion(q, selectedIdxs);
+    let vCls, vIcon, vTitle, vSub;
+    if (r.status === 'correct') {
+      vCls = 'correct'; vIcon = '\u2713';
+      vTitle = 'Correct';
+      vSub = isFitb ? 'Your answer matched.' : (isMulti ? 'You picked every right answer.' : '+1 point');
+    } else if (r.status === 'partial') {
+      vCls = 'partial'; vIcon = '\u25D0';
+      vTitle = 'Partial credit';
+      vSub = `Score: ${r.score.toFixed(2)} / 1.00`;
+    } else if (r.status === 'wrong') {
+      vCls = 'wrong'; vIcon = '\u2715';
+      vTitle = 'Incorrect';
+      vSub = isFitb ? "Your answer wasn\u2019t matched \u2014 see below."
+                    : (isMulti ? 'See the marked correct answers below.'
+                               : 'See the correct answer below.');
+    } else {
+      vCls = 'wrong'; vIcon = '?';
+      vTitle = 'Skipped';
+      vSub = isFitb ? 'No answer was entered.' : 'No selection was made.';
+    }
+    html += `
+      <div class="qverdict ${vCls}">
+        <div class="qverdict-icon">${vIcon}</div>
+        <div class="qverdict-text"><strong>${vTitle}</strong>${vSub}</div>
+      </div>
+    `;
+  }
+
+  html += `<span class="qtype-tag ${tagClass}">${tagLabel}</span>`;
+  if (isScenario && q.context) {
+    html += `<div class="scenario-context"><div class="scenario-context-eyebrow">Situation</div><div class="scenario-context-body">${q.context}</div></div>`;
+  }
+  html += `<div class="qstem">${q.stem}</div>`;
+
+  if (isFitb) {
+    // ── Fill-in-the-blank input ────────────────────────────────────
+    const inputCls = isChecked ? (r && r.status === 'correct' ? 'is-correct' : 'is-wrong') : '';
+    html += `<div class="fitb-wrapper">`;
+    html += `<input type="text" class="fitb-input ${inputCls}" ${isChecked ? 'readonly' : ''} placeholder="Type your answer\u2026">`;
+    if (!isChecked && q.hint) {
+      html += `<div class="fitb-hint">\u2192 Hint: ${q.hint}</div>`;
+    }
+    if (isChecked && r) {
+      const ca = Array.isArray(q.answer) ? q.answer : [q.answer];
+      if (r.status === 'correct') {
+        html += `<div class="fitb-result correct">\u2713 Correct \u2014 <code>${escapeHtml(ca[0])}</code></div>`;
+      } else {
+        const ut = r.userText || '';
+        html += `<div class="fitb-result wrong">`;
+        html += ut
+          ? `<div>\u2715 Your answer: <code>${escapeHtml(ut)}</code></div>`
+          : `<div>\u2715 No answer entered.</div>`;
+        html += `<div style="margin-top:6px">Correct: <code>${escapeHtml(ca[0])}</code>`;
+        if (ca.length > 1) html += ` <span style="color:var(--ink-mute)"> or <code>${escapeHtml(ca[1])}</code></span>`;
+        html += `</div></div>`;
+      }
+      if (q.fb) html += `<div class="fitb-fb">${q.fb}</div>`;
+    }
+    html += `</div>`;
+  } else {
+    // ── MCQ / Multi / Scenario options ────────────────────────────
+    html += `<div class="options">`;
+    q.options.forEach((opt, i) => {
+      const wasSelected = selectedIdxs.includes(i);
+      let cls = '';
+      let marker;
+      let tagsHtml = '';
+      let showFeedback = false;
+
+      if (isChecked) {
+        cls += ' locked';
+        if (opt.c && wasSelected) {
+          cls += ' is-correct';
+          marker = '\u2713';
+          tagsHtml = '<span class="opt-tag you">Your pick</span><span class="opt-tag ans">Correct</span>';
+          showFeedback = true;
+        } else if (opt.c && !wasSelected) {
+          cls += ' is-missed';
+          marker = '\u25CB';
+          tagsHtml = '<span class="opt-tag miss">Correct answer</span>';
+          showFeedback = true;
+        } else if (!opt.c && wasSelected) {
+          cls += ' is-wrong';
+          marker = '\u2715';
+          tagsHtml = '<span class="opt-tag you">Your pick</span>';
+          showFeedback = true;
+        } else {
+          marker = isMulti ? '' : String.fromCharCode(65 + i);
+        }
+      } else {
+        if (wasSelected) cls += ' selected';
+        marker = isMulti ? (wasSelected ? '\u2713' : '') : String.fromCharCode(65 + i);
+      }
+
+      html += `
+        <div class="opt ${cls}" data-type="${q.type}" data-idx="${i}">
+          <div class="opt-main">
+            <div class="opt-marker">${marker}</div>
+            <div class="opt-text">${opt.t}${tagsHtml}</div>
+          </div>
+          ${showFeedback ? `<div class="opt-feedback">${opt.fb}</div>` : ''}
+        </div>
+      `;
+    });
+    html += `</div>`;
+  }
+  html += `</div>`; // close .qcard
+
+  $('quizContent').innerHTML = html;
+
+  // ── Input / click wiring ─────────────────────────────────────────
+  if (isFitb) {
+    const input = $('quizContent').querySelector('.fitb-input');
+    if (input) {
+      const stored = typeof state.answers[state.current] === 'string' ? state.answers[state.current] : '';
+      input.value = isChecked ? (r ? r.userText || '' : stored) : stored;
+      if (!isChecked) {
+        input.addEventListener('input', e => {
+          state.answers[state.current] = e.target.value;
+          $('checkBtn').disabled = e.target.value.trim() === '';
+        });
+        input.addEventListener('keydown', e => {
+          if (e.key === 'Enter' && !$('checkBtn').disabled) $('checkBtn').click();
+        });
+        input.focus();
+      }
+    }
+  } else if (!isChecked) {
+    $('quizContent').querySelectorAll('.opt').forEach(el => {
+      el.addEventListener('click', () => {
+        const idx = parseInt(el.dataset.idx, 10);
+        const arr = state.answers[state.current];
+        if (q.type === 'mcq' || q.type === 'scenario') {
+          state.answers[state.current] = [idx];
+        } else {
+          const at = arr.indexOf(idx);
+          if (at >= 0) arr.splice(at, 1);
+          else arr.push(idx);
+        }
+        renderQuiz();
+      });
+    });
+  }
+
+  // Buttons
+  $('prevBtn').disabled = state.current === 0;
+  const isLast = state.current === state.questions.length - 1;
+
+  if (timedActive) {
+    // Active timed session: no Check, free navigation, Finish always available.
+    $('checkBtn').classList.add('hidden');
+    $('nextBtn').classList.remove('hidden');
+    $('nextBtn').disabled = isLast;
+    $('finishBtn').classList.remove('hidden');
+  } else {
+    // Practice mode (or post-finish review): original flow.
+    if (!isChecked) {
+      $('checkBtn').classList.remove('hidden');
+      $('checkBtn').disabled = selectedIdxs.length === 0;
+      $('nextBtn').classList.add('hidden');
+      $('finishBtn').classList.add('hidden');
+    } else {
+      $('checkBtn').classList.add('hidden');
+      if (isLast && allChecked) {
+        $('nextBtn').classList.add('hidden');
+        $('finishBtn').classList.remove('hidden');
+      } else {
+        $('nextBtn').classList.remove('hidden');
+        $('nextBtn').disabled = isLast;
+        $('finishBtn').classList.toggle('hidden', !allChecked);
+      }
+    }
+  }
+}
+
+$('prevBtn').addEventListener('click', () => {
+  if (state.current > 0) { state.current--; renderQuiz(); }
+});
+$('nextBtn').addEventListener('click', () => {
+  if (state.current < state.questions.length - 1) {
+    state.current++;
+    renderQuiz();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+$('checkBtn').addEventListener('click', () => {
+  if (state.answers[state.current].length === 0) return;
+  state.checked[state.current] = true;
+  renderQuiz();
+});
+$('finishBtn').addEventListener('click', () => {
+  if (state.timerEnabled && !state.timeUp) {
+    state.timeUsedMs = (state.timerMinutes * 60 * 1000) - Math.max(0, state.timerEndAt - Date.now());
+    stopTimer();
+  }
+  // Mark all as checked so review (after results) shows per-question feedback.
+  state.checked = state.checked.map(() => true);
+  showResults();
+});
+$('abandonBtn').addEventListener('click', () => {
+  if (confirm('Abandon this quiz and return to setup? Your progress will be lost.')) {
+    stopTimer();
+    state.timeUp = false;
+    $('view-quiz').classList.add('hidden');
+    $('view-setup').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+/* ============================================================
+   RESULTS VIEW (final summary)
+   ============================================================ */
+function showResults() {
+  $('view-quiz').classList.add('hidden');
+  const view = $('view-results');
+  view.classList.remove('hidden');
+  view.classList.add('fade-in');
+
+  const breakdown = state.questions.map((q, i) => {
+    const r = scoreQuestion(q, state.answers[i]);
+    return { q, selected: state.answers[i], ...r };
+  });
+  const totalScore = breakdown.reduce((s, b) => s + b.score, 0);
+  const total = breakdown.length;
+  const pct = Math.round((totalScore / total) * 100);
+  const correctCount = breakdown.filter(b => b.status === 'correct').length;
+  const partialCount = breakdown.filter(b => b.status === 'partial').length;
+  const wrongCount   = breakdown.filter(b => b.status === 'wrong' || b.status === 'skipped').length;
+
+  // Score tier lookup — driven by CONFIG.scoreTiers (edit at the top of <script>)
+  const tier = CONFIG.scoreTiers.find(t => pct >= t.minPct)
+            || CONFIG.scoreTiers[CONFIG.scoreTiers.length - 1];
+  const eyebrow    = tier.eyebrow;
+  const verdict    = tier.verdictHtml;
+  const verdictSub = tier.verdictSub;
+
+  // Optional time-up banner
+  const timeupHtml = state.timeUp
+    ? `<div class="timeup-banner"><strong>Time's up.</strong> The quiz auto-submitted when the ${state.timerMinutes}-minute timer expired. Unanswered questions are counted as skipped.</div>`
+    : '';
+
+  // Optional time-used line under the dial
+  const timeUsedHtml = state.timerEnabled
+    ? `<div class="score-frac" style="margin-top: 8px;">Time used: ${formatTime(state.timeUsedMs)} / ${state.timerMinutes}:00</div>`
+    : '';
+
+  /* ── Per-objective breakdown ──────────────────────────────────
+     Shown whenever the paper spans 2+ objectives (always true in
+     exam simulation). Rows under the pack's pass mark (default 65%) —
+     are flagged red: those are the objectives to drill next.       */
+  let objHtml = '';
+  {
+    const byCat = {};
+    breakdown.forEach(b => {
+      const k = b.q.cat || 'other';
+      (byCat[k] = byCat[k] || { score: 0, n: 0 }).score += b.score;
+      byCat[k].n += 1;
+    });
+    const catKeys = Object.keys(byCat);
+    if (catKeys.length >= 2) {
+      const rows = CATEGORIES
+        .filter(c => byCat[c.key])
+        .map(c => ({ label: c.label, ...byCat[c.key] }))
+        .concat(byCat['other'] ? [{ label: 'Uncategorised', ...byCat['other'] }] : [])
+        .map(r => {
+          const p = Math.round((r.score / r.n) * 100);
+          return `<div class="obj-row${p < PASS_PCT ? ' weak' : ''}">
+                    <div class="obj-row-label">${r.label}</div>
+                    <div class="obj-row-bar"><i style="width:${p}%"></i></div>
+                    <div class="obj-row-pct">${r.score.toFixed(1)}/${r.n} · ${p}%</div>
+                  </div>`;
+        }).join('');
+      objHtml = `<div class="obj-break">
+                   <div class="obj-break-title">Performance by objective — red rows are below the ~${PASS_PCT}% pass line</div>
+                   ${rows}
+                 </div>`;
+    }
+  }
+
+  // Auto-accumulate session results into localStorage (for health analysis & loop closure)
+  try {
+    const packId = _meta.packId || _meta.subject || 'quiz';
+    const storageKey = 'quizforge_history_' + packId;
+    const history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    const record = {
+      timestamp: new Date().toISOString(),
+      packId: packId,
+      score: totalScore,
+      total: total,
+      pct: pct,
+      results: breakdown.map(b => ({
+        stem: b.q.stem,
+        cat: b.q.cat || 'other',
+        type: b.q.type,
+        score: b.score,
+        status: b.status
+      }))
+    };
+    history.push(record);
+    localStorage.setItem(storageKey, JSON.stringify(history));
+  } catch (e) {
+    // localStorage might be unavailable or disabled
+  }
+
+  view.innerHTML = `
+    ${timeupHtml}
+    <div class="results-hero">
+      <div class="score-dial">
+        <svg viewBox="0 0 120 120">
+          <circle class="track" cx="60" cy="60" r="52" fill="none" stroke-width="9"/>
+          <circle class="fill"  cx="60" cy="60" r="52" fill="none" stroke-width="9"
+                  stroke-dasharray="${(2*Math.PI*52).toFixed(2)}"
+                  stroke-dashoffset="${((2*Math.PI*52)*(1 - pct/100)).toFixed(2)}"/>
+        </svg>
+        <div class="score-dial-inner">
+          <div class="score-pct">${pct}<span style="font-size: 24px; color: var(--ink-mute);">%</span></div>
+          <div class="score-frac">${totalScore.toFixed(1)} / ${total}</div>
+        </div>
+      </div>
+      <div>
+        <div class="verdict-eyebrow">${eyebrow}</div>
+        <div class="verdict">${verdict}</div>
+        <div class="verdict-sub">${verdictSub}</div>
+        ${timeUsedHtml}
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card correct">
+        <div class="stat-num correct">${correctCount}</div>
+        <div class="stat-label">Fully correct</div>
+      </div>
+      <div class="stat-card partial">
+        <div class="stat-num partial">${partialCount}</div>
+        <div class="stat-label">Partial credit</div>
+      </div>
+      <div class="stat-card wrong">
+        <div class="stat-num wrong">${wrongCount}</div>
+        <div class="stat-label">Incorrect / skipped</div>
+      </div>
+    </div>
+
+    ${objHtml}
+
+    <div class="btn-row">
+      <button class="btn ghost" id="reviewSetupBtn">← Change quiz length</button>
+      <button class="btn ghost" id="exportResultsBtn">⤓ Export JSON</button>
+      <div class="nav-right">
+        <button class="btn ghost" id="reviewBackBtn">↩ Back to questions</button>
+        <button class="btn primary" id="retakeBtn">↻ Retake (new shuffle)</button>
+      </div>
+    </div>
+  `;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  $('exportResultsBtn').addEventListener('click', () => {
+    try {
+      const packId = _meta.packId || _meta.subject || 'quiz';
+      const storageKey = 'quizforge_history_' + packId;
+      const history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      const exportData = {
+        packId: packId,
+        subject: _meta.subject || packId,
+        exportedAt: new Date().toISOString(),
+        sessions: history.length > 0 ? history : [{
+          timestamp: new Date().toISOString(),
+          packId: packId,
+          score: totalScore,
+          total: total,
+          pct: pct,
+          results: breakdown.map(b => ({
+            stem: b.q.stem,
+            cat: b.q.cat || 'other',
+            type: b.q.type,
+            score: b.score,
+            status: b.status
+          }))
+        }]
+      };
+      const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${packId}-results-${new Date().toISOString().slice(0,10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      alert('Could not export results: ' + err);
+    }
+  });
+
+  $('retakeBtn').addEventListener('click', () => {
+    state.questions = buildActiveQuiz();
+    state.answers   = state.questions.map(q => q.type === 'fitb' ? '' : []);
+    state.checked   = state.questions.map(() => false);
+    state.current   = 0;
+    state.timeUp    = false;
+    state.timeUsedMs = 0;
+    view.classList.add('hidden');
+    $('view-quiz').classList.remove('hidden');
+    $('qTotal').textContent = state.questions.length;
+    // Restart timer if timed mode is on
+    if (state.timerEnabled) {
+      startTimer(state.timerMinutes * 60 * 1000);
+    }
+    renderQuiz();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  $('reviewBackBtn').addEventListener('click', () => {
+    view.classList.add('hidden');
+    $('view-quiz').classList.remove('hidden');
+    state.current = 0;
+    renderQuiz();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  $('reviewSetupBtn').addEventListener('click', () => {
+    view.classList.add('hidden');
+    $('view-setup').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+</script>
+</body>
+</html>
