@@ -4,9 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GE2411 Rizal's Life and Works — Reviewer</title>
-<meta property="og:title" content="GE2411 Rizal's Life and Works — Reviewer">
-<meta property="og:description" content="Practice questions on Rizal's life, works, and legacy.">
-html
+<meta property="og:title" content="GE2411 Rizal&#x27;s Life and Works — Reviewer" />
+<meta property="og:description" content="Practice questions on Rizal&#x27;s life, works, and legacy." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -76,6 +77,26 @@ html
     align-items: baseline;
     gap: 14px;
     flex-wrap: wrap;
+  }
+  .hub-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 3px 8px;
+    background: var(--bg);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .hub-link:hover, .hub-link:focus-visible {
+    background: var(--accent);
+    color: var(--bg);
+    outline: none;
   }
   .codex {
     font-family: var(--mono);
@@ -276,6 +297,13 @@ html
     background: var(--ink);
     color: var(--bg);
     transition: background .15s ease, color .15s ease, transform .15s ease, border-color .15s ease;
+  }
+  a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
   }
   .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
   .btn:disabled { opacity: .25; cursor: not-allowed; }
@@ -738,11 +766,32 @@ html
     border-top: 1px solid var(--rule);
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: .18em;
     text-transform: uppercase;
     color: var(--ink-mute);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .colophon-left {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .colophon-link {
+    color: var(--ink-mute);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .colophon-link:hover, .colophon-link:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+    outline: none;
   }
 
   /* MODE & FOCUS SECTIONS (setup additions) */
@@ -1144,6 +1193,7 @@ html
   -->
   <header class="masthead">
     <div class="masthead-left">
+      <a href="../index.html" class="hub-link" title="Back to Reviewer Hub index">← Index</a>
       <span class="codex" id="cfg-masthead-codex"></span>
       <span class="crumb" id="cfg-masthead-crumb"></span>
     </div>
@@ -1288,7 +1338,10 @@ html
     </div>
 
     <div class="btn-row">
-      <span class="crumb" id="poolNote">Drawing from <strong id="poolAvailable" style="color: var(--accent); font-family: var(--display); font-size: 16px; letter-spacing: 0;">81</strong> available questions</span>
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+        <a href="../index.html" class="btn ghost">← Back to Index</a>
+        <span class="crumb" id="poolNote">Drawing from <strong id="poolAvailable" style="color: var(--accent); font-family: var(--display); font-size: 16px; letter-spacing: 0;">81</strong> available questions</span>
+      </div>
       <button class="btn" id="startBtn">Begin Quiz →</button>
     </div>
   </section>
@@ -1323,7 +1376,10 @@ html
   <section id="view-results" class="hidden"></section>
 
   <footer class="colophon">
-    <span id="cfg-footer-left"></span>
+    <div class="colophon-left">
+      <a href="../index.html" class="colophon-link">← Back to Index</a>
+      <span id="cfg-footer-left"></span>
+    </div>
     <span id="cfg-footer-right"></span>
   </footer>
 </div>
@@ -2247,6 +2303,18 @@ $('abandonBtn').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 });
+document.querySelectorAll('a[href="../index.html"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const quiz = $('view-quiz');
+    if (quiz && !quiz.classList.contains('hidden')) {
+      if (!confirm('Leave this quiz and return to the Reviewer Hub? Your current progress will be lost.')) {
+        e.preventDefault();
+      } else {
+        stopTimer();
+      }
+    }
+  });
+});
 
 /* ============================================================
    RESULTS VIEW (final summary)
@@ -2318,6 +2386,31 @@ function showResults() {
     }
   }
 
+  // Auto-accumulate session results into localStorage (for health analysis & loop closure)
+  try {
+    const packId = _meta.packId || _meta.subject || 'quiz';
+    const storageKey = 'quizforge_history_' + packId;
+    const history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    const record = {
+      timestamp: new Date().toISOString(),
+      packId: packId,
+      score: totalScore,
+      total: total,
+      pct: pct,
+      results: breakdown.map(b => ({
+        stem: b.q.stem,
+        cat: b.q.cat || 'other',
+        type: b.q.type,
+        score: b.score,
+        status: b.status
+      }))
+    };
+    history.push(record);
+    localStorage.setItem(storageKey, JSON.stringify(history));
+  } catch (e) {
+    // localStorage might be unavailable or disabled
+  }
+
   view.innerHTML = `
     ${timeupHtml}
     <div class="results-hero">
@@ -2359,7 +2452,11 @@ function showResults() {
     ${objHtml}
 
     <div class="btn-row">
-      <button class="btn ghost" id="reviewSetupBtn">← Change quiz length</button>
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <a href="../index.html" class="btn ghost">← Back to Index</a>
+        <button class="btn ghost" id="reviewSetupBtn">← Change quiz length</button>
+        <button class="btn ghost" id="exportResultsBtn">⤓ Export JSON</button>
+      </div>
       <div class="nav-right">
         <button class="btn ghost" id="reviewBackBtn">↩ Back to questions</button>
         <button class="btn primary" id="retakeBtn">↻ Retake (new shuffle)</button>
@@ -2368,6 +2465,44 @@ function showResults() {
   `;
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  $('exportResultsBtn').addEventListener('click', () => {
+    try {
+      const packId = _meta.packId || _meta.subject || 'quiz';
+      const storageKey = 'quizforge_history_' + packId;
+      const history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      const exportData = {
+        packId: packId,
+        subject: _meta.subject || packId,
+        exportedAt: new Date().toISOString(),
+        sessions: history.length > 0 ? history : [{
+          timestamp: new Date().toISOString(),
+          packId: packId,
+          score: totalScore,
+          total: total,
+          pct: pct,
+          results: breakdown.map(b => ({
+            stem: b.q.stem,
+            cat: b.q.cat || 'other',
+            type: b.q.type,
+            score: b.score,
+            status: b.status
+          }))
+        }]
+      };
+      const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${packId}-results-${new Date().toISOString().slice(0,10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      alert('Could not export results: ' + err);
+    }
+  });
 
   $('retakeBtn').addEventListener('click', () => {
     state.questions = buildActiveQuiz();

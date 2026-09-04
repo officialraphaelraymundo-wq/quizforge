@@ -78,6 +78,26 @@
     gap: 14px;
     flex-wrap: wrap;
   }
+  .hub-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 3px 8px;
+    background: var(--bg);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .hub-link:hover, .hub-link:focus-visible {
+    background: var(--accent);
+    color: var(--bg);
+    outline: none;
+  }
   .codex {
     font-family: var(--mono);
     font-size: 11px;
@@ -277,6 +297,13 @@
     background: var(--ink);
     color: var(--bg);
     transition: background .15s ease, color .15s ease, transform .15s ease, border-color .15s ease;
+  }
+  a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
   }
   .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
   .btn:disabled { opacity: .25; cursor: not-allowed; }
@@ -739,11 +766,32 @@
     border-top: 1px solid var(--rule);
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: .18em;
     text-transform: uppercase;
     color: var(--ink-mute);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .colophon-left {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .colophon-link {
+    color: var(--ink-mute);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .colophon-link:hover, .colophon-link:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+    outline: none;
   }
 
   /* MODE & FOCUS SECTIONS (setup additions) */
@@ -1145,6 +1193,7 @@
   -->
   <header class="masthead">
     <div class="masthead-left">
+      <a href="../index.html" class="hub-link" title="Back to Reviewer Hub index">← Index</a>
       <span class="codex" id="cfg-masthead-codex"></span>
       <span class="crumb" id="cfg-masthead-crumb"></span>
     </div>
@@ -1289,7 +1338,10 @@
     </div>
 
     <div class="btn-row">
-      <span class="crumb" id="poolNote">Drawing from <strong id="poolAvailable" style="color: var(--accent); font-family: var(--display); font-size: 16px; letter-spacing: 0;">81</strong> available questions</span>
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+        <a href="../index.html" class="btn ghost">← Back to Index</a>
+        <span class="crumb" id="poolNote">Drawing from <strong id="poolAvailable" style="color: var(--accent); font-family: var(--display); font-size: 16px; letter-spacing: 0;">81</strong> available questions</span>
+      </div>
       <button class="btn" id="startBtn">Begin Quiz →</button>
     </div>
   </section>
@@ -1324,7 +1376,10 @@
   <section id="view-results" class="hidden"></section>
 
   <footer class="colophon">
-    <span id="cfg-footer-left"></span>
+    <div class="colophon-left">
+      <a href="../index.html" class="colophon-link">← Back to Index</a>
+      <span id="cfg-footer-left"></span>
+    </div>
     <span id="cfg-footer-right"></span>
   </footer>
 </div>
@@ -2248,6 +2303,18 @@ $('abandonBtn').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 });
+document.querySelectorAll('a[href="../index.html"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const quiz = $('view-quiz');
+    if (quiz && !quiz.classList.contains('hidden')) {
+      if (!confirm('Leave this quiz and return to the Reviewer Hub? Your current progress will be lost.')) {
+        e.preventDefault();
+      } else {
+        stopTimer();
+      }
+    }
+  });
+});
 
 /* ============================================================
    RESULTS VIEW (final summary)
@@ -2385,8 +2452,11 @@ function showResults() {
     ${objHtml}
 
     <div class="btn-row">
-      <button class="btn ghost" id="reviewSetupBtn">← Change quiz length</button>
-      <button class="btn ghost" id="exportResultsBtn">⤓ Export JSON</button>
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <a href="../index.html" class="btn ghost">← Back to Index</a>
+        <button class="btn ghost" id="reviewSetupBtn">← Change quiz length</button>
+        <button class="btn ghost" id="exportResultsBtn">⤓ Export JSON</button>
+      </div>
       <div class="nav-right">
         <button class="btn ghost" id="reviewBackBtn">↩ Back to questions</button>
         <button class="btn primary" id="retakeBtn">↻ Retake (new shuffle)</button>
