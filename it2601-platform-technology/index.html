@@ -1124,6 +1124,44 @@
     background: var(--bg); padding: 1px 5px; border-radius: 2px;
   }
 
+  /* Code callout box ─────────────────────────────────────────────────── */
+  .code-box {
+    background: var(--bg-deep);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    margin: 16px 0 22px;
+    border-radius: 0 4px 4px 0;
+  }
+  .code-box-eyebrow {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .code-box-pre {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+  }
+  .code-box-pre code {
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    color: inherit;
+  }
+
   /* ── EXAM SIMULATION (weighted blueprint mode) ──────────────── */
   /* The exam toggle uses the gold accent to set it apart from the
      ordinary (terracotta) focus / timer toggles.                   */
@@ -1608,6 +1646,28 @@ function examPlan() {
 function escapeHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+
+function formatInline(s) {
+  if (!s) return '';
+  return String(s).replace(/`([^`]+)`/g, (match, p1) => `<code>${escapeHtml(p1)}</code>`);
+}
+
+function formatContent(s) {
+  if (!s) return '';
+  let text = String(s);
+
+  // 1. Fenced code blocks ```lang\ncode\n``` or ```code```
+  const codeBlockRegex = /```(?:([a-zA-Z0-9_-]+)\n)?([\s\S]*?)```/g;
+  text = text.replace(codeBlockRegex, (match, lang, code) => {
+    const badge = (lang ? lang.toUpperCase() + ' ' : '') + 'CODE';
+    return `<div class="code-box"><div class="code-box-eyebrow">${escapeHtml(badge)}</div><pre class="code-box-pre"><code>${escapeHtml(code.trim())}</code></pre></div>`;
+  });
+
+  // 2. Inline code backticks `code`
+  text = text.replace(/`([^`]+)`/g, (match, p1) => `<code>${escapeHtml(p1)}</code>`);
+
+  return text;
+}
 // Build the DOM from CONFIG before any handlers bind.
 applyConfig();
 
@@ -1654,14 +1714,25 @@ function poolSize() {
 // fields, keeps origIdx + cat for review and the objective breakdown.
 function normalizeQuestion(q) {
   if (q.type === 'fitb') {
-    return { type: q.type, stem: q.stem, answer: q.answer,
-             caseSensitive: q.caseSensitive || false, hint: q.hint || '',
-             fb: q.fb || '', subtype: q.subtype || '', origIdx: q.origIdx, cat: q.cat };
+    const res = { type: q.type, stem: q.stem, answer: q.answer,
+                  caseSensitive: q.caseSensitive || false, hint: q.hint || '',
+                  fb: q.fb || '', subtype: q.subtype || '', origIdx: q.origIdx, cat: q.cat };
+    if (q.code) {
+      res.code = q.code;
+      if (q.codeLang) res.codeLang = q.codeLang;
+      if (q.codeEyebrow) res.codeEyebrow = q.codeEyebrow;
+    }
+    return res;
   }
   const base = { type: q.type, stem: q.stem,
                  options: shuffle(q.options.map((o, i) => ({ ...o, origIdx: i }))),
                  origIdx: q.origIdx, cat: q.cat };
   if (q.type === 'scenario') base.context = q.context || '';
+  if (q.code) {
+    base.code = q.code;
+    if (q.codeLang) base.codeLang = q.codeLang;
+    if (q.codeEyebrow) base.codeEyebrow = q.codeEyebrow;
+  }
   return base;
 }
 
@@ -2125,9 +2196,13 @@ function renderQuiz() {
 
   html += `<span class="qtype-tag ${tagClass}">${tagLabel}</span>`;
   if (isScenario && q.context) {
-    html += `<div class="scenario-context"><div class="scenario-context-eyebrow">Situation</div><div class="scenario-context-body">${q.context}</div></div>`;
+    html += `<div class="scenario-context"><div class="scenario-context-eyebrow">Situation</div><div class="scenario-context-body">${formatContent(q.context)}</div></div>`;
   }
-  html += `<div class="qstem">${q.stem}</div>`;
+  html += `<div class="qstem">${formatContent(q.stem)}</div>`;
+  if (q.code) {
+    const badge = q.codeEyebrow || (q.codeLang ? q.codeLang.toUpperCase() + ' CODE' : 'CODE SNIPPET');
+    html += `<div class="code-box"><div class="code-box-eyebrow">${escapeHtml(badge)}</div><pre class="code-box-pre"><code>${escapeHtml(q.code.trim())}</code></pre></div>`;
+  }
 
   if (isFitb) {
     // ── Fill-in-the-blank input ────────────────────────────────────
@@ -2135,7 +2210,7 @@ function renderQuiz() {
     html += `<div class="fitb-wrapper">`;
     html += `<input type="text" class="fitb-input ${inputCls}" ${isChecked ? 'readonly' : ''} placeholder="Type your answer\u2026">`;
     if (!isChecked && q.hint) {
-      html += `<div class="fitb-hint">\u2192 Hint: ${q.hint}</div>`;
+      html += `<div class="fitb-hint">\u2192 Hint: ${formatInline(q.hint)}</div>`;
     }
     if (isChecked && r) {
       const ca = Array.isArray(q.answer) ? q.answer : [q.answer];
@@ -2151,7 +2226,7 @@ function renderQuiz() {
         if (ca.length > 1) html += ` <span style="color:var(--ink-mute)"> or <code>${escapeHtml(ca[1])}</code></span>`;
         html += `</div></div>`;
       }
-      if (q.fb) html += `<div class="fitb-fb">${q.fb}</div>`;
+      if (q.fb) html += `<div class="fitb-fb">${formatInline(q.fb)}</div>`;
     }
     html += `</div>`;
   } else {
@@ -2193,9 +2268,9 @@ function renderQuiz() {
         <div class="opt ${cls}" data-type="${q.type}" data-idx="${i}">
           <div class="opt-main">
             <div class="opt-marker">${marker}</div>
-            <div class="opt-text">${opt.t}${tagsHtml}</div>
+            <div class="opt-text">${formatInline(opt.t)}${tagsHtml}</div>
           </div>
-          ${showFeedback ? `<div class="opt-feedback">${opt.fb}</div>` : ''}
+          ${showFeedback ? `<div class="opt-feedback">${formatInline(opt.fb)}</div>` : ''}
         </div>
       `;
     });
