@@ -474,7 +474,7 @@
     background: var(--bg-deep);
     border: 1px solid var(--rule);
     cursor: pointer;
-    transition: background .12s ease, border-color .12s ease;
+    transition: background .12s ease, border-color .12s ease, box-shadow .12s ease, opacity .12s ease;
     user-select: none;
   }
   .opt-main {
@@ -487,6 +487,9 @@
     background: var(--bg-raise);
   }
   .opt.locked { cursor: default; }
+  .opt.locked:not(.is-correct):not(.is-wrong):not(.is-missed) {
+    opacity: .45;
+  }
   .opt-marker {
     flex-shrink: 0;
     width: 22px;
@@ -532,39 +535,58 @@
 
   /* checked / locked option states */
   .opt.is-correct {
-    background: var(--correct-bg);
-    border-color: var(--correct-edge);
+    background: rgba(123, 184, 118, 0.14);
+    border-color: var(--correct);
+    box-shadow: 0 0 0 1px var(--correct), 0 0 14px rgba(123, 184, 118, 0.22);
+    opacity: 1;
   }
   .opt.is-correct .opt-marker {
     background: var(--correct);
     border-color: var(--correct);
-    color: var(--correct-bg);
+    color: var(--bg);
+    font-weight: 700;
   }
   .opt.is-correct .opt-text { color: var(--ink); }
-
-  .opt.is-wrong {
-    background: var(--wrong-bg);
-    border-color: var(--wrong-edge);
-    margin-bottom: 24px;
+  .opt.is-correct .opt-text code {
+    border-color: rgba(123, 184, 118, 0.4);
+    background: rgba(0, 0, 0, 0.3);
   }
-  .opt.is-wrong .opt-marker {
-    background: var(--wrong);
-    border-color: var(--wrong);
-    color: var(--wrong-bg);
-  }
-  .opt.is-wrong .opt-text { color: var(--ink); }
 
   .opt.is-missed {
-    background: var(--gold-bg);
-    border-color: var(--gold-edge);
-    border-style: dashed;
+    background: rgba(212, 160, 74, 0.14);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold), 0 0 14px rgba(212, 160, 74, 0.22);
+    opacity: 1;
   }
   .opt.is-missed .opt-marker {
     background: var(--gold);
     border-color: var(--gold);
-    color: var(--gold-bg);
+    color: var(--bg);
+    font-weight: 700;
   }
   .opt.is-missed .opt-text { color: var(--ink); }
+  .opt.is-missed .opt-text code {
+    border-color: rgba(212, 160, 74, 0.4);
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .opt.is-wrong {
+    background: rgba(213, 92, 74, 0.14);
+    border-color: var(--wrong);
+    box-shadow: 0 0 0 1px var(--wrong), 0 0 14px rgba(213, 92, 74, 0.22);
+    opacity: 1;
+  }
+  .opt.is-wrong .opt-marker {
+    background: var(--wrong);
+    border-color: var(--wrong);
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+  .opt.is-wrong .opt-text { color: var(--ink); }
+  .opt.is-wrong .opt-text code {
+    border-color: rgba(213, 92, 74, 0.4);
+    background: rgba(0, 0, 0, 0.3);
+  }
 
   .opt-tag {
     display: inline-block;
@@ -573,14 +595,17 @@
     font-size: 9px;
     letter-spacing: .14em;
     text-transform: uppercase;
-    padding: 1px 6px;
+    padding: 2px 7px;
     color: var(--bg);
     vertical-align: middle;
     border-radius: 2px;
+    font-weight: 600;
   }
-  .opt-tag.you { background: var(--ink); }
-  .opt-tag.ans { background: var(--correct); }
-  .opt-tag.miss { background: var(--gold); }
+  .opt-tag.you { background: var(--ink-soft); color: var(--bg); }
+  .opt.is-wrong .opt-tag.you { background: var(--wrong); color: #FFFFFF; }
+  .opt.is-correct .opt-tag.you { background: var(--ink-soft); color: var(--bg); }
+  .opt-tag.ans { background: var(--correct); color: var(--bg); }
+  .opt-tag.miss { background: var(--gold); color: var(--bg); }
 
   .opt-feedback {
     margin-top: 10px;
@@ -592,6 +617,15 @@
     font-style: italic;
     color: var(--ink-soft);
     line-height: 1.5;
+  }
+  .opt.is-correct .opt-feedback {
+    border-left-color: var(--correct);
+  }
+  .opt.is-missed .opt-feedback {
+    border-left-color: var(--gold);
+  }
+  .opt.is-wrong .opt-feedback {
+    border-left-color: var(--wrong);
   }
   .opt-feedback code {
     font-family: var(--mono);
@@ -1083,8 +1117,8 @@
   }
   .fitb-input:focus      { border-color: var(--accent); }
   .fitb-input:read-only  { cursor: default; }
-  .fitb-input.is-correct { border-color: var(--correct); background: var(--correct-bg); color: var(--correct); }
-  .fitb-input.is-wrong   { border-color: var(--wrong);   background: var(--wrong-bg);   color: var(--wrong); }
+  .fitb-input.is-correct { border-color: var(--correct); background: var(--correct-bg); color: var(--correct); box-shadow: 0 0 0 1px var(--correct), 0 0 14px rgba(123, 184, 118, 0.22); }
+  .fitb-input.is-wrong   { border-color: var(--wrong);   background: var(--wrong-bg);   color: var(--wrong);   box-shadow: 0 0 0 1px var(--wrong), 0 0 14px rgba(213, 92, 74, 0.22); }
   .fitb-hint {
     font-family: var(--mono); font-size: 10.5px;
     letter-spacing: .1em; color: var(--ink-mute); margin-top: 10px;
@@ -1127,18 +1161,19 @@
   /* Code callout box ─────────────────────────────────────────────────── */
   .code-box {
     background: var(--bg-deep);
+    border: 1px solid var(--rule);
     border-left: 3px solid var(--gold);
-    padding: 14px 18px;
+    padding: 16px 20px;
     margin: 16px 0 22px;
     border-radius: 0 4px 4px 0;
   }
   .code-box-eyebrow {
     font-family: var(--mono);
-    font-size: 9.5px;
-    letter-spacing: .2em;
+    font-size: 10px;
+    letter-spacing: .18em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-weight: 600;
   }
   .code-box-pre {
@@ -1146,8 +1181,8 @@
     padding: 0;
     background: transparent;
     font-family: var(--mono);
-    font-size: 13.5px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.65;
     color: var(--ink);
     white-space: pre-wrap;
     word-break: break-word;
@@ -1169,7 +1204,7 @@
   .toggle.exam.on::after { background: var(--gold); }
 
   /* Controls that exam mode overrides get visually locked.        */
-  .locked { opacity: .38; pointer-events: none; filter: saturate(.5); }
+  .count-grid.locked, .opt-section.locked { opacity: .38; pointer-events: none; filter: saturate(.5); }
 
   /* Blueprint-coverage readout shown under the exam toggle.       */
   .exam-coverage {
@@ -2296,10 +2331,17 @@ function renderQuiz() {
           tagsHtml = '<span class="opt-tag you">Your pick</span><span class="opt-tag ans">Correct</span>';
           showFeedback = true;
         } else if (opt.c && !wasSelected) {
-          cls += ' is-missed';
-          marker = '\u25CB';
-          tagsHtml = '<span class="opt-tag miss">Correct answer</span>';
-          showFeedback = true;
+          if (isMulti) {
+            cls += ' is-missed';
+            marker = '\u25CB';
+            tagsHtml = '<span class="opt-tag miss">Missed choice</span>';
+            showFeedback = true;
+          } else {
+            cls += ' is-correct';
+            marker = '\u2713';
+            tagsHtml = '<span class="opt-tag ans">Correct answer</span>';
+            showFeedback = true;
+          }
         } else if (!opt.c && wasSelected) {
           cls += ' is-wrong';
           marker = '\u2715';

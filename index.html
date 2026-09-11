@@ -72,6 +72,28 @@
     gap: 14px;
     flex-wrap: wrap;
   }
+  .masthead-right {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .hub-gh-link {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .hub-gh-link:hover, .hub-gh-link:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+    outline: none;
+  }
   .codex {
     font-family: var(--mono);
     font-size: 11px;
@@ -267,7 +289,10 @@
       <span class="codex">QuizForge</span>
       <span class="stamp">Reviewer Hub</span>
     </div>
-    <span class="stamp">BSIT-24-01</span>
+    <div class="masthead-right">
+      <a href="https://github.com/officialraphaelraymundo-wq/quizforge" class="hub-gh-link" target="_blank" rel="noopener">GitHub ↗</a>
+      <span class="stamp">BSIT-24-01</span>
+    </div>
   </div>
   <!-- Hero -->
   <div class="hero">
@@ -279,43 +304,43 @@
   <div class="section-label">Available quizzes</div>
   <!-- Quiz grid -->
   <div class="quiz-grid">
-    <a class="quiz-card" href="IT2503-Data-Structures-and-Algorithms/">
+    <a class="quiz-card" href="./IT2503-Data-Structures-and-Algorithms/index.html">
       <span class="card-code">IT2503</span>
       <span class="card-arrow">→</span>
       <div class="card-title">Data Structures and Algorithms</div>
       <div class="card-meta">Lesson handout reviewer</div>
     </a>
-    <a class="quiz-card" href="IT1906-Human-Computer-Interaction/">
+    <a class="quiz-card" href="./IT1906-Human-Computer-Interaction/index.html">
       <span class="card-code">IT1906</span>
       <span class="card-arrow">→</span>
       <div class="card-title">Human-Computer Interaction</div>
       <div class="card-meta">Lesson handout reviewer</div>
     </a>
-    <a class="quiz-card" href="IT2311-Principles-of-Communication/">
+    <a class="quiz-card" href="./IT2311-Principles-of-Communication/index.html">
       <span class="card-code">IT2311</span>
       <span class="card-arrow">→</span>
       <div class="card-title">Principles of Communication</div>
       <div class="card-meta">Lesson handout reviewer</div>
     </a>
-    <a class="quiz-card" href="ge2409-philippine-history/">
+    <a class="quiz-card" href="./ge2409-philippine-history/index.html">
       <span class="card-code">GE2409</span>
       <span class="card-arrow">→</span>
       <div class="card-title">Philippine History</div>
       <div class="card-meta">Lesson handout reviewer</div>
     </a>
-    <a class="quiz-card" href="ge2411-rizal/">
+    <a class="quiz-card" href="./ge2411-rizal/index.html">
       <span class="card-code">GE2411</span>
       <span class="card-arrow">→</span>
       <div class="card-title">Rizal's Life and Works</div>
       <div class="card-meta">Lesson handout reviewer</div>
     </a>
-    <a class="quiz-card" href="it2601-platform-technology/">
+    <a class="quiz-card" href="./it2601-platform-technology/index.html">
       <span class="card-code">IT2601</span>
       <span class="card-arrow">→</span>
       <div class="card-title">Platform Technology</div>
       <div class="card-meta">Lesson handout reviewer</div>
     </a>
-    <a class="quiz-card" href="IT1908-Object-Oriented-Programming/">
+    <a class="quiz-card" href="./IT1908-Object-Oriented-Programming/index.html">
       <span class="card-code">IT1908</span>
       <span class="card-arrow">→</span>
       <div class="card-title">Object-Oriented Programming</div>
@@ -325,9 +350,9 @@
   <!-- Footer -->
   <footer>
     <div class="footer-top">
-      <div class="footer-left">Built with QuizForge by <a href="https://github.com/officialraphaelraymundo-wq" style="color:var(--ink-mute);text-decoration:none;border-bottom:1px solid var(--rule-strong);transition:color .15s,border-color .15s;">officialraphaelraymundo-wq</a></div>
+      <div class="footer-left">Built with QuizForge by <a href="https://github.com/officialraphaelraymundo-wq" target="_blank" rel="noopener" style="color:var(--ink-mute);text-decoration:none;border-bottom:1px solid var(--rule-strong);transition:color .15s,border-color .15s;">officialraphaelraymundo-wq</a></div>
       <div class="footer-right">
-        <a href="https://github.com/officialraphaelraymundo-wq/quizforge">Source ↗</a>
+        <a href="https://github.com/officialraphaelraymundo-wq/quizforge" target="_blank" rel="noopener">Source on GitHub ↗</a>
       </div>
     </div>
     <div class="footer-disclosure">This site and its review materials were engineered using a multi-model agentic pipeline. Content generation, adversarial review, and accuracy verification are each handled by independent LLM agents. Site design and quiz engine are similarly AI-assisted. All outputs undergo human review before publication.</div>
