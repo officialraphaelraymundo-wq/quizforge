@@ -1215,6 +1215,11 @@
     word-break: break-word;
     overflow-x: auto;
   }
+  .code-box-diagram {
+    line-height: 1.25;
+    white-space: pre;
+    letter-spacing: 0;
+  }
   /* Java syntax tokens. Keywords take the gold accent, so `private` and
      `public` are the brightest things in the box -- which is the point of
      the encapsulation lesson. Comments go mute so `// line n1` markers
@@ -1770,13 +1775,19 @@ function highlightJava(src) {
 // Highlight only what we can actually parse. Anything not tagged java --
 // pseudocode, plain text -- falls through to the plain escaped path.
 function renderCodeBody(code, lang) {
-  const src = String(code).trim();
+  const src = String(code).replace(/^\r?\n+/, '').replace(/\r?\n\s*$/, '');
   return (lang && String(lang).toLowerCase() === 'java') ? highlightJava(src) : escapeHtml(src);
 }
 
 function formatInline(s) {
   if (!s) return '';
-  return String(s).replace(/`([^`]+)`/g, (match, p1) => `<code>${escapeHtml(p1)}</code>`);
+  const parts = String(s).split(/(`[^`]+`)/g);
+  return parts.map(part => {
+    if (part.startsWith('`') && part.endsWith('`') && part.length >= 2) {
+      return `<code>${escapeHtml(part.slice(1, -1))}</code>`;
+    }
+    return escapeHtml(part);
+  }).join('');
 }
 
 function formatContent(s) {
@@ -1785,13 +1796,29 @@ function formatContent(s) {
 
   // 1. Fenced code blocks ```lang\ncode\n``` or ```code```
   const codeBlockRegex = /```(?:([a-zA-Z0-9_-]+)\n)?([\s\S]*?)```/g;
+  const blocks = [];
   text = text.replace(codeBlockRegex, (match, lang, code) => {
-    const badge = (lang ? lang.toUpperCase() + ' ' : '') + 'CODE';
-    return `<div class="code-box"><div class="code-box-eyebrow">${escapeHtml(badge)}</div><pre class="code-box-pre"><code>${renderCodeBody(code, lang || 'java')}</code></pre></div>`;
+    const isDiagram = lang && ['text', 'diagram', 'ascii', 'tree'].includes(lang.toLowerCase());
+    const badge = isDiagram ? 'DIAGRAM' : ((lang ? lang.toUpperCase() + ' ' : '') + 'CODE');
+    const preClass = isDiagram ? 'code-box-pre code-box-diagram' : 'code-box-pre';
+    const placeholder = `___BLOCK_${blocks.length}___`;
+    blocks.push(`<div class="code-box"><div class="code-box-eyebrow">${escapeHtml(badge)}</div><pre class="${preClass}"><code>${renderCodeBody(code, lang || 'java')}</code></pre></div>`);
+    return placeholder;
   });
 
-  // 2. Inline code backticks `code`
-  text = text.replace(/`([^`]+)`/g, (match, p1) => `<code>${escapeHtml(p1)}</code>`);
+  // 2. Format inline code & escape remaining text
+  const parts = text.split(/(`[^`]+`)/g);
+  text = parts.map(part => {
+    if (part.startsWith('`') && part.endsWith('`') && part.length >= 2) {
+      return `<code>${escapeHtml(part.slice(1, -1))}</code>`;
+    }
+    return escapeHtml(part);
+  }).join('');
+
+  // 3. Restore fenced code blocks
+  blocks.forEach((block, i) => {
+    text = text.replace(`___BLOCK_${i}___`, block);
+  });
 
   return text;
 }
@@ -2492,8 +2519,10 @@ function renderQuiz() {
   }
   html += `<div class="qstem">${formatContent(q.stem)}</div>`;
   if (q.code) {
-    const badge = q.codeEyebrow || (q.codeLang ? q.codeLang.toUpperCase() + ' CODE' : 'CODE SNIPPET');
-    html += `<div class="code-box"><div class="code-box-eyebrow">${escapeHtml(badge)}</div><pre class="code-box-pre"><code>${renderCodeBody(q.code, q.codeLang)}</code></pre></div>`;
+    const isDiagram = q.codeLang && ['text', 'diagram', 'ascii', 'tree'].includes(q.codeLang.toLowerCase());
+    const badge = q.codeEyebrow || (isDiagram ? 'DIAGRAM' : (q.codeLang ? q.codeLang.toUpperCase() + ' CODE' : 'CODE SNIPPET'));
+    const preClass = isDiagram ? 'code-box-pre code-box-diagram' : 'code-box-pre';
+    html += `<div class="code-box"><div class="code-box-eyebrow">${escapeHtml(badge)}</div><pre class="${preClass}"><code>${renderCodeBody(q.code, q.codeLang)}</code></pre></div>`;
   }
 
   if (isFitb) {
