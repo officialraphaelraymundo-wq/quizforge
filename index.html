@@ -8,377 +8,272 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>QuizForge — Reviewer Hub</title>
 <meta property="og:title" content="QuizForge — Reviewer Hub">
-<meta property="og:description" content="Practice reviewers for BSIT subjects — MCQ, multi-select, scenario, and fill-in-the-blank items with instant feedback.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta property="og:description" content="Practice reviewers for BSIT subjects — MCQ, multi-select, scenario, and fill-in-the-blank items with instant feedback.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600&family=Courier+Prime:wght@400;700&family=Caveat:wght@500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:           #14171C;
-    --bg-2:         #1C2027;
-    --bg-deep:      #242932;
-    --bg-raise:     #2C313B;
-    --ink:          #ECE6D7;
-    --ink-soft:     #B8B2A4;
-    --ink-mute:     #7A7468;
-    --rule:         #2E333D;
-    --rule-strong:  #3D434F;
-    --accent:       #D86B4E;
-    --accent-deep:  #6B2818;
-    --accent-soft:  #3A1F18;
-    --gold:         #D4A04A;
-    --gold-bg:      #2A2010;
-    --shadow:       0 1px 0 rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.5);
-    --display:      "Fraunces", "Times New Roman", serif;
-    --body:         "IBM Plex Sans", -apple-system, system-ui, sans-serif;
-    --mono:         "JetBrains Mono", "SF Mono", Menlo, monospace;
+/* ============================================================
+   QuizForge shared theme — "Reading Room" variant — load in BOTH hub and quiz templates
+   Dark is default; light "paper" mode follows the phone setting.
+   ============================================================ */
+:root{
+  --bg:#0F0E13; --bg-2:#1C1A22; --bg-deep:#25222E; --bg-raise:#2E2A3A;
+  --ink:#F4F1EA; --ink-soft:#B9B6C0; --ink-mute:#8B8895;
+  --rule:#2A2733; --rule-strong:#3F3A4D;
+  --accent:#B39A6B; --accent-deep:#6B5530; --accent-soft:#2A2115;
+  --purple:#5B3F8C; --purple-lt:#8A6BC4; --on-purple:#F4F1EA;
+  --correct:#7FC49A; --correct-bg:#14261D; --correct-edge:#2C4A3A;
+  --wrong:#E0707F; --wrong-bg:#2B151B; --wrong-edge:#4A2530;
+  --gold:#A98BE0; --gold-bg:#211A33; --gold-edge:#3F3163;   /* "partial / missed" = lavender */
+  --bg-glow:rgba(91,63,140,.30); --bg-glow-2:rgba(91,63,140,.14); --spade-alpha:.09;
+  --frame:rgba(201,169,110,.30);
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+  --radius-card:12px; --radius-ctl:8px;
+  --display:"EB Garamond",Garamond,"Palatino Linotype",Georgia,serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono","SF Mono",Menlo,monospace; --type:"Courier Prime","Courier New",Courier,monospace;
+  --page:#1B1920; --page-edge:rgba(0,0,0,.35); --ruled:rgba(185,182,192,.07); --lamp:rgba(179,154,107,.10);
+  --tok-type:#A98BE0;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#F4F1EA; --bg-2:#FBF9F4; --bg-deep:#ECE7DC; --bg-raise:#E4DDCF;
+    --ink:#1C1A22; --ink-soft:#45414F; --ink-mute:#66626F;
+    --rule:#DDD6C8; --rule-strong:#C4BAA6;
+    --accent:#7A5E2E; --accent-deep:#5A441D; --accent-soft:#F1E8D6;
+    --purple:#5B3F8C; --purple-lt:#6546A3; --on-purple:#FBF9F4;
+    --correct:#23704A; --correct-bg:#E2F0E6; --correct-edge:#A9CFB7;
+    --wrong:#A8324A; --wrong-bg:#F8E3E7; --wrong-edge:#E0AAB5;
+    --gold:#6546A3; --gold-bg:#ECE5F6; --gold-edge:#C6B6E6;
+    --bg-glow:rgba(91,63,140,.12); --bg-glow-2:rgba(201,169,110,.12); --spade-alpha:.06;
+    --frame:rgba(128,97,42,.35);
+    --shadow:0 1px 0 rgba(28,26,34,.05),0 8px 24px -14px rgba(28,26,34,.25);
+    --tok-type:#6546A3; --page:#FFFDF8; --page-edge:rgba(90,68,29,.10); --ruled:rgba(101,70,163,.10); --lamp:rgba(122,94,46,.08);
+    color-scheme:light;
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--body);
-    font-weight: 400;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  body {
-    min-height: 100vh;
-    background-image:
-      radial-gradient(1200px 700px at 5% -15%, rgba(216,107,78,.10), transparent 60%),
-      radial-gradient(1000px 600px at 105% 115%, rgba(123,184,118,.05), transparent 60%),
-      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.025 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-    padding: 48px 24px 80px;
-  }
-  .shell { max-width: 880px; margin: 0 auto; }
-  /* ── MASTHEAD ── */
-  .masthead {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--ink);
-    margin-bottom: 36px;
-  }
-  .masthead-left {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  .masthead-right {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  .hub-gh-link {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule-strong);
-    padding-bottom: 1px;
-    transition: color .15s ease, border-color .15s ease;
-  }
-  .hub-gh-link:hover, .hub-gh-link:focus-visible {
-    color: var(--accent);
-    border-color: var(--accent);
-    outline: none;
-  }
-  .codex {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--ink);
-    border: 1px solid var(--ink);
-    padding: 3px 8px;
-    background: var(--bg);
-  }
-  .stamp {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  /* ── HERO ── */
-  .hero { padding: 28px 0 20px; }
-  .eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 18px;
-  }
-  .display {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(48px, 7vw, 86px);
-    line-height: .95;
-    letter-spacing: -.02em;
-    color: var(--ink);
-    margin-bottom: 22px;
-  }
-  .display em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-  }
-  .lede {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: 19px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    max-width: 580px;
-  }
-  .divider-double {
-    border: 0;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    height: 4px;
-    margin: 36px 0 28px;
-  }
-  .section-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 18px;
-  }
-  .section-label::before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    background: var(--accent);
-  }
-  /* ── QUIZ CARDS ── */
-  .quiz-grid {
-    display: grid;
-    gap: 12px;
-  }
-  .quiz-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: var(--bg-2);
-    border: 1px solid var(--rule-strong);
-    padding: 24px 22px;
-    position: relative;
-    transition: transform .15s ease, background .15s ease, border-color .15s ease;
-  }
-  .quiz-card:hover, .quiz-card:focus-visible {
-    background: var(--bg-deep);
-    border-color: var(--ink-soft);
-    transform: translateY(-2px);
-    outline: none;
-  }
-  .quiz-card:active {
-    transform: translateY(0);
-  }
-  .card-code {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--ink);
-    border: 1px solid var(--ink);
-    padding: 2px 7px;
-    background: var(--bg);
-    margin-bottom: 10px;
-  }
-  .card-badge {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 2px 7px;
-    background: var(--accent-soft);
-    margin-left: 6px;
-    margin-bottom: 10px;
-    vertical-align: baseline;
-  }
-  .card-title {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(22px, 4vw, 30px);
-    line-height: 1.15;
-    letter-spacing: -.01em;
-    color: var(--ink);
-    margin-bottom: 8px;
-  }
-  .card-meta {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .card-arrow {
-    position: absolute;
-    top: 24px;
-    right: 22px;
-    font-family: var(--mono);
-    font-size: 14px;
-    color: var(--ink-mute);
-    transition: transform .15s ease, color .15s ease;
-  }
-  .quiz-card:hover .card-arrow {
-    transform: translateX(4px);
-    color: var(--accent);
-  }
-  /* ── FOOTER ── */
-  footer {
-    margin-top: 48px;
-    padding-top: 18px;
-    border-top: 1px solid var(--rule);
-  }
-  .footer-top {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .footer-disclosure {
-    margin-top: 14px;
-    font-family: var(--body);
-    font-size: 11px;
-    line-height: 1.6;
-    color: var(--ink-mute);
-    max-width: 640px;
-  }
-  .footer-left {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .footer-right a {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    text-decoration: none;
-    transition: color .15s;
-  }
-  .footer-right a:hover { color: var(--accent); }
-  /* ── RESPONSIVE ── */
-  @media (max-width: 600px) {
-    body { padding: 32px 18px 60px; }
-    .masthead { flex-direction: column; gap: 8px; }
-    .footer-top { flex-direction: column; gap: 8px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { transition: none !important; }
-  }
+}
+:root[data-theme="light"]{
+  --bg:#F4F1EA; --bg-2:#FBF9F4; --bg-deep:#ECE7DC; --bg-raise:#E4DDCF;
+  --ink:#1C1A22; --ink-soft:#45414F; --ink-mute:#66626F;
+  --rule:#DDD6C8; --rule-strong:#C4BAA6;
+  --accent:#7A5E2E; --accent-deep:#5A441D; --accent-soft:#F1E8D6;
+  --purple:#5B3F8C; --purple-lt:#6546A3; --on-purple:#FBF9F4;
+  --correct:#23704A; --correct-bg:#E2F0E6; --correct-edge:#A9CFB7;
+  --wrong:#A8324A; --wrong-bg:#F8E3E7; --wrong-edge:#E0AAB5;
+  --gold:#6546A3; --gold-bg:#ECE5F6; --gold-edge:#C6B6E6;
+  --bg-glow:rgba(91,63,140,.12); --bg-glow-2:rgba(201,169,110,.12); --spade-alpha:.06;
+  --frame:rgba(128,97,42,.35);
+  --shadow:0 1px 0 rgba(28,26,34,.05),0 8px 24px -14px rgba(28,26,34,.25);
+  --tok-type:#6546A3; --page:#FFFDF8; --page-edge:rgba(90,68,29,.10); --ruled:rgba(101,70,163,.10); --lamp:rgba(122,94,46,.08);
+  color-scheme:light;
+}
+
+
+.theme-preview{font-family:var(--body);font-size:0.875rem;min-height:36px;padding:6px 14px;border-radius:99px;border:1px solid var(--rule-strong);background:var(--bg-2);color:var(--ink-soft);cursor:pointer}
+.theme-preview:hover{border-color:var(--accent);color:var(--accent)}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:
+    radial-gradient(800px 520px at 8% -8%, var(--lamp), transparent 65%),
+    radial-gradient(700px 500px at 100% 100%, var(--bg-glow-2), transparent 65%),
+    var(--bg);
+  color:var(--ink); font-family:var(--body); font-size:1.0625rem; line-height:1.6;
+  min-height:100vh; padding:36px 22px 64px;
+}
+.shell{max-width:900px;margin:0 auto}
+
+/* masthead like a library placard */
+.masthead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:12px;margin-bottom:40px;border-bottom:1px solid var(--rule-strong)}
+.brand{font-family:var(--display);font-size:1.6875rem;font-weight:600;letter-spacing:.01em}
+.masthead nav{display:flex;align-items:center;gap:16px;font-family:var(--type);font-size:0.875rem;color:var(--ink-mute)}
+.masthead a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--rule-strong)}
+.masthead a:hover,.masthead a:focus-visible{color:var(--accent);border-color:var(--accent);outline:none}
+
+.hero{max-width:620px;margin-bottom:34px}
+.eyebrow{font-family:var(--type);font-size:0.875rem;color:var(--accent);margin-bottom:10px}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(2.5rem,7vw,4rem);line-height:1.04;margin-bottom:16px}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{font-size:1.0938rem;color:var(--ink-soft);max-width:54ch}
+
+h2{font-family:var(--display);font-size:1.75rem;font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:14px}
+h2::after{content:"";flex:1;height:1px;background:var(--rule-strong)}
+
+/* catalog cards */
+.drawer{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.catalog{
+  position:relative;display:flex;flex-direction:column;gap:6px;
+  min-height:168px;padding:14px 20px 32px;
+  color:inherit;text-decoration:none;
+  background-color:var(--page);
+  background-image:
+    linear-gradient(var(--purple),var(--purple)),
+    repeating-linear-gradient(to bottom, transparent 0 25px, var(--ruled) 25px 26px);
+  background-size:100% 2px,100% 100%;
+  background-position:0 44px,0 44px;
+  background-repeat:no-repeat,no-repeat;
+  border:1px solid var(--rule-strong);border-radius:4px;
+  box-shadow:var(--shadow);
+  transition:transform .18s ease,border-color .18s ease;
+}
+.catalog:hover,.catalog:focus-visible{transform:translateY(-3px);border-color:var(--accent);outline:none}
+.catalog:focus-visible{box-shadow:0 0 0 3px var(--purple-lt)}
+.call{display:flex;align-items:center;gap:6px;height:26px;font-family:var(--type);font-weight:700;font-size:0.9375rem;color:var(--ink-soft)}
+.call i{font-style:normal;font-size:0.625rem;color:var(--ink-mute);opacity:.7}
+.cat-title{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.15;margin-top:10px}
+.cat-meta{font-family:var(--type);font-size:0.8438rem;color:var(--ink-mute);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.alpha{font-family:var(--body);font-weight:600;font-size:0.75rem;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:0 10px}
+.punch{position:absolute;left:50%;bottom:9px;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;background:var(--bg);box-shadow:inset 0 1px 2px rgba(0,0,0,.45)}
+
+.how{margin-top:48px;font-size:0.9688rem;color:var(--ink-soft);max-width:62ch;padding-left:16px;border-left:2px solid var(--rule-strong)}
+.how b{color:var(--ink);font-weight:600}
+
+/* footer with bookplate */
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--rule-strong);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;font-size:0.875rem;color:var(--ink-mute)}
+.bookplate{width:128px;padding:10px 10px 12px;border:1px solid var(--accent);outline:1px solid var(--accent);outline-offset:3px;text-align:center;font-family:var(--display)}
+.bookplate small{display:block;font-style:italic;font-size:0.8125rem;color:var(--ink-mute)}
+.bookplate b{display:block;font-weight:600;font-size:1.0625rem;color:var(--ink);margin:2px 0}
+.bookplate i{font-style:normal;font-size:0.6875rem;color:var(--accent)}
+footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--rule-strong)}
+footer a:hover,footer a:focus-visible{color:var(--accent);border-color:var(--accent);outline:none}
+.disclosure{margin-top:10px;font-size:0.7812rem;line-height:1.65;max-width:64ch}
+
+@media (max-width:640px){
+  body{padding:18px 14px 48px;font-size:1rem}
+  .masthead{margin-bottom:18px;padding-bottom:10px}
+  .brand{font-size:1.4375rem}
+  .masthead nav span{display:none}
+  .hero{margin-bottom:18px}
+  .eyebrow{font-size:0.8125rem;margin-bottom:4px}
+  h1{font-size:2rem;margin-bottom:0}
+  .lede{display:none}
+  h2{font-size:1.4375rem;margin-bottom:12px}
+  .drawer{grid-template-columns:1fr;gap:12px}
+  .catalog{min-height:132px;padding:10px 16px 30px}
+  .cat-title{font-size:1.3125rem;margin-top:6px}
+  .how{margin-top:32px}
+  footer{grid-template-columns:1fr;margin-top:40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ================= quiet whimsy ================= */
+/* a bookworm peeks out of the punched hole on hover / focus / tap */
+.punch::after{content:"";position:absolute;left:50%;bottom:4px;width:12px;height:12px;margin-left:-6px;border-radius:50% 50% 45% 45%;
+  background:radial-gradient(circle at 34% 42%,var(--page) 0 1.2px,transparent 1.6px),radial-gradient(circle at 66% 42%,var(--page) 0 1.2px,transparent 1.6px),var(--purple-lt);
+  transform:translateY(5px) scale(.2);opacity:0;transition:transform .35s cubic-bezier(.3,1.6,.5,1),opacity .2s}
+.catalog:hover .punch::after,.catalog:focus-visible .punch::after,.catalog:active .punch::after{transform:translateY(0) scale(1);opacity:1}
+.plates{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.bookplate{position:relative;cursor:default}
+.bookplate i{display:inline-block;transition:transform .6s ease}
+.bookplate:hover i,.bookplate:focus-visible i{transform:rotate(360deg)}
+.bookplate:focus-visible{outline:2px solid var(--purple-lt);outline-offset:6px}
+@media (max-width:640px){.plates{flex-direction:row;align-items:center}}
+@media (prefers-reduced-motion:reduce){.punch::after{transition:none}.bookplate i{transition:none}}
+
+/* ---- intuitiveness pass ---- */
+.how{margin:0 0 30px}
+.call .open{margin-left:auto;font-family:var(--body);font-weight:600;font-size:0.875rem;color:var(--accent);border-bottom:1px solid currentColor;line-height:1.2}
+.catalog:hover .open,.catalog:focus-visible .open{color:var(--purple-lt)}
+@media (max-width:640px){.how{margin:0 0 20px;font-size:0.9375rem}}
+.theme-preview{white-space:nowrap}
+.masthead{flex-wrap:wrap}
 </style>
 </head>
 <body>
 <div class="shell">
-  <!-- Masthead -->
-  <div class="masthead">
-    <div class="masthead-left">
-      <span class="codex">QuizForge</span>
-      <span class="stamp">Reviewer Hub</span>
-    </div>
-    <div class="masthead-right">
-      <a href="https://github.com/officialraphaelraymundo-wq/quizforge" class="hub-gh-link" target="_blank" rel="noopener">GitHub ↗</a>
-      <span class="stamp">BSIT-24-01</span>
-    </div>
-  </div>
-  <!-- Hero -->
-  <div class="hero">
-    <div class="eyebrow">Practice reviewers</div>
-    <div class="display">Pick a <em>subject</em></div>
-    <div class="lede">MCQ, multi-select, scenario, and fill-in-the-blank items with per-option feedback on every check.</div>
-  </div>
-  <hr class="divider-double">
-  <div class="section-label">Available quizzes</div>
-  <!-- Quiz grid -->
-  <div class="quiz-grid">
-    <a class="quiz-card" href="./IT2503-Data-Structures-and-Algorithms/index.html">
-      <span class="card-code">IT2503</span>
-      <span class="card-arrow">→</span>
-      <div class="card-title">Data Structures and Algorithms</div>
-      <div class="card-meta">Lesson handout reviewer</div>
+  <header class="masthead">
+    <div class="brand">QuizForge</div>
+    <nav>
+      <span>BSIT-24-01</span>
+      <a href="https://github.com/officialraphaelraymundo-wq/quizforge" target="_blank" rel="noopener">GitHub</a>
+      <button class="theme-preview" type="button">Light mode</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Reviewer Hub · Reading Room</div>
+    <h1>Pull a card. <em>Study</em> the handout.</h1>
+    <p class="lede">Each reviewer follows one lesson handout. Every answer you check comes with a note on why each option is right or wrong.</p>
+  </section>
+
+  <p class="how"><b>How it works:</b> answer, press Check, then read the note under every option, including the ones you did not pick.</p>
+
+  <h2>Catalog</h2>
+  <div class="drawer">
+    <a class="catalog" href="./IT2503-Data-Structures-and-Algorithms/index.html">
+      <div class="call"><span>IT2503</span><i aria-hidden="true">&#9824;</i><b class="open">Open</b></div>
+      <div class="cat-title">Data Structures and Algorithms</div>
+      <div class="cat-meta">Handouts 01–04 · 243 questions</div>
+      <span class="punch" aria-hidden="true"></span>
     </a>
-    <a class="quiz-card" href="./IT1906-Human-Computer-Interaction/index.html">
-      <span class="card-code">IT1906</span>
-      <span class="card-arrow">→</span>
-      <div class="card-title">Human-Computer Interaction</div>
-      <div class="card-meta">Lesson handout reviewer</div>
+    <a class="catalog" href="./IT1906-Human-Computer-Interaction/index.html">
+      <div class="call"><span>IT1906</span><i aria-hidden="true">&#9824;</i><b class="open">Open</b></div>
+      <div class="cat-title">Human-Computer Interaction</div>
+      <div class="cat-meta">Handouts 01–05 · 260 questions</div>
+      <span class="punch" aria-hidden="true"></span>
     </a>
-    <a class="quiz-card" href="./IT2311-Principles-of-Communication/index.html">
-      <span class="card-code">IT2311</span>
-      <span class="card-arrow">→</span>
-      <div class="card-title">Principles of Communication</div>
-      <div class="card-meta">Lesson handout reviewer</div>
+    <a class="catalog" href="./IT2311-Principles-of-Communication/index.html">
+      <div class="call"><span>IT2311</span><i aria-hidden="true">&#9824;</i><b class="open">Open</b></div>
+      <div class="cat-title">Principles of Communication</div>
+      <div class="cat-meta">Handouts 01–04 · 204 questions</div>
+      <span class="punch" aria-hidden="true"></span>
     </a>
-    <a class="quiz-card" href="./ge2409-philippine-history/index.html">
-      <span class="card-code">GE2409</span>
-      <span class="card-arrow">→</span>
-      <div class="card-title">Philippine History</div>
-      <div class="card-meta">Lesson handout reviewer</div>
+    <a class="catalog" href="./ge2409-philippine-history/index.html">
+      <div class="call"><span>GE2409</span><i aria-hidden="true">&#9824;</i><b class="open">Open</b></div>
+      <div class="cat-title">Philippine History</div>
+      <div class="cat-meta">Handouts 01–04 · 216 questions</div>
+      <span class="punch" aria-hidden="true"></span>
     </a>
-    <a class="quiz-card" href="./ge2411-rizal/index.html">
-      <span class="card-code">GE2411</span>
-      <span class="card-arrow">→</span>
-      <div class="card-title">Rizal's Life and Works</div>
-      <div class="card-meta">Lesson handout reviewer</div>
+    <a class="catalog" href="./ge2411-rizal/index.html">
+      <div class="call"><span>GE2411</span><i aria-hidden="true">&#9824;</i><b class="open">Open</b></div>
+      <div class="cat-title">Rizal's Life and Works</div>
+      <div class="cat-meta">Handouts 01–04 · 241 questions</div>
+      <span class="punch" aria-hidden="true"></span>
     </a>
-    <a class="quiz-card" href="./it2601-platform-technology/index.html">
-      <span class="card-code">IT2601</span>
-      <span class="card-arrow">→</span>
-      <div class="card-title">Platform Technology</div>
-      <div class="card-meta">Lesson handout reviewer</div>
+    <a class="catalog" href="./it2601-platform-technology/index.html">
+      <div class="call"><span>IT2601</span><i aria-hidden="true">&#9824;</i><b class="open">Open</b></div>
+      <div class="cat-title">Platform Technology</div>
+      <div class="cat-meta">Handouts 01–04 · 203 questions</div>
+      <span class="punch" aria-hidden="true"></span>
     </a>
-    <a class="quiz-card" href="./IT1908-Object-Oriented-Programming/index.html">
-      <span class="card-code">IT1908</span>
-      <span class="card-arrow">→</span>
-      <div class="card-title">Object-Oriented Programming</div>
-      <div class="card-meta">Lesson handout reviewer</div>
+    <a class="catalog" href="./IT1908-Object-Oriented-Programming/index.html">
+      <div class="call"><span>IT1908</span><i aria-hidden="true">&#9824;</i><b class="open">Open</b></div>
+      <div class="cat-title">Object-Oriented Programming</div>
+      <div class="cat-meta">Handouts 01–08 · 487 questions</div>
+      <span class="punch" aria-hidden="true"></span>
     </a>
-    <a class="quiz-card" href="./java-code-practice/index.html">
-      <span class="card-code">JAVA</span>
-      <span class="card-badge">Alpha</span>
-      <span class="card-arrow">→</span>
-      <div class="card-title">Java Code Practice</div>
-      <div class="card-meta">Alpha release · Arrange-the-code drills</div>
+    <a class="catalog" href="./java-code-practice/index.html">
+      <div class="call"><span>JAVA</span><i aria-hidden="true">&#9824;</i><b class="open">Open</b></div>
+      <div class="cat-title">Java Code Practice</div>
+      <div class="cat-meta">Arrange-the-code drills<span class="alpha">Alpha</span></div>
+      <span class="punch" aria-hidden="true"></span>
     </a>
   </div>
-  <!-- Footer -->
+
+
   <footer>
-    <div class="footer-top">
-      <div class="footer-left">Built with QuizForge by <a href="https://github.com/officialraphaelraymundo-wq" target="_blank" rel="noopener" style="color:var(--ink-mute);text-decoration:none;border-bottom:1px solid var(--rule-strong);transition:color .15s,border-color .15s;">officialraphaelraymundo-wq</a></div>
-      <div class="footer-right">
-        <a href="https://github.com/officialraphaelraymundo-wq/quizforge" target="_blank" rel="noopener">Source on GitHub ↗</a>
-      </div>
+    <div class="plates"><div class="bookplate" tabindex="0"><small>Ex libris</small><b>QuizForge</b><i aria-hidden="true">&#9824;</i></div></div>
+    <div>
+      <div>Built by <a href="https://github.com/officialraphaelraymundo-wq" target="_blank" rel="noopener">officialraphaelraymundo-wq</a> · <a href="https://github.com/officialraphaelraymundo-wq/quizforge" target="_blank" rel="noopener">Source on GitHub</a></div>
+      <p class="disclosure">This site and its review materials were engineered using a multi-model agentic pipeline. Content generation, adversarial review, and accuracy verification are each handled by independent LLM agents. Site design and quiz engine are similarly AI-assisted. All outputs undergo human review before publication.</p>
     </div>
-    <div class="footer-disclosure">This site and its review materials were engineered using a multi-model agentic pipeline. Content generation, adversarial review, and accuracy verification are each handled by independent LLM agents. Site design and quiz engine are similarly AI-assisted. All outputs undergo human review before publication.</div>
   </footer>
 </div>
+<script>
+(function(){var b=document.querySelector('.theme-preview');if(!b)return;var root=document.documentElement;
+try{var saved=localStorage.getItem('qf-theme');if(saved==='light'||saved==='dark')root.dataset.theme=saved}catch(e){}
+function cur(){var t=root.dataset.theme;if(t)return t;return matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
+function label(){var next=cur()==='light'?'dark':'light';b.textContent=next==='light'?'Light mode':'Dark mode';b.setAttribute('aria-label','Switch to '+next+' mode')}
+b.onclick=function(){var next=cur()==='light'?'dark':'light';root.dataset.theme=next;try{localStorage.setItem('qf-theme',next)}catch(e){}label()};label();})();
+</script>
 <!-- Visitor analytics -->
 <script data-goatcounter="https://officialraphaelraymundo.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
