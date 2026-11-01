@@ -429,11 +429,11 @@ a.btn { display: inline-flex; align-items: center; justify-content: center; text
 
 .p-bank { padding-top: 2px; }
 
-.p-row { display: flex; align-items: stretch; background: var(--bg-raise); border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; min-height: 44px; user-select: none; }
+.p-row { display: flex; align-items: stretch; background: var(--bg-raise); border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; min-height: 44px; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 
 .p-answer .p-row { background: var(--bg-deep); }
 
-.p-handle { display: flex; align-items: center; justify-content: center; min-width: 38px; border-right: 1px solid var(--rule); color: var(--accent); font-size: 1.25rem; cursor: grab; touch-action: none; }
+.p-handle { display: flex; align-items: center; justify-content: center; min-width: 48px; border-right: 1px solid var(--rule); color: var(--accent); font-size: 1.25rem; cursor: grab; touch-action: none; -webkit-touch-callout: none; }
 
 .p-code { flex: 1 1 0%; min-width: 0px; font-family: var(--mono); font-size: 0.8rem; line-height: 1.55; padding: 10px 12px 10px 2.1em; text-indent: -1.4em; white-space: pre-wrap; overflow-wrap: anywhere; }
 
@@ -1699,16 +1699,19 @@ function parsonsHTML(q,i,isChecked,r){
 var pDrag=null;
 function wireParsons(i){
   var hs=document.querySelectorAll('#pAnswer .p-row, #pBank .p-row');
-  for(var n=0;n<hs.length;n++){ (function(h){ h.addEventListener('pointerdown', function(e){ pDown(e,i); }); })(hs[n]); }
+  for(var n=0;n<hs.length;n++){ (function(h){ h.addEventListener('pointerdown', function(e){ pDown(e,i); }); h.addEventListener('contextmenu', function(e){ e.preventDefault(); }); })(hs[n]); }
 }
 function pDown(e,i){
   if(state.checked[i]) return;
   var row=e.target.closest('.p-row'); if(!row) return;
+  // touch: only the handle has touch-action:none; elsewhere the finger scrolls the page
+  if(e.pointerType==='touch' && !e.target.closest('.p-handle')) return;
+  if(pDrag) pCleanup();
   pDrag={ i:i, k:+row.dataset.k, row:row, startX:e.clientX, startY:e.clientY, started:false };
   try{ row.setPointerCapture(e.pointerId); }catch(_){}
   document.addEventListener('pointermove', pMove, {passive:false});
   document.addEventListener('pointerup', pUp);
-  document.addEventListener('pointercancel', pUp);
+  document.addEventListener('pointercancel', pCancel);
 }
 function pMoveClone(x,y){ pDrag.clone.style.left=(x-pDrag.offX)+'px'; pDrag.clone.style.top=(y-pDrag.offY)+'px'; }
 function pMove(e){
@@ -1722,7 +1725,18 @@ function pMove(e){
     pDrag.clone=clone; pDrag.offX=pDrag.startX-rect.left; pDrag.offY=pDrag.startY-rect.top;
     pDrag.row.classList.add('p-dragging'); pDrag.started=true;
   }
-  e.preventDefault(); pMoveClone(e.clientX,e.clientY); pShowInsert(e.clientX,e.clientY);
+  e.preventDefault(); pDrag.lastX=e.clientX; pDrag.lastY=e.clientY;
+  pMoveClone(e.clientX,e.clientY); pShowInsert(e.clientX,e.clientY); pAutoScroll();
+}
+function pAutoScroll(){
+  if(!pDrag || !pDrag.started || pDrag.raf) return;
+  var edge=70, y=pDrag.lastY, dy=0;
+  if(y<edge) dy=-Math.ceil((edge-y)/5); else if(y>window.innerHeight-edge) dy=Math.ceil((y-(window.innerHeight-edge))/5);
+  if(!dy) return;
+  pDrag.raf=requestAnimationFrame(function(){
+    if(!pDrag) return;
+    pDrag.raf=0; window.scrollBy(0,dy); pMoveClone(pDrag.lastX,pDrag.lastY); pShowInsert(pDrag.lastX,pDrag.lastY); pAutoScroll();
+  });
 }
 function pTarget(x,y){
   var a=document.getElementById('pAnswer'), b=document.getElementById('pBank');
@@ -1755,6 +1769,7 @@ function pUp(e){
   }
   pCleanup();
 }
+function pCancel(){ pCleanup(); }
 function pRefreshEmpty(i){
   var a=document.getElementById('pAnswer'); if(!a) return;
   var has=a.querySelectorAll('.p-row').length>0;
@@ -1764,13 +1779,14 @@ function pRefreshEmpty(i){
   if(!has && !hint){ var d=document.createElement('div'); d.className='p-hint'; d.textContent='Drag the correct lines here, in order'; a.appendChild(d); }
 }
 function pCleanup(){
+  if(pDrag && pDrag.raf) cancelAnimationFrame(pDrag.raf);
   if(pDrag && pDrag.clone) pDrag.clone.remove();
   var ins=document.querySelectorAll('.p-insert'); for(var n=0;n<ins.length;n++) ins[n].remove();
   var dg=document.querySelectorAll('.p-row.p-dragging'); for(var m=0;m<dg.length;m++) dg[m].classList.remove('p-dragging');
   pDrag=null;
   document.removeEventListener('pointermove', pMove);
   document.removeEventListener('pointerup', pUp);
-  document.removeEventListener('pointercancel', pUp);
+  document.removeEventListener('pointercancel', pCancel);
 }
 
 function scoreQuestion(q, selectedIdxs) {
