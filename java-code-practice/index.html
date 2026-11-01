@@ -429,7 +429,7 @@ a.btn { display: inline-flex; align-items: center; justify-content: center; text
 
 .p-bank { padding-top: 2px; }
 
-.p-row { display: flex; align-items: stretch; background: var(--bg-raise); border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; min-height: 44px; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.p-row { display: flex; align-items: stretch; background: var(--bg-raise); border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; min-height: 44px; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 
 .p-answer .p-row { background: var(--bg-deep); }
 
@@ -1704,8 +1704,6 @@ function wireParsons(i){
 function pDown(e,i){
   if(state.checked[i]) return;
   var row=e.target.closest('.p-row'); if(!row) return;
-  // touch: only the handle has touch-action:none; elsewhere the finger scrolls the page
-  if(e.pointerType==='touch' && !e.target.closest('.p-handle')) return;
   if(pDrag) pCleanup();
   pDrag={ i:i, k:+row.dataset.k, row:row, startX:e.clientX, startY:e.clientY, started:false };
   try{ row.setPointerCapture(e.pointerId); }catch(_){}
