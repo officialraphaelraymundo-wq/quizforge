@@ -377,7 +377,7 @@ a.btn { display: inline-flex; align-items: center; justify-content: center; text
 
 .timer-badge.danger::before { background: var(--wrong); }
 
-@keyframes pulse { 
+@keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.55; }
 }
@@ -402,7 +402,7 @@ a.btn { display: inline-flex; align-items: center; justify-content: center; text
 
 .fade-in { animation: 0.35s ease 0s 1 normal both running fade; }
 
-@keyframes fade { 
+@keyframes fade {
   0% { opacity: 0; transform: translateY(6px); }
   100% { opacity: 1; transform: translateY(0px); }
 }
@@ -734,7 +734,7 @@ body{background-image:radial-gradient(1200px 700px at 5% -15%,var(--bg-glow),tra
   .meta-row{display:none}
   .setup-summary{margin-top:8px;gap:10px 22px}
   .btn-row{position:sticky;bottom:0;z-index:4;margin-top:18px;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 28%)}
-  .btn-row > div{display:none}
+  #view-setup .btn-row > div{display:none}
   #startBtn{width:100%}
 }
 /* ============================================================
@@ -1419,9 +1419,10 @@ function examTargetTotal() {
 // [{cat, want, have, take}]  where take = min(want, have).
 function examPlan() {
   const m = (CONFIG.examSim && CONFIG.examSim.multiplier) || 1;
+  const pool = availableQuestions();
   return CATEGORIES.map(c => {
     const want = c.weight * m;
-    const have = CAT_COUNTS[c.key] || 0;
+    const have = pool.filter(q => q.cat === c.key).length;
     return { cat: c, want, have, take: Math.min(want, have) };
   });
 }
@@ -1551,8 +1552,9 @@ function shuffle(arr) {
 
 // Pool size given current focus selection.
 function poolSize() {
-  if (!state.focusEnabled || state.focusedCats.length === 0) return BANK.length;
-  return BANK.filter(q => state.focusedCats.includes(q.cat)).length;
+  const pool = availableQuestions();
+  if (!state.focusEnabled || state.focusedCats.length === 0) return pool.length;
+  return pool.filter(q => state.focusedCats.includes(q.cat)).length;
 }
 
 // Shared question normalizer: shuffles options, strips authoring-only
@@ -1610,7 +1612,10 @@ function drawSpread(pool, n) {
 // Packs have no question IDs, so a flag is keyed on a hash of the stem.
 const FLAG_KEY = 'quizforge_flags_' + ((PACK.meta && (PACK.meta.packId || PACK.meta.subject)) || 'quiz');
 let flags = {};
-try { flags = JSON.parse(localStorage.getItem(FLAG_KEY) || '{}'); } catch (e) { flags = {}; }
+try {
+  const saved = JSON.parse(localStorage.getItem(FLAG_KEY) || '{}');
+  if (saved && typeof saved === 'object' && !Array.isArray(saved)) flags = saved;
+} catch (e) { /* storage unavailable or invalid */ }
 
 function flagId(q) {
   let h = 5381;
@@ -1618,9 +1623,11 @@ function flagId(q) {
   return 'q' + h.toString(36);
 }
 function isFlagged(q) { return Object.prototype.hasOwnProperty.call(flags, flagId(q)); }
+function availableQuestions() { return BANK.filter(q => !isFlagged(q)); }
 function saveFlags() {
   try { localStorage.setItem(FLAG_KEY, JSON.stringify(flags)); } catch (e) { /* storage unavailable */ }
   renderFlagNote();
+  updateSetupSummary();
 }
 function renderFlagNote() {
   const n = Object.keys(flags).length;
@@ -2018,7 +2025,7 @@ function updateSetupSummary() {
     $('poolConcepts').textContent = '';
     const startBtn = $('startBtn');
     startBtn.disabled = drawn === 0;
-    startBtn.textContent = drawn === 0 ? 'Bank is empty' : 'Begin Exam →';
+    startBtn.textContent = drawn === 0 ? 'No questions available' : 'Begin Exam →';
     return;
   }
 
@@ -2039,7 +2046,7 @@ function updateSetupSummary() {
   // focus
   if (!state.focusEnabled || state.focusedCats.length === 0 || state.focusedCats.length === CATEGORIES.length) {
     $('ssFocus').textContent = 'All topics';
-    $('focusSub').textContent = `All ${BANK.length} questions across ${CATEGORIES.length} topics`;
+    $('focusSub').textContent = `${available} questions available across ${CATEGORIES.length} topics`;
     $('focusSub').classList.remove('live');
   } else {
     const n = state.focusedCats.length;
@@ -2066,7 +2073,7 @@ function updateSetupSummary() {
   // reuse a concept.
   $('poolAvailable').textContent = available;
   const focusPool = (state.focusEnabled && state.focusedCats.length > 0)
-    ? BANK.filter(q => state.focusedCats.includes(q.cat)) : BANK;
+    ? availableQuestions().filter(q => state.focusedCats.includes(q.cat)) : availableQuestions();
   const concepts = conceptCount(focusPool);
   $('poolConcepts').textContent = concepts < available
     ? ` · ${concepts} distinct concepts` : '';
@@ -2075,7 +2082,7 @@ function updateSetupSummary() {
   const startBtn = $('startBtn');
   if (available === 0) {
     startBtn.disabled = true;
-    startBtn.textContent = 'Pick at least one topic';
+    startBtn.textContent = 'No questions available';
   } else {
     startBtn.disabled = false;
     startBtn.textContent = 'Begin Quiz →';
@@ -2673,7 +2680,15 @@ function showResults() {
   });
 
   $('retakeBtn').addEventListener('click', () => {
-    state.questions = buildActiveQuiz();
+    const questions = buildActiveQuiz();
+    if (questions.length === 0) {
+      view.classList.add('hidden');
+      $('view-setup').classList.remove('hidden');
+      updateSetupSummary();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    state.questions = questions;
     state.answers   = state.questions.map(q => q.type === 'fitb' ? '' : []); state.pBank = {}; state.pInit = {};
     state.checked   = state.questions.map(() => false);
     state.current   = 0;
