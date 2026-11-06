@@ -22,6 +22,8 @@ Questions are AI-generated from our course handouts using multiple models — on
 
 The AI writes the questions. I check them and own the mistakes. If you spot a wrong answer, message me.
 
+The flag-system rollout and related quiz-engine fixes were implemented with [OpenAI Codex](https://github.com/codex).
+
 ---
 
 Made by Raphael Raymundo · BSIT 201B
