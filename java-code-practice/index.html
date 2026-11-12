@@ -1639,6 +1639,30 @@ function syncFlagBtn() {
   if (q) $('flagBtn').textContent = isFlagged(q) ? 'Flagged: undo' : 'Flag question';
 }
 
+// Flags are stored as {id: stem}. To leave the browser a flag also needs to say
+// where it sits, so the pack supplies the lesson (cat) and type by matching ids.
+function flaggedList() {
+  return Object.entries(flags).map(([id, stem]) => {
+    const q = BANK.find(b => flagId(b) === id);
+    return { stem: String(stem), cat: q && q.cat ? q.cat : '', type: q ? q.type : '' };
+  });
+}
+function flaggedText() {
+  const pack = (PACK.meta && (PACK.meta.packId || PACK.meta.subject)) || 'quiz';
+  return flaggedList().map(f => '[' + pack + (f.cat ? ' ' + f.cat : '') + '] ' + f.stem).join('\n\n');
+}
+function copyFlagged(btn) {
+  const list = flaggedText();
+  const fallback = () => window.prompt('Flagged questions', list);
+  const done = () => {
+    if (!btn) return;
+    const label = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => { btn.textContent = label; }, 1500);
+  };
+  if (navigator.clipboard) navigator.clipboard.writeText(list).then(done, fallback); else fallback();
+}
+
 function buildQuiz(count) {
   let pool = BANK.map((q, i) => ({ ...q, origIdx: i })).filter(q => !isFlagged(q));
   if (state.focusEnabled && state.focusedCats.length > 0) {
@@ -2098,11 +2122,7 @@ $('flagBtn').addEventListener('click', () => {
   syncFlagBtn();
 });
 $('flagRestore').addEventListener('click', () => { flags = {}; saveFlags(); });
-$('flagCopy').addEventListener('click', () => {
-  const list = Object.values(flags).join('\n\n');
-  const fallback = () => window.prompt('Flagged questions', list);
-  if (navigator.clipboard) navigator.clipboard.writeText(list).catch(fallback); else fallback();
-});
+$('flagCopy').addEventListener('click', () => copyFlagged($('flagCopy')));
 renderFlagNote();
 
 $('startBtn').addEventListener('click', () => {
@@ -2585,6 +2605,12 @@ function showResults() {
     // localStorage might be unavailable or disabled
   }
 
+  // Flags live in this browser only; this row is how they leave it at the end.
+  const flagCount = Object.keys(flags).length;
+  const flagHtml = flagCount
+    ? `<div class="crumb" id="resultsFlagNote" style="margin: 12px 0;"><span>${flagCount} ${flagCount === 1 ? 'question' : 'questions'} flagged</span> <button class="btn quiet" id="resultsFlagCopy">Copy list</button></div>`
+    : '';
+
   view.innerHTML = `
     ${timeupHtml}
     <div class="results-hero">
@@ -2626,6 +2652,8 @@ function showResults() {
 
     ${objHtml}
 
+    ${flagHtml}
+
     <div class="btn-row">
       <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
         <a href="../index.html" class="btn ghost">← Back to Index</a>
@@ -2641,6 +2669,9 @@ function showResults() {
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
+  const resultsFlagCopy = $('resultsFlagCopy');
+  if (resultsFlagCopy) resultsFlagCopy.addEventListener('click', () => copyFlagged(resultsFlagCopy));
+
   $('exportResultsBtn').addEventListener('click', () => {
     try {
       const packId = _meta.packId || _meta.subject || 'quiz';
@@ -2650,6 +2681,7 @@ function showResults() {
         packId: packId,
         subject: _meta.subject || packId,
         exportedAt: new Date().toISOString(),
+        flagged: flaggedList(),
         sessions: history.length > 0 ? history : [{
           timestamp: new Date().toISOString(),
           packId: packId,
