@@ -545,6 +545,30 @@ a.btn { display: inline-flex; align-items: center; justify-content: center; text
 
 .exam-coverage .ec-missing { color: var(--ink-mute); }
 
+.exam-lengths { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+
+.exam-lengths-label { font-family: var(--type, var(--mono)); font-size: 0.7188rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute); margin-right: 4px; }
+
+.exam-len-btn { background: var(--bg-deep); border: 1px solid var(--rule-strong); color: var(--ink-soft); padding: 6px 12px; min-height: 36px; border-radius: 4px; cursor: pointer; font-family: var(--type, var(--mono)); font-size: 0.7812rem; transition: background 0.12s, border-color 0.12s, color 0.12s; }
+
+.exam-len-btn:hover { border-color: var(--ink-soft); color: var(--ink); background: var(--bg-raise); }
+
+.exam-len-btn.on { background: var(--gold-bg); border-color: var(--gold); color: var(--ink); box-shadow: inset 0 0 0 1px var(--gold); }
+
+.exam-periods { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 10px; }
+
+@media (max-width: 600px) {
+  .exam-periods { grid-template-columns: 1fr; }
+}
+
+.exam-period-pill { background: var(--bg-2); border: 1px solid var(--rule); padding: 8px 10px; border-radius: 4px; font-family: var(--type, var(--mono)); font-size: 0.75rem; color: var(--ink-soft); display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+.exam-period-pill.awaiting { border-style: dashed; color: var(--ink-mute); }
+
+.exam-period-pill .ep-slots { color: var(--gold); font-weight: 600; }
+
+.exam-period-pill.awaiting .ep-slots { color: var(--ink-mute); font-weight: 400; }
+
 .obj-break { margin: 34px 0px 8px; }
 
 .obj-break-title { font-family: var(--mono); font-size: 0.6562rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); border-bottom: 1px solid var(--rule-strong); padding-bottom: 8px; margin-bottom: 4px; }
@@ -562,6 +586,8 @@ a.btn { display: inline-flex; align-items: center; justify-content: center; text
 .obj-row-pct { font-family: var(--mono); font-size: 0.75rem; text-align: right; color: var(--ink-soft); }
 
 .obj-row.weak .obj-row-pct { color: var(--wrong); }
+
+.obj-row.muted .obj-row-label, .obj-row.muted .obj-row-pct { color: var(--ink-mute); }
 
 /* --- palette test overrides --- */
 .masthead,.divider-double{border-color:var(--accent)}
@@ -1055,7 +1081,9 @@ body{background-image:radial-gradient(900px 600px at 6% -10%,var(--lamp),transpa
         <div class="toggle exam" id="examToggle" role="switch" aria-checked="false" tabindex="0"></div>
       </div>
       <div class="exam-coverage hidden" id="examCoverage">
+        <div class="exam-lengths hidden" id="examLengths"></div>
         <div class="ec-line" id="examCoverageLine"></div>
+        <div class="exam-periods hidden" id="examPeriods"></div>
       </div>
     </div>
 
@@ -1352,6 +1380,32 @@ function applyConfig() {
     (CONFIG.examSim && CONFIG.examSim.enabled) ? '' : 'none';
   document.getElementById('cfg-exam-title').textContent =
     (CONFIG.examSim && CONFIG.examSim.title) || 'Exam simulation';
+  const examLengthsEl = document.getElementById('examLengths');
+  if (examLengthsEl) {
+    examLengthsEl.innerHTML = '';
+    const isPeriodCfg = CONFIG.examSim && CONFIG.examSim.enabled
+      && Array.isArray(CONFIG.examSim.periods) && CONFIG.examSim.periods.length > 0;
+    const lenOpts = isPeriodCfg && Array.isArray(CONFIG.examSim.lengthOptions)
+      ? CONFIG.examSim.lengthOptions : [];
+    if (lenOpts.length > 1) {
+      const defLen = CONFIG.examSim.total || lenOpts[0];
+      const lbl = document.createElement('span');
+      lbl.className = 'exam-lengths-label';
+      lbl.textContent = 'Exam length';
+      examLengthsEl.appendChild(lbl);
+      lenOpts.forEach(n => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'exam-len-btn' + (n === defLen ? ' on' : '');
+        btn.dataset.len = String(n);
+        btn.textContent = (n === defLen) ? `${n} · Official` : String(n);
+        examLengthsEl.appendChild(btn);
+      });
+      examLengthsEl.classList.remove('hidden');
+    } else {
+      examLengthsEl.classList.add('hidden');
+    }
+  }
 
   // Time chips
   const timePicker = document.getElementById('timePicker');
@@ -1410,16 +1464,41 @@ const CAT_COUNTS = Object.fromEntries(
 );
 
 /* ── Exam-blueprint helpers (engine code — no edits needed) ──────── */
-// How many questions exam mode WANTS in total (weights × multiplier).
+// How many questions exam mode WANTS in total (period-weighted or weights × multiplier).
 function examTargetTotal() {
-  const m = (CONFIG.examSim && CONFIG.examSim.multiplier) || 1;
+  const ex = CONFIG.examSim;
+  if (ex && Array.isArray(ex.periods) && ex.periods.length > 0) {
+    return (typeof state !== 'undefined' && state.examTotal) || ex.total || 0;
+  }
+  const m = (ex && ex.multiplier) || 1;
   return CATEGORIES.reduce((s, c) => s + c.weight * m, 0);
 }
-// The per-objective draw plan given what the bank currently holds:
-// [{cat, want, have, take}]  where take = min(want, have).
+// The per-period or per-objective draw plan given what the bank currently holds.
 function examPlan() {
-  const m = (CONFIG.examSim && CONFIG.examSim.multiplier) || 1;
+  const ex = CONFIG.examSim;
   const pool = availableQuestions();
+  if (ex && Array.isArray(ex.periods) && ex.periods.length > 0) {
+    const periods = ex.periods;
+    const total = examTargetTotal();
+    const alloc = periods.map((p, idx) => {
+      const exact = (p.pct * total) / 100;
+      const fl = Math.floor(exact);
+      return { idx, fl, rem: exact - fl, pct: p.pct };
+    });
+    let leftover = total - alloc.reduce((s, r) => s + r.fl, 0);
+    alloc.slice()
+      .sort((a, b) => (b.rem - a.rem) || (b.pct - a.pct) || (a.idx - b.idx))
+      .slice(0, Math.max(0, leftover))
+      .forEach(r => { alloc[r.idx].fl += 1; });
+    return periods.map((p, idx) => {
+      const want = alloc[idx].fl;
+      const cats = p.cats || [];
+      const have = pool.filter(q => cats.includes(q.cat)).length;
+      const missingCats = cats.filter(k => !pool.some(q => q.cat === k));
+      return { period: p, cats, pct: p.pct, want, have, take: Math.min(want, have), missingCats };
+    });
+  }
+  const m = (ex && ex.multiplier) || 1;
   return CATEGORIES.map(c => {
     const want = c.weight * m;
     const have = pool.filter(q => q.cat === c.key).length;
@@ -1535,6 +1614,7 @@ const state = {
   timeUsedMs: 0,            // captured when results shown
   // Exam simulation (weighted blueprint draw)
   examMode: false,
+  examTotal: (CONFIG.examSim && CONFIG.examSim.total) || 0,
   _savedTimerEnabled: false,        // user's timer prefs, restored when
   _savedTimerMinutes: CFG_DEFAULT_MINUTES, // exam mode is switched off
 };
@@ -1679,6 +1759,38 @@ function buildQuiz(count) {
 function buildExamQuiz() {
   const indexed = BANK.map((q, i) => ({ ...q, origIdx: i })).filter(q => !isFlagged(q));
   let paper = [];
+  const ex = CONFIG.examSim;
+  if (ex && Array.isArray(ex.periods) && ex.periods.length > 0) {
+    examPlan().forEach(p => {
+      if (p.take === 0) return;
+      const catPools = p.cats
+        .map(k => ({ key: k, qs: indexed.filter(q => q.cat === k) }))
+        .filter(cp => cp.qs.length > 0);
+      const alloc = catPools.map(() => 0);
+      let remaining = p.take;
+      while (remaining > 0) {
+        const open = catPools.map((cp, i) => alloc[i] < cp.qs.length ? i : -1).filter(i => i >= 0);
+        if (open.length === 0) break;
+        const share = Math.floor(remaining / open.length);
+        if (share > 0) {
+          open.forEach(i => {
+            const add = Math.min(share, catPools[i].qs.length - alloc[i]);
+            alloc[i] += add;
+            remaining -= add;
+          });
+        } else {
+          shuffle(open).slice(0, remaining).forEach(i => {
+            alloc[i] += 1;
+            remaining -= 1;
+          });
+        }
+      }
+      catPools.forEach((cp, i) => {
+        if (alloc[i] > 0) paper = paper.concat(drawSpread(cp.qs, alloc[i]));
+      });
+    });
+    return shuffle(paper).map(normalizeQuestion);
+  }
   examPlan().forEach(p => {
     if (p.take === 0) return;
     const pool = indexed.filter(q => q.cat === p.cat.key);
@@ -1955,7 +2067,12 @@ $('examToggle').addEventListener('click', () => {
     state._savedTimerEnabled = state.timerEnabled;
     state._savedTimerMinutes = state.timerMinutes;
     state.timerEnabled = true;
-    state.timerMinutes = (CONFIG.examSim && CONFIG.examSim.minutes) || 60;
+    const baseMin = (CONFIG.examSim && CONFIG.examSim.minutes) || 60;
+    const baseTot = (CONFIG.examSim && CONFIG.examSim.total) || 0;
+    const curTot = state.examTotal || baseTot;
+    state.timerMinutes = (baseTot > 0 && curTot > 0 && curTot !== baseTot)
+      ? Math.max(5, Math.round((baseMin * curTot / baseTot) / 5) * 5)
+      : baseMin;
     // Exam covers every objective — switch focus off.
     state.focusEnabled = false;
     $('focusToggle').classList.remove('on');
@@ -1987,6 +2104,22 @@ $('examToggle').addEventListener('click', () => {
 $('examToggle').addEventListener('keydown', e => {
   if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); $('examToggle').click(); }
 });
+$('examLengths').addEventListener('click', e => {
+  const btn = e.target.closest('.exam-len-btn');
+  if (!btn) return;
+  const len = parseInt(btn.dataset.len, 10);
+  if (!len || len <= 0) return;
+  state.examTotal = len;
+  const baseMin = (CONFIG.examSim && CONFIG.examSim.minutes) || 60;
+  const baseTot = (CONFIG.examSim && CONFIG.examSim.total) || len;
+  state.timerMinutes = (len === baseTot)
+    ? baseMin
+    : Math.max(5, Math.round((baseMin * len / baseTot) / 5) * 5);
+  $('examLengths').querySelectorAll('.exam-len-btn').forEach(b => {
+    b.classList.toggle('on', b === btn);
+  });
+  updateSetupSummary();
+});
 
 // ----- timer toggle + time picker -----
 $('timerToggle').addEventListener('click', () => {
@@ -2014,6 +2147,8 @@ document.querySelectorAll('.time-chip').forEach(chip => {
 function updateSetupSummary() {
   const examCfg = CONFIG.examSim || {};
 
+  const isPeriodExam = !!(examCfg.periods && examCfg.periods.length > 0);
+
   /* ── EXAM SIMULATION BRANCH ─────────────────────────────────── */
   if (state.examMode) {
     const plan   = examPlan();
@@ -2022,26 +2157,50 @@ function updateSetupSummary() {
     const missing = plan.filter(p => p.take < p.want);
 
     $('ssLength').textContent = `${drawn} question${drawn === 1 ? '' : 's'}`;
-    $('ssMode').textContent   = 'Exam simulation';
-    $('ssFocus').textContent  = 'All objectives · weighted';
+    $('ssMode').textContent   = isPeriodExam ? 'Final exam simulation' : 'Exam simulation';
+    $('ssFocus').textContent  = isPeriodExam
+      ? 'All periods · ' + examCfg.periods.map(p => p.pct).join('/')
+      : 'All objectives · weighted';
     $('ssTime').textContent   = `${state.timerMinutes} min`;
 
-    $('examSub').textContent  = 'ON — drawing per the blueprint weights, feedback at the end';
+    $('examSub').textContent  = isPeriodExam
+      ? 'ON — drawing by exam period weights, feedback at the end'
+      : 'ON — drawing per the blueprint weights, feedback at the end';
     $('examSub').classList.add('live');
-    $('focusSub').textContent = 'Locked — the exam draws from every objective';
+    $('focusSub').textContent = isPeriodExam
+      ? 'Locked — the exam draws across all term periods'
+      : 'Locked — the exam draws from every objective';
     $('focusSub').classList.remove('live');
     $('timerSub').textContent = `Locked to ${state.timerMinutes} minutes by exam simulation`;
     $('timerSub').classList.remove('live');
     $('feedbackTimingMeta').innerHTML = 'At the end, when you finish';
 
-    // Coverage meter: how much of the 40-slot blueprint the bank fills.
+    // Coverage meter: how much of the blueprint the bank fills.
     let cov = `Blueprint coverage: <strong>${drawn} / ${target}</strong> exam slots filled`;
-    if (missing.length > 0) {
-      const keys = missing.map(p => p.cat.key);
-      const shown = keys.slice(0, 8).join(', ') + (keys.length > 8 ? ` +${keys.length - 8} more` : '');
-      cov += ` <span class="ec-missing">· awaiting questions: ${shown}</span>`;
+    if (isPeriodExam) {
+      if (missing.length > 0) {
+        const names = missing.map(p => p.period.label || p.period.key);
+        cov += ` <span class="ec-missing">· awaiting questions in: ${names.join(', ')}</span>`;
+      } else {
+        cov += ` <span class="ec-missing">· full blueprint — ready for finals</span>`;
+      }
+      $('examPeriods').innerHTML = plan.map(p => {
+        const lbl = p.period.label || p.period.key;
+        const cls = p.take < p.want ? 'exam-period-pill awaiting' : 'exam-period-pill';
+        const note = (p.take < p.want && p.missingCats && p.missingCats.length > 0)
+          ? ` · awaiting ${p.missingCats.join(', ')}` : '';
+        return `<div class="${cls}"><span>${lbl} (${p.pct}%)${note}</span><span class="ep-slots">${p.take}/${p.want}</span></div>`;
+      }).join('');
+      $('examPeriods').classList.remove('hidden');
     } else {
-      cov += ` <span class="ec-missing">· full blueprint — this is a true exam form</span>`;
+      if (missing.length > 0) {
+        const keys = missing.map(p => p.cat.key);
+        const shown = keys.slice(0, 8).join(', ') + (keys.length > 8 ? ` +${keys.length - 8} more` : '');
+        cov += ` <span class="ec-missing">· awaiting questions: ${shown}</span>`;
+      } else {
+        cov += ` <span class="ec-missing">· full blueprint — this is a true exam form</span>`;
+      }
+      $('examPeriods').classList.add('hidden');
     }
     $('examCoverageLine').innerHTML = cov;
 
@@ -2054,8 +2213,9 @@ function updateSetupSummary() {
   }
 
   /* ── NORMAL PRACTICE BRANCH ─────────────────────────────────── */
-  $('examSub').textContent = examCfg.enabled === false ? '' :
-    `Replicates the official weighted blueprint — ${examTargetTotal()} questions · ${examCfg.minutes || 60} min · all objectives`;
+  $('examSub').textContent = examCfg.enabled === false ? '' : (isPeriodExam
+    ? `Weighted final exam (${examCfg.periods.map(p => `${p.label || p.key} ${p.pct}%`).join(' · ')}) — ${examTargetTotal()} questions · ${examCfg.minutes || 60} min`
+    : `Replicates the official weighted blueprint — ${examTargetTotal()} questions · ${examCfg.minutes || 60} min · all objectives`);
   $('examSub').classList.remove('live');
 
   const available = poolSize();
@@ -2538,6 +2698,34 @@ function showResults() {
     ? `<div class="score-frac" style="margin-top: 8px;">Time used: ${formatTime(state.timeUsedMs)} / ${state.timerMinutes}:00</div>`
     : '';
 
+  /* ── Per-period breakdown (when exam.periods is configured) ─── */
+  let periodHtml = '';
+  if (CONFIG.examSim && Array.isArray(CONFIG.examSim.periods) && CONFIG.examSim.periods.length > 0) {
+    const pRows = CONFIG.examSim.periods.map(period => {
+      const cats = period.cats || [];
+      const items = breakdown.filter(b => cats.includes(b.q.cat));
+      const n = items.length;
+      if (n === 0) {
+        return `<div class="obj-row muted">
+                  <div class="obj-row-label">${period.label || period.key} (${period.pct}%)</div>
+                  <div class="obj-row-bar"><i style="width:0%"></i></div>
+                  <div class="obj-row-pct">0/0 · —</div>
+                </div>`;
+      }
+      const sc = items.reduce((s, b) => s + b.score, 0);
+      const p = Math.round((sc / n) * 100);
+      return `<div class="obj-row${p < PASS_PCT ? ' weak' : ''}">
+                <div class="obj-row-label">${period.label || period.key} (${period.pct}%)</div>
+                <div class="obj-row-bar"><i style="width:${p}%"></i></div>
+                <div class="obj-row-pct">${sc.toFixed(1)}/${n} · ${p}%</div>
+              </div>`;
+    }).join('');
+    periodHtml = `<div class="obj-break">
+                    <div class="obj-break-title">Performance by period — red rows are below the ${PASS_PCT}% pass line</div>
+                    ${pRows}
+                  </div>`;
+  }
+
   /* ── Per-objective breakdown ──────────────────────────────────
      Shown whenever the paper spans 2+ objectives (always true in
      exam simulation). Rows under the pack's pass mark (default 65%) —
@@ -2649,6 +2837,8 @@ function showResults() {
         <div class="stat-label">Incorrect / skipped</div>
       </div>
     </div>
+
+    ${periodHtml}
 
     ${objHtml}
 
